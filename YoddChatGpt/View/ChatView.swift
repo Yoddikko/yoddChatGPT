@@ -10,7 +10,7 @@ import CoreData
 
 struct ChatView: View {
     
-    
+    var speechSynthesizer = SpeechSynthesizer()
     
     @Environment (\.managedObjectContext) var managedObjectContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
@@ -61,8 +61,19 @@ struct ChatView: View {
                             } else {
                                 VStack {
                                     HStack() {
-                                        createBotMessageBubble(text: message.body!)
+                                        createBotMessageBubble(text: message.body!, type: message.type == "text" ? .text : .error)
+
                                         Spacer()
+                                        
+                                        Button(action: {
+                                            speechSynthesizer.readString(text: message.body!)
+                                        }, label: {
+                                            Image(systemName: "waveform.circle")
+                                                .resizable()
+                                                .frame(width: 30, height: 30)
+                                        }).padding(.trailing, 5)
+
+
                                     }
                                     HStack {
                                         createTimeStamp(date: message.date!)
@@ -105,6 +116,14 @@ struct ChatView: View {
             }, label: {
                 Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
             })
+            
+            //TEMPORARY BUTTON
+            Button(action: {
+                DataController.shared.deleteData(context: managedObjectContext)
+            }, label: {
+                Image(systemName: "trash").resizable().frame(width: 30, height: 30)
+            })
+
         }.padding()
         
         //        .onTapGesture {
@@ -123,16 +142,25 @@ struct ChatView: View {
             return
         }
         let userMessage = TemporaryMessage(body: text, sender: .user)
-        DataController.shared.addMessage(body: userMessage.body, sender: "user", context: managedObjectContext)
+        DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text,  context: managedObjectContext)
         audioPlayer.playMessageSound(sender: .user)
 
-        openAIViewModel.send(text: text, completion: { response in
+        openAIViewModel.send(text: text, completion: { response, messageType  in
             DispatchQueue.main.async {
-                var botMessage = TemporaryMessage(body: response, sender: .bot)
-                botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
-                self.models.append(botMessage)
-                DataController.shared.addMessage(body: botMessage.body, sender: "bot", context: managedObjectContext)
-                audioPlayer.playMessageSound(sender: .bot)
+                if messageType == .text {
+                    var botMessage = TemporaryMessage(body: response, sender: .bot)
+                    botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
+                    self.models.append(botMessage)
+                    DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", context: managedObjectContext)
+                    audioPlayer.playMessageSound(sender: .bot)
+                } else if messageType == .error {
+                    var botMessage = TemporaryMessage(body: response, sender: .bot)
+                    botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
+                    self.models.append(botMessage)
+                    DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
+                    audioPlayer.playMessageSound(sender: .bot)
+
+                }
                 
             }
         })
@@ -154,7 +182,7 @@ struct ChatView: View {
     }
 }
 
-struct ChatView_Previews2: PreviewProvider {
+struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
     }
@@ -180,14 +208,26 @@ func createUserMessageBubble (text : String) -> some View {
     
 }
 @ViewBuilder
-func createBotMessageBubble (text : String) -> some View {
+func createBotMessageBubble (text : String, type : MessageType) -> some View {
     HStack() {
-        Text(text)
-            .multilineTextAlignment(.leading)
-            .padding(.trailing, 30)
-            .padding(.vertical, 10)
-            .padding(.horizontal, 10)
-            .padding(.leading, 5)
+        if type == .text {
+            Text(text)
+                .multilineTextAlignment(.leading)
+                .padding(.trailing, 30)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 10)
+                .padding(.leading, 5)
+        }
+        else if type == .error{
+            Text(text)
+                .foregroundColor(.red)
+                .multilineTextAlignment(.leading)
+                .padding(.trailing, 30)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 10)
+                .padding(.leading, 5)
+
+        }
         
     }.background {
         ZStack {

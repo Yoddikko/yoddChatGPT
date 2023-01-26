@@ -114,38 +114,6 @@
             endingLineNumber = "15"
             landmarkName = "DataController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "946F7738-7AFD-499C-A17F-BB9C985F8896 - d44ec36cf47e3c78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "one-time initialization function for shared"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "946F7738-7AFD-499C-A17F-BB9C985F8896 - 95b3e27f34c3540e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YoddChatGpt.DataController.shared.unsafeMutableAddressor : YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -162,38 +130,6 @@
             endingLineNumber = "17"
             landmarkName = "init()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AB38A3C9-347A-45C6-9BA4-7D7039056E46 - 9b5f06e8aaf6e1c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YoddChatGpt.DataController.__allocating_init() -&gt; YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "AB38A3C9-347A-45C6-9BA4-7D7039056E46 - 199175c1ea344dc4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YoddChatGpt.DataController.init() -&gt; YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -210,38 +146,6 @@
             endingLineNumber = "19"
             landmarkName = "init()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "56DC69C1-A0F5-48CA-9D88-9EEF24E0983C - fa0a51ed240b5828"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSPersistentStoreDescription, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YoddChatGpt.DataController.init() -&gt; YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "56DC69C1-A0F5-48CA-9D88-9EEF24E0983C - fa0a51ed240b5828"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSPersistentStoreDescription, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YoddChatGpt.DataController.init() -&gt; YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -258,38 +162,22 @@
             endingLineNumber = "16"
             landmarkName = "DataController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "4D8FC994-EA0D-4503-9765-9CAF7F673576 - 9b5f06e8aaf6e1c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YoddChatGpt.DataController.__allocating_init() -&gt; YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "4D8FC994-EA0D-4503-9765-9CAF7F673576 - 199175c1ea344dc4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YoddChatGpt.DataController.init() -&gt; YoddChatGpt.DataController"
-                  moduleName = "YoddChatGpt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/DataModel/DataController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5AEAC35-5475-4FB9-8D80-EF249EC2EE89"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/ViewModel/OpenAIViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "send(text:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

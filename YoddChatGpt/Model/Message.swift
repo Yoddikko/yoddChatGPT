@@ -12,8 +12,13 @@ struct TemporaryMessage : Hashable {
     var sender : Sender
     var timeStamp = Date()
     var id = UUID()
+    
 }
 
 enum Sender {
     case bot, user
+}
+
+enum MessageType {
+    case text, error
 }

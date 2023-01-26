@@ -33,14 +33,25 @@ class DataController : ObservableObject {
     }
     
     
-    func addMessage (body : String, sender: String, context : NSManagedObjectContext) {
+    func addMessage (body : String, sender: String, type : String, context : NSManagedObjectContext) {
         let message = Message(context: context)
         message.date = Date()
         message.body = body
         message.id = UUID()
         message.sender = sender == "bot" ? "bot" : "user"
-        
+        message.type = type == "text" ? "text" : "error"
         save(context: context)
+    }
+    
+    func deleteData (context : NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Message")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(deleteRequest)
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
     }
     
 //    func editMessage (message: Message, body : String, sender : Sender, id : UUID, context : NSManagedObjectContext) {
