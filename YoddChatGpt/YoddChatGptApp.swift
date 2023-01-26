@@ -15,7 +15,7 @@ struct YoddChatGptApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ChatView2()
+            ChatView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
