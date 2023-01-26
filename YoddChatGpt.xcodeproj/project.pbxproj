@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		712443B62976ECF9007E98AA /* YoddChatGptApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712443B52976ECF9007E98AA /* YoddChatGptApp.swift */; };
+		712443BA2976ECFA007E98AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712443B92976ECFA007E98AA /* Assets.xcassets */; };
+		712443BD2976ECFA007E98AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712443BC2976ECFA007E98AA /* Preview Assets.xcassets */; };
+		712443C22976ECFA007E98AA /* MessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 712443C02976ECFA007E98AA /* MessageModel.xcdatamodeld */; };
+		712443CC2976EE30007E98AA /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712443CB2976EE30007E98AA /* OpenAIViewModel.swift */; };
+		7179EAA629811F60004A95CA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7179EAA529811F60004A95CA /* OpenAISwift */; };
+		71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B2C29812D4B00CB13C2 /* Message.swift */; };
+		71BE9B342982856300CB13C2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B332982856300CB13C2 /* DataController.swift */; };
+		71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3529828BB000CB13C2 /* ChatView.swift */; };
+		71BE9B3829828F6B00CB13C2 /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3729828F6B00CB13C2 /* TimeFormatting.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		712443B22976ECF9007E98AA /* YoddChatGpt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoddChatGpt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		712443B52976ECF9007E98AA /* YoddChatGptApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoddChatGptApp.swift; sourceTree = "<group>"; };
+		712443B92976ECFA007E98AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		712443BC2976ECFA007E98AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		712443C12976ECFA007E98AA /* YoddChatGpt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoddChatGpt.xcdatamodel; sourceTree = "<group>"; };
+		712443CB2976EE30007E98AA /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
+		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		71BE9B3529828BB000CB13C2 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		71BE9B3729828F6B00CB13C2 /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		712443AF2976ECF9007E98AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7179EAA629811F60004A95CA /* OpenAISwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		712443A92976ECF9007E98AA = {
+			isa = PBXGroup;
+			children = (
+				712443B42976ECF9007E98AA /* YoddChatGpt */,
+				712443B32976ECF9007E98AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		712443B32976ECF9007E98AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				712443B22976ECF9007E98AA /* YoddChatGpt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		712443B42976ECF9007E98AA /* YoddChatGpt */ = {
+			isa = PBXGroup;
+			children = (
+				712443B52976ECF9007E98AA /* YoddChatGptApp.swift */,
+				71BE9B3929828F7300CB13C2 /* Helpers */,
+				71BE9B312982835A00CB13C2 /* View */,
+				71BE9B322982836E00CB13C2 /* ViewModel */,
+				71BE9B302982835100CB13C2 /* Model */,
+				71BE9B2F298282E700CB13C2 /* DataModel */,
+				712443B92976ECFA007E98AA /* Assets.xcassets */,
+				712443BB2976ECFA007E98AA /* Preview Content */,
+			);
+			path = YoddChatGpt;
+			sourceTree = "<group>";
+		};
+		712443BB2976ECFA007E98AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				712443BC2976ECFA007E98AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71BE9B2F298282E700CB13C2 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				712443C02976ECFA007E98AA /* MessageModel.xcdatamodeld */,
+				71BE9B332982856300CB13C2 /* DataController.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		71BE9B302982835100CB13C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71BE9B2C29812D4B00CB13C2 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71BE9B312982835A00CB13C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71BE9B3529828BB000CB13C2 /* ChatView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71BE9B322982836E00CB13C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				712443CB2976EE30007E98AA /* OpenAIViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		71BE9B3929828F7300CB13C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				71BE9B3729828F6B00CB13C2 /* TimeFormatting.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		712443B12976ECF9007E98AA /* YoddChatGpt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 712443C52976ECFA007E98AA /* Build configuration list for PBXNativeTarget "YoddChatGpt" */;
+			buildPhases = (
+				712443AE2976ECF9007E98AA /* Sources */,
+				712443AF2976ECF9007E98AA /* Frameworks */,
+				712443B02976ECF9007E98AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YoddChatGpt;
+			packageProductDependencies = (
+				7179EAA529811F60004A95CA /* OpenAISwift */,
+			);
+			productName = YoddChatGpt;
+			productReference = 712443B22976ECF9007E98AA /* YoddChatGpt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		712443AA2976ECF9007E98AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					712443B12976ECF9007E98AA = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 712443AD2976ECF9007E98AA /* Build configuration list for PBXProject "YoddChatGpt" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 712443A92976ECF9007E98AA;
+			packageReferences = (
+				7179EAA429811F60004A95CA /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
+			productRefGroup = 712443B32976ECF9007E98AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				712443B12976ECF9007E98AA /* YoddChatGpt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		712443B02976ECF9007E98AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				712443BD2976ECFA007E98AA /* Preview Assets.xcassets in Resources */,
+				712443BA2976ECFA007E98AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		712443AE2976ECF9007E98AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				712443CC2976EE30007E98AA /* OpenAIViewModel.swift in Sources */,
+				71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */,
+				712443B62976ECF9007E98AA /* YoddChatGptApp.swift in Sources */,
+				71BE9B3829828F6B00CB13C2 /* TimeFormatting.swift in Sources */,
+				71BE9B342982856300CB13C2 /* DataController.swift in Sources */,
+				712443C22976ECFA007E98AA /* MessageModel.xcdatamodeld in Sources */,
+				71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		712443C32976ECFA007E98AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		712443C42976ECFA007E98AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		712443C62976ECFA007E98AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YoddChatGpt/Preview Content\"";
+				DEVELOPMENT_TEAM = AH7YQ86734;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ale.YoddChatGpt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		712443C72976ECFA007E98AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YoddChatGpt/Preview Content\"";
+				DEVELOPMENT_TEAM = AH7YQ86734;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ale.YoddChatGpt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		712443AD2976ECF9007E98AA /* Build configuration list for PBXProject "YoddChatGpt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				712443C32976ECFA007E98AA /* Debug */,
+				712443C42976ECFA007E98AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		712443C52976ECFA007E98AA /* Build configuration list for PBXNativeTarget "YoddChatGpt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				712443C62976ECFA007E98AA /* Debug */,
+				712443C72976ECFA007E98AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7179EAA429811F60004A95CA /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7179EAA529811F60004A95CA /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7179EAA429811F60004A95CA /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		712443C02976ECFA007E98AA /* MessageModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				712443C12976ECFA007E98AA /* YoddChatGpt.xcdatamodel */,
+			);
+			currentVersion = 712443C12976ECFA007E98AA /* YoddChatGpt.xcdatamodel */;
+			path = MessageModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 712443AA2976ECF9007E98AA /* Project object */;
+}
