@@ -8,10 +8,17 @@
 import Foundation
 import OpenAISwift
 
+/**
+ This is the ViewModel that manages the OpenAISwift implementation.
+
+ - Version: 0.1
+
+ */
 final class OpenAIViewModel : ObservableObject {
     
     private var client : OpenAISwift?
     
+    // TODO: - THIS IS TEMPORARY, REMOVE THIS BEFORE MAKING THE CODE PUBLIC XD OR AT LEAST REMEMBER TO NOT PUT MY API
     func setup() {
         client = OpenAISwift(authToken: "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")
     }

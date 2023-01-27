@@ -21,6 +21,12 @@
 		71BE9B3D2982E85D00CB13C2 /* RecievedMessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */; };
 		71BE9B3F2982E8E500CB13C2 /* SentMessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71BE9B3E2982E8E500CB13C2 /* SentMessage.mp3 */; };
 		71BE9B422982F12F00CB13C2 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */; };
+		71BE9B492983D89D00CB13C2 /* BotMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B482983D89D00CB13C2 /* BotMessageBubble.swift */; };
+		71BE9B4B2983D8CB00CB13C2 /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B4A2983D8CB00CB13C2 /* TimeStamp.swift */; };
+		71BE9B4F2983D99B00CB13C2 /* EmptyChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */; };
+		71BE9B512983D9E400CB13C2 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B502983D9E400CB13C2 /* MessagesView.swift */; };
+		71BE9B532983DAA200CB13C2 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B522983DAA200CB13C2 /* NewMessageView.swift */; };
+		71BE9B552983DF7200CB13C2 /* UserMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B542983DF7200CB13C2 /* UserMessageBubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RecievedMessage.mp3; sourceTree = "<group>"; };
 		71BE9B3E2982E8E500CB13C2 /* SentMessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SentMessage.mp3; sourceTree = "<group>"; };
 		71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		71BE9B482983D89D00CB13C2 /* BotMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMessageBubble.swift; sourceTree = "<group>"; };
+		71BE9B4A2983D8CB00CB13C2 /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
+		71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyChatView.swift; sourceTree = "<group>"; };
+		71BE9B502983D9E400CB13C2 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		71BE9B522983DAA200CB13C2 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		71BE9B542983DF7200CB13C2 /* UserMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageBubble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +124,11 @@
 		71BE9B312982835A00CB13C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71BE9B472983D88000CB13C2 /* ViewBuilders */,
 				71BE9B3529828BB000CB13C2 /* ChatView.swift */,
+				71BE9B522983DAA200CB13C2 /* NewMessageView.swift */,
+				71BE9B502983D9E400CB13C2 /* MessagesView.swift */,
+				71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +158,16 @@
 				71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		71BE9B472983D88000CB13C2 /* ViewBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				71BE9B482983D89D00CB13C2 /* BotMessageBubble.swift */,
+				71BE9B542983DF7200CB13C2 /* UserMessageBubble.swift */,
+				71BE9B4A2983D8CB00CB13C2 /* TimeStamp.swift */,
+			);
+			path = ViewBuilders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,13 +250,19 @@
 			files = (
 				712443CC2976EE30007E98AA /* OpenAIViewModel.swift in Sources */,
 				71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */,
+				71BE9B4B2983D8CB00CB13C2 /* TimeStamp.swift in Sources */,
 				712443B62976ECF9007E98AA /* YoddChatGptApp.swift in Sources */,
 				71BE9B3B2982DDC600CB13C2 /* AudioPlayer.swift in Sources */,
 				71BE9B3829828F6B00CB13C2 /* TimeFormatting.swift in Sources */,
 				71BE9B342982856300CB13C2 /* DataController.swift in Sources */,
 				712443C22976ECFA007E98AA /* MessageModel.xcdatamodeld in Sources */,
+				71BE9B4F2983D99B00CB13C2 /* EmptyChatView.swift in Sources */,
+				71BE9B532983DAA200CB13C2 /* NewMessageView.swift in Sources */,
 				71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */,
 				71BE9B422982F12F00CB13C2 /* SpeechSynthesizer.swift in Sources */,
+				71BE9B552983DF7200CB13C2 /* UserMessageBubble.swift in Sources */,
+				71BE9B512983D9E400CB13C2 /* MessagesView.swift in Sources */,
+				71BE9B492983D89D00CB13C2 /* BotMessageBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

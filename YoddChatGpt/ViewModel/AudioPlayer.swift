@@ -7,6 +7,12 @@
 import AVFoundation
 
 
+/**
+ This is the ViewModel that manages the AVFoundation AudioPlayer framework.
+
+ - Version: 0.1
+
+ */
 class AudioPlayer {
     var player: AVAudioPlayer?
     
@@ -24,6 +30,6 @@ class AudioPlayer {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {
-            // couldn't load file :(
+            // TODO: - Error handling
         }}
 }
