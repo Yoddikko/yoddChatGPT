@@ -23,7 +23,7 @@ struct MessagesView: View {
                         .padding(10)
                         .font(.callout)
                         .background {
-                            RoundedRectangle(cornerRadius: 15).foregroundColor(.blue.opacity(0.2))
+                            RoundedRectangle(cornerRadius: 15).foregroundColor(.accentColor.opacity(0.2))
                         }
                 }
                 ForEach (messages) { message in

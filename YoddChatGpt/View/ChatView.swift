@@ -26,7 +26,7 @@ struct ChatView: View {
     
     
     var body: some View {
-        
+        NavigationStack {
         VStack {
             if messages.isEmpty {
                 //Shows an empty chat view
@@ -34,15 +34,35 @@ struct ChatView: View {
             } else {
                 //View with messages
                 MessagesView()
-                .padding(.top, 1)
                 
-                .onTapGesture {
-                    textIsFocused = false
-                }
+                    .padding(.top, 1)
+                
+                    .onTapGesture {
+                        textIsFocused = false
+                    }
             }
         }
-        //View with text field to send a message
-        NewMessageView(text: $text, textIsFocused: _textIsFocused)
+            //View with text field to send a message
+            NewMessageView(text: $text, textIsFocused: _textIsFocused)
+
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: {
+                    SettingsView()
+                }, label: {
+                    Image(systemName: "list.bullet")
+                })
+            }
+        }
+
+
+    }
+        .navigationViewStyle(StackNavigationViewStyle())
+        
+
+
+
+
     }
 }
 

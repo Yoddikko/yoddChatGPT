@@ -27,6 +27,7 @@ class AudioPlayer {
         let url = URL(fileURLWithPath: path)
         
         do {
+            
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {

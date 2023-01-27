@@ -184,7 +184,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D583B9FF-18A2-48F6-A25B-0C9F2180640C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YoddChatGpt/View/MessagesView.swift"
@@ -193,6 +193,22 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "isNewDate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8D1876F-3509-42EF-A5BD-E98397D707A1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/ViewModel/AccentColor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

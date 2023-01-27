@@ -33,6 +33,13 @@ func createBotMessageBubble (text : String, type : MessageType) -> some View {
         }) {
             Label("Listen", systemImage: "ear")
         }
+        
+        Button(action: {
+            speechSynthesizer.readString(text: text)
+        }) {
+            Label("Save", systemImage: "bookmark")
+        }
+
         Button(action: {
             
         }) {
