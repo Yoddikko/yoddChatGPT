@@ -27,6 +27,8 @@ class AudioPlayer {
         let url = URL(fileURLWithPath: path)
         
         do {
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
+            try AVAudioSession.sharedInstance().setActive(true)
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {

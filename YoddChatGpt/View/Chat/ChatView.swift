@@ -16,8 +16,6 @@ import CoreData
  */
 struct ChatView: View {
     
-    @Environment(\.dismiss) var dismiss
-    
     // MARK: - Sending message properties
     ///This is the text written in the textfield
     @State var text : String = ""
@@ -60,13 +58,15 @@ struct ChatView: View {
                             }, label: {
                                 Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
                             })
-            
-                            //TEMPORARY BUTTON
-            
                         }.padding()
                         .onAppear{
                             openAIViewModel.setup()
                         }
+                        .onDisappear{
+                            textIsFocused = false
+                        }
+
+
             
                         .toolbar {
                             ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -125,7 +125,6 @@ struct ChatView: View {
                 }
             }
         })
-        dismiss()
         self.text = ""
     }
     

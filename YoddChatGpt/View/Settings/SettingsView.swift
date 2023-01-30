@@ -90,6 +90,9 @@ struct SettingsView: View {
                             Text("Paste your token here")
                         }
                     })
+                    .onDisappear{
+                        presentAlert = false
+                    }
                     .onChange(of: openAIViewModelToken) { token in
                         OpenAIViewModel.shared.setToken(string: token)
                     }
@@ -101,7 +104,7 @@ struct SettingsView: View {
                 })
                 
 //                Section("Multipeer", content: {
-//                    
+//
 //                    HStack {
 //                        Text("Change multipeer name")
 //                        Spacer()

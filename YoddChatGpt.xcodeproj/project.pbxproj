@@ -18,6 +18,7 @@
 		7193E32029869794004A10D4 /* ExampleThemeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E31F29869793004A10D4 /* ExampleThemeChat.swift */; };
 		7193E3222986A797004A10D4 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E3212986A797004A10D4 /* ThemePickerView.swift */; };
 		7193E32529881642004A10D4 /* SavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32429881642004A10D4 /* SavedMessagesView.swift */; };
+		7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */; };
 		71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B2C29812D4B00CB13C2 /* Message.swift */; };
 		71BE9B342982856300CB13C2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B332982856300CB13C2 /* DataController.swift */; };
 		71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3529828BB000CB13C2 /* ChatView.swift */; };
@@ -48,6 +49,7 @@
 		7193E31F29869793004A10D4 /* ExampleThemeChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleThemeChat.swift; sourceTree = "<group>"; };
 		7193E3212986A797004A10D4 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		7193E32429881642004A10D4 /* SavedMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMessagesView.swift; sourceTree = "<group>"; };
+		7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySavedMessagesView.swift; sourceTree = "<group>"; };
 		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		71BE9B3529828BB000CB13C2 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7193E32829881C6D004A10D4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				71BE9B3529828BB000CB13C2 /* ChatView.swift */,
+				71BE9B502983D9E400CB13C2 /* MessagesView.swift */,
+				7193E31D29868320004A10D4 /* BotMessageBubble.swift */,
+				71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */,
+				71BE9B472983D88000CB13C2 /* ViewBuilders */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7193E32929881C9A004A10D4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				71BE9B5A2983EF7D00CB13C2 /* SettingsView.swift */,
+				7193E3212986A797004A10D4 /* ThemePickerView.swift */,
+				7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */,
+				7193E31F29869793004A10D4 /* ExampleThemeChat.swift */,
+				7193E32429881642004A10D4 /* SavedMessagesView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		71BE9B2F298282E700CB13C2 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,15 +165,8 @@
 		71BE9B312982835A00CB13C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				71BE9B472983D88000CB13C2 /* ViewBuilders */,
-				71BE9B3529828BB000CB13C2 /* ChatView.swift */,
-				7193E31D29868320004A10D4 /* BotMessageBubble.swift */,
-				7193E3212986A797004A10D4 /* ThemePickerView.swift */,
-				71BE9B502983D9E400CB13C2 /* MessagesView.swift */,
-				71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */,
-				7193E31F29869793004A10D4 /* ExampleThemeChat.swift */,
-				71BE9B5A2983EF7D00CB13C2 /* SettingsView.swift */,
-				7193E32429881642004A10D4 /* SavedMessagesView.swift */,
+				7193E32929881C9A004A10D4 /* Settings */,
+				7193E32829881C6D004A10D4 /* Chat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,6 +302,7 @@
 				71BE9B5B2983EF7D00CB13C2 /* SettingsView.swift in Sources */,
 				7193E32029869794004A10D4 /* ExampleThemeChat.swift in Sources */,
 				712443B62976ECF9007E98AA /* YoddChatGptApp.swift in Sources */,
+				7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */,
 				71BE9B3B2982DDC600CB13C2 /* AudioPlayer.swift in Sources */,
 				71BE9B572983E75D00CB13C2 /* ThemeViewModel.swift in Sources */,
 				71BE9B3829828F6B00CB13C2 /* TimeFormatting.swift in Sources */,

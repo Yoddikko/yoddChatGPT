@@ -9,14 +9,21 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct BotMessageBubble: View {
+    // MARK: - Environmental objects
     @Environment (\.managedObjectContext) var managedObjectContext
+    
+    // MARK: - ViewModels
     @StateObject var speechSynthesizer = SpeechSynthesizer.shared
     @ObservedObject var chatColors = ThemeViewModel.shared
+    
+    // MARK: - Properties
     var messageState : Bool
     var primaryColor : Color
     var secondaryColor : Color
     var message : Message
     var type : MessageType
+    
+    
     var body: some View {
         Menu {
             Button(action: {
@@ -84,7 +91,7 @@ struct BotMessageBubble: View {
                                     .padding(.trailing, 2)
                             }
                         }
-
+                        
                         RoundedRectangle(cornerRadius: 15).foregroundColor(secondaryColor)
                             .padding(.trailing, 30).padding(.leading, 5)
                     }
@@ -98,8 +105,8 @@ struct BotMessageBubble: View {
 }
 
 
-//struct BotMessageBubble_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BotMessageBubble(speechSynthesizer: SpeechSynthesizer(), message: Message(), type: .text)
-//    }
-//}
+struct BotMessageBubble_Previews: PreviewProvider {
+    static var previews: some View {
+        BotMessageBubble(messageState: true, primaryColor: .blue, secondaryColor: .teal, message: Message(), type: .text)
+    }
+}

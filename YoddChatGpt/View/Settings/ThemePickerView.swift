@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ThemePickerView: View {
     
-    //    @ObservedObject var accentColor  = ThemeViewModel.shared
+    // MARK: - ViewModels and properties
     var themeViewModel = ThemeViewModel.shared
     var themes = ThemeViewModel.shared.themes
     @State var tappedTheme : Theme = ThemeViewModel.shared.theme
+    
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
@@ -22,7 +24,7 @@ struct ThemePickerView: View {
                         .frame(width: 100, height: 150).clipShape(RoundedRectangle(cornerRadius: 15))
                         .background {
                             if tappedTheme == theme {
-                                    RoundedRectangle(cornerRadius: 15).foregroundColor(.gray).padding(2)
+                                RoundedRectangle(cornerRadius: 15).foregroundColor(.gray).padding(2)
                             }
                         }
                         .onTapGesture {

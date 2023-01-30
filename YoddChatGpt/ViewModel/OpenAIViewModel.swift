@@ -27,7 +27,7 @@ final class OpenAIViewModel : ObservableObject {
     // TODO: - THIS IS TEMPORARY, REMOVE THIS BEFORE MAKING THE CODE PUBLIC XD OR AT LEAST REMEMBER TO NOT PUT MY API
     func setup() {
         token = OpenAISwift(authToken: UserDefaults.standard.string(forKey: "token") ?? "")
-        print(UserDefaults.standard.string(forKey: "token") ?? "")
+//        print(UserDefaults.standard.string(forKey: "token") ?? "")
     }
     //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
     

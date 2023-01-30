@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ExampleThemeChat: View {
+    
+    // MARK: - ViewModels
+    var themeViewModel : ThemeViewModel = ThemeViewModel()
+
+    // MARK: - Environmental objects
     @Environment(\.colorScheme) var colorScheme
+    
+    // MARK: - Properties
     var primaryColor : Color
     var secondaryColor : Color
     var theme : Theme
-    var themeViewModel : ThemeViewModel = ThemeViewModel()
+    
     var body: some View {
         ZStack {
             Color(colorScheme == .light ? .lightGray : .black).opacity(0.4)
@@ -30,7 +37,6 @@ struct ExampleThemeChat: View {
                             LinearGradient(gradient: Gradient(colors: [primaryColor, secondaryColor]), startPoint: .topLeading, endPoint: .bottomTrailing).clipShape(RoundedRectangle(cornerRadius: 15))
                                 .padding(.leading, 30).padding(.trailing, 5)
                         }
-
                 }
                 HStack {
                     Text("              ")
@@ -42,9 +48,6 @@ struct ExampleThemeChat: View {
                         .background {
                             LinearGradient(gradient: Gradient(colors: [secondaryColor, primaryColor]), startPoint: .topLeading, endPoint: .bottomTrailing).clipShape(RoundedRectangle(cornerRadius: 15))
                                 .padding(.trailing, 30).padding(.leading, 5)
-
-                            
-                            
                         }
                     Spacer()
                 }

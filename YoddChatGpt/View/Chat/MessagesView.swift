@@ -14,11 +14,8 @@ struct MessagesView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
     @Environment(\.dismiss) var dismiss
     
-    
+    // MARK: - Properties
     @ObservedObject var chatColors = ThemeViewModel.shared
-
-//    @ObservedObject var speechSynthesizer = SpeechSynthesizer()
-
     
     var body: some View {
         ScrollViewReader { value in
