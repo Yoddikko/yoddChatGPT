@@ -19,6 +19,7 @@
 		7193E3222986A797004A10D4 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E3212986A797004A10D4 /* ThemePickerView.swift */; };
 		7193E32529881642004A10D4 /* SavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32429881642004A10D4 /* SavedMessagesView.swift */; };
 		7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */; };
+		7193E32C298825BF004A10D4 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32B298825BF004A10D4 /* OnBoardingView.swift */; };
 		71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B2C29812D4B00CB13C2 /* Message.swift */; };
 		71BE9B342982856300CB13C2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B332982856300CB13C2 /* DataController.swift */; };
 		71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3529828BB000CB13C2 /* ChatView.swift */; };
@@ -50,6 +51,8 @@
 		7193E3212986A797004A10D4 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		7193E32429881642004A10D4 /* SavedMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMessagesView.swift; sourceTree = "<group>"; };
 		7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySavedMessagesView.swift; sourceTree = "<group>"; };
+		7193E32A29882435004A10D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7193E32B298825BF004A10D4 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		71BE9B3529828BB000CB13C2 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -99,10 +102,12 @@
 		712443B42976ECF9007E98AA /* YoddChatGpt */ = {
 			isa = PBXGroup;
 			children = (
+				7193E32A29882435004A10D4 /* Info.plist */,
 				712443B52976ECF9007E98AA /* YoddChatGptApp.swift */,
 				71BE9B5C2983FB4A00CB13C2 /* Extensions */,
 				71BE9B3929828F7300CB13C2 /* Helpers */,
 				71BE9B312982835A00CB13C2 /* View */,
+				7193E32B298825BF004A10D4 /* OnBoardingView.swift */,
 				71BE9B322982836E00CB13C2 /* ViewModel */,
 				71BE9B302982835100CB13C2 /* Model */,
 				71BE9B2F298282E700CB13C2 /* DataModel */,
@@ -317,6 +322,7 @@
 				7193E31C29867E00004A10D4 /* NSManagedObjectContext+extension.swift in Sources */,
 				7193E31E29868320004A10D4 /* BotMessageBubble.swift in Sources */,
 				71BE9B422982F12F00CB13C2 /* SpeechSynthesizer.swift in Sources */,
+				7193E32C298825BF004A10D4 /* OnBoardingView.swift in Sources */,
 				71BE9B552983DF7200CB13C2 /* UserMessageBubble.swift in Sources */,
 				71BE9B512983D9E400CB13C2 /* MessagesView.swift in Sources */,
 			);
@@ -450,7 +456,7 @@
 				DEVELOPMENT_TEAM = AH7YQ86734;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = YoddChatGpt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -479,7 +485,7 @@
 				DEVELOPMENT_TEAM = AH7YQ86734;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = YoddChatGpt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

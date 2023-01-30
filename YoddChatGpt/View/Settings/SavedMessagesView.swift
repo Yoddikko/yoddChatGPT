@@ -15,7 +15,10 @@ struct SavedMessagesView: View {
     var theme = ThemeViewModel.shared.theme
 
     var body: some View {
-        ScrollView {
+        if savedMessages.isEmpty {
+            EmptySavedMessagesView()
+        } else {
+            ScrollView {
                 ForEach (savedMessages) { message in
                     VStack {
                         HStack {
@@ -30,6 +33,7 @@ struct SavedMessagesView: View {
                     }
                 }
                 Spacer()
+            }
         }
     }
 }

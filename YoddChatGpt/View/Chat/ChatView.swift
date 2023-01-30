@@ -16,6 +16,7 @@ import CoreData
  */
 struct ChatView: View {
     
+    
     // MARK: - Sending message properties
     ///This is the text written in the textfield
     @State var text : String = ""
@@ -32,9 +33,12 @@ struct ChatView: View {
     @Environment (\.managedObjectContext) var managedObjectContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
     
+    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
+    
     var body: some View {
         NavigationStack {
             VStack {
+                
                 if messages.isEmpty {
                     //Shows an empty chat view
                     EmptyChatView()
@@ -60,7 +64,7 @@ struct ChatView: View {
                             })
                         }.padding()
                         .onAppear{
-                            openAIViewModel.setup()
+                            OpenAIViewModel.shared.setup()
                         }
                         .onDisappear{
                             textIsFocused = false
@@ -79,7 +83,9 @@ struct ChatView: View {
                         }
             
             
-        }
+        }            .fullScreenCover(isPresented: $shouldShowOnBoarding, content: { OnBoardingView(shouldShowOnBoarding: $shouldShowOnBoarding)})
+
+            .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
@@ -106,7 +112,7 @@ struct ChatView: View {
         audioPlayer.playMessageSound(sender: .user)
         
         //API call
-        openAIViewModel.send(text: text, completion: { response, messageType  in
+        OpenAIViewModel.shared.send(text: text, completion: { response, messageType  in
             DispatchQueue.main.async {
                 
                 //Saves the bot message and checks if it's an error message or a normal text

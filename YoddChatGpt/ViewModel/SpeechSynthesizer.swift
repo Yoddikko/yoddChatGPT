@@ -29,7 +29,6 @@ class SpeechSynthesizer : ObservableObject {
         utterance.pitchMultiplier = 1.0
         utterance.rate = 0.5
         utterance.voice = AVSpeechSynthesisVoice(language: recognizeLanguage(text: text))
-//        self.textCurrentlySpeaking = text
         speechSynthesizer.speak(utterance)
         
     }

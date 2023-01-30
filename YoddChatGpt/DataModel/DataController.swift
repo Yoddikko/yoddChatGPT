@@ -26,7 +26,7 @@ class DataController : ObservableObject {
     func save(context: NSManagedObjectContext) {
         do {
             try context.save()
-            print("Data saved")
+//            print("Data saved")
         } catch {
             print("ERROR >>> Data couldn't be saved")
         }
@@ -55,11 +55,7 @@ class DataController : ObservableObject {
 
     
     func deleteData (context : NSManagedObjectContext, message : Message) {
-        do {
-            try context.delete(message)
-        } catch {
-            print("Couldn't delete item")
-        }
+            context.delete(message)
     }
     
     func deleteAllData (context : NSManagedObjectContext) {
@@ -69,6 +65,7 @@ class DataController : ObservableObject {
         do {
             try context.executeAndMergeChanges(using: deleteRequest)
         } catch let error as NSError {
+            print(error)
             // TODO: handle the error
         }
     }
@@ -81,9 +78,10 @@ class DataController : ObservableObject {
         
         do {
             try context.executeAndMergeChanges(using: deleteRequest)
-//            try context.execute(deleteRequest)
         } catch let error as NSError {
+            print(error)
             // TODO: handle the error
+
         }
     }
 

@@ -40,7 +40,6 @@ class ThemeViewModel : ObservableObject {
         } else {
             self.theme = .native
             self.theme = getThemefromString(stringTheme: themeColorUserDefaults)
-            print (self.theme)
         }
     }
     
@@ -108,8 +107,6 @@ class ThemeViewModel : ObservableObject {
             return "☁️ Sky"
         case .mint:
             return "🌿 Mint"
-        default:
-            return "🤖 Native"
         }
 
     }
