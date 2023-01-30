@@ -12,7 +12,7 @@ struct BotMessageBubble: View {
     @Environment (\.managedObjectContext) var managedObjectContext
     @StateObject var speechSynthesizer = SpeechSynthesizer.shared
     @ObservedObject var chatColors = ThemeViewModel.shared
-
+    var messageState : Bool
     var primaryColor : Color
     var secondaryColor : Color
     var message : Message
@@ -40,7 +40,7 @@ struct BotMessageBubble: View {
             
             
             Button(action: {
-                //                speechSynthesizer.readString(text: message.body!)
+                DataController.shared.saveMessage(message: message, context: managedObjectContext)
             }) {
                 Label("Save", systemImage: "bookmark")
             }
@@ -55,30 +55,39 @@ struct BotMessageBubble: View {
                 }
             }
         } label: {
-            
-            HStack() {
-                if type == .text {
-                    Text(message.body!)
-                        .multilineTextAlignment(.leading)
-                        .padding(.trailing, 30)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
-                        .padding(.leading, 5)
-                }
-                else if type == .error{
-                    Text(message.body!)
-                        .foregroundColor(.red)
-                        .multilineTextAlignment(.leading)
-                        .padding(.trailing, 30)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
-                        .padding(.leading, 5)
-                    
-                }
-            }.background {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15).foregroundColor(secondaryColor)
-                        .padding(.trailing, 30).padding(.leading, 5)
+            HStack {
+                HStack {
+                    if type == .text {
+                        Text(message.body!)
+                            .multilineTextAlignment(.leading)
+                            .padding(.trailing, 30)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .padding(.leading, 5)
+                    }
+                    else if type == .error{
+                        Text(message.body!)
+                            .foregroundColor(.red)
+                            .multilineTextAlignment(.leading)
+                            .padding(.trailing, 30)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .padding(.leading, 5)
+                        
+                    }
+                }.background {
+                    ZStack {
+                        HStack {
+                            Spacer()
+                            if message.saved == true {
+                                Image(systemName: "bookmark")
+                                    .padding(.trailing, 2)
+                            }
+                        }
+
+                        RoundedRectangle(cornerRadius: 15).foregroundColor(secondaryColor)
+                            .padding(.trailing, 30).padding(.leading, 5)
+                    }
                 }
             }
         }    .buttonStyle(.plain)

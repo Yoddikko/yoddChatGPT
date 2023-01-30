@@ -4,6 +4,7 @@
         <attribute name="body" optional="YES" attributeType="String" defaultValueString="Empty string"/>
         <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="696419640" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="saved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="sender" optional="YES" attributeType="String" defaultValueString="user"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>

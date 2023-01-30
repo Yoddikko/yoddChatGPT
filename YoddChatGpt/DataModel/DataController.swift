@@ -40,8 +40,19 @@ class DataController : ObservableObject {
         message.id = UUID()
         message.sender = sender == "bot" ? "bot" : "user"
         message.type = type == "text" ? "text" : "error"
+        message.saved = false
         save(context: context)
     }
+    
+    func saveMessage (message: Message, context : NSManagedObjectContext) {
+        if message.saved == false {
+            message.saved = true
+        } else {
+            message.saved = false
+        }
+        save(context: context)
+    }
+
     
     func deleteData (context : NSManagedObjectContext, message : Message) {
         do {

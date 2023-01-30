@@ -19,4 +19,15 @@ extension NSManagedObjectContext {
         let changes: [AnyHashable: Any] = [NSDeletedObjectsKey: result?.result as? [NSManagedObjectID] ?? []]
         NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [self])
     }
+    
+    public func executeAndMergeChanges(using batchUpdateRequest: NSBatchUpdateRequest) throws {
+        batchUpdateRequest.resultType = .updatedObjectIDsResultType
+        let result = try execute(batchUpdateRequest) as? NSBatchUpdateResult
+        let changes: [AnyHashable: Any] = [NSDeletedObjectsKey: result?.result as? [NSManagedObjectID] ?? []]
+        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [self])
+    }
+
 }
+
+
+

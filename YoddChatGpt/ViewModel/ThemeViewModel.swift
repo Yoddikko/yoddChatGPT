@@ -34,7 +34,7 @@ class ThemeViewModel : ObservableObject {
         } else {
             self.accentColor = Color(hex: accentColorUserDefaults)
         }
-        print(themeColorUserDefaults)
+
         if self.themeColorUserDefaults.isEmpty {
             self.theme = .native
         } else {
@@ -67,7 +67,7 @@ class ThemeViewModel : ObservableObject {
         case .sun:
             return (.orange, .orange.opacity(0.6))
         case .sky:
-            return (.mint, .indigo)
+            return (.blue.opacity(0.3), .teal.opacity(0.3))
         case .mint:
             return (.green, .mint.opacity(0.6))
         }

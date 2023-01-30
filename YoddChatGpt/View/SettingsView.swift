@@ -41,11 +41,15 @@ struct SettingsView: View {
                 Section("Chat", content: {
                     
                     // TODO: - Saved messages view
-                    HStack {
-                        Text("Saved messages")
-                        Spacer()
-                        Image(systemName: "bookmark")
-                    }
+                    NavigationLink(destination: {
+                        SavedMessagesView()
+                    }, label: {
+                        HStack {
+                            Text("Saved messages")
+                            Spacer()
+                            Image(systemName: "bookmark")
+                        }
+                    })
                     
                     Button(action: {
                         isPresentingConfirm = true
@@ -69,7 +73,7 @@ struct SettingsView: View {
                     
                     
                     
-                    // TODO: - Saved messages view
+                    
                     Button(action: {
                         presentAlert = true
                     }, label: {
@@ -96,14 +100,14 @@ struct SettingsView: View {
                     }
                 })
                 
-                Section("Multipeer", content: {
-
-                    HStack {
-                        Text("Change multipeer name")
-                        Spacer()
-                        Image(systemName: "person")
-                    }
-                })
+//                Section("Multipeer", content: {
+//                    
+//                    HStack {
+//                        Text("Change multipeer name")
+//                        Spacer()
+//                        Image(systemName: "person")
+//                    }
+//                })
             }
             .navigationTitle("Settings")
         }.navigationBarTitleDisplayMode(.automatic)
