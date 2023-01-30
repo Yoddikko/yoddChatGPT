@@ -68,18 +68,24 @@ class DataController : ObservableObject {
         
         do {
             try context.executeAndMergeChanges(using: deleteRequest)
-//            try context.execute(deleteRequest)
         } catch let error as NSError {
             // TODO: handle the error
         }
     }
     
-//    func editMessage (message: Message, body : String, sender : Sender, id : UUID, context : NSManagedObjectContext) {
-//        message.timestamp = Date()
-//        message.body = body
-//        message.id = UUID()
-//        message.sender = sender == .bot ? "bot" : "user"
-//
-//        save(context: context)
-//    }
+    func deleteAllUnsavedData (context : NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Message")
+        fetchRequest.predicate = NSPredicate(format: "saved == %@", "\(false)")
+
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.executeAndMergeChanges(using: deleteRequest)
+//            try context.execute(deleteRequest)
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+    }
+
+    
 }

@@ -16,9 +16,20 @@ struct SavedMessagesView: View {
 
     var body: some View {
         ScrollView {
-            ForEach (savedMessages) { message in
-                BotMessageBubble(messageState: message.saved, primaryColor: ThemeViewModel.shared.getColorsFromThemeEnum(theme: theme).0, secondaryColor: ThemeViewModel.shared.getColorsFromThemeEnum(theme: theme).1, message: message, type: .text)
-            }
+                ForEach (savedMessages) { message in
+                    VStack {
+                        HStack {
+                            BotMessageBubble(messageState: message.saved, primaryColor: ThemeViewModel.shared.getColorsFromThemeEnum(theme: theme).0, secondaryColor: ThemeViewModel.shared.getColorsFromThemeEnum(theme: theme).1, message: message, type: .text)
+                            Spacer()
+                        }
+                        HStack {
+                            createFullTimeStamp(date: message.date!)
+                            createTimeStamp(date: message.date!)
+                            Spacer()
+                        }
+                    }
+                }
+                Spacer()
         }
     }
 }

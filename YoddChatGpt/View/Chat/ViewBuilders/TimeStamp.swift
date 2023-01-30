@@ -21,3 +21,12 @@ func createTimeStamp (date : Date) -> some View {
         .foregroundColor(.secondary)
         .padding(.horizontal)
 }
+
+@ViewBuilder
+func createFullTimeStamp (date : Date) -> some View {
+    Text(date, style: .date)
+        .font(.footnote)
+        .foregroundColor(.secondary)
+        .padding(.leading)
+}
+

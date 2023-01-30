@@ -65,6 +65,10 @@ struct SettingsView: View {
                         Button("Delete all messages?", role: .destructive) {
                             DataController.shared.deleteAllData(context: managedObjectContext)
                         }
+                        Button("Delete all unsaved messages?", role: .destructive) {
+                            DataController.shared.deleteAllUnsavedData(context: managedObjectContext)
+                        }
+
                     } message: {
                         Text("You cannot undo this action")
                     }
