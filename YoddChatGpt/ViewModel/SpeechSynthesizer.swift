@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 import NaturalLanguage
+import SwiftUI
 
 /**
  This is the ViewModel that manages the AVFoundation synthesizer and the NaturalLanguage frameworks.
@@ -15,8 +16,12 @@ import NaturalLanguage
  - Version: 0.1
 
  */
-class SpeechSynthesizer {
-    let speechSynthesizer = AVSpeechSynthesizer()
+class SpeechSynthesizer : ObservableObject {
+    
+    static let shared = SpeechSynthesizer()
+        
+    @Published var speechSynthesizer = AVSpeechSynthesizer()
+    
     
     ///This function read the text using the right synthesis voice language (if available, otherwise it will use en-US language)
     func readString (text : String) {
@@ -24,18 +29,22 @@ class SpeechSynthesizer {
         utterance.pitchMultiplier = 1.0
         utterance.rate = 0.5
         utterance.voice = AVSpeechSynthesisVoice(language: recognizeLanguage(text: text))
+//        self.textCurrentlySpeaking = text
         speechSynthesizer.speak(utterance)
+        
     }
     
     ///This function detects the language of a text (if available, otherwise it will return en-US language)
     func recognizeLanguage (text: String) -> String {
-        var dominantLanguage = "en-US"
+        var dominantLanguage = "en"
         let languageRecognizer = NLLanguageRecognizer()
         languageRecognizer.processString(text)
         if let tmpDominantLanguage = languageRecognizer.dominantLanguage {
             dominantLanguage = tmpDominantLanguage.rawValue
-           return dominantLanguage
+            return dominantLanguage
         }
         return dominantLanguage
     }
+    
+    
 }

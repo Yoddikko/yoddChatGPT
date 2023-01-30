@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct YoddChatGptApp: App {
     @StateObject private var dataController = DataController.shared
-    @ObservedObject var accentColor = AccentColor.shared
+    @ObservedObject var accentColor = ThemeViewModel.shared
 //    let persistenceController = PersistenceController.shared
 
     var body: some Scene {

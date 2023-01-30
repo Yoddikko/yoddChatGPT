@@ -43,12 +43,21 @@ class DataController : ObservableObject {
         save(context: context)
     }
     
-    func deleteData (context : NSManagedObjectContext) {
+    func deleteData (context : NSManagedObjectContext, message : Message) {
+        do {
+            try context.delete(message)
+        } catch {
+            print("Couldn't delete item")
+        }
+    }
+    
+    func deleteAllData (context : NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Message")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            try context.execute(deleteRequest)
+            try context.executeAndMergeChanges(using: deleteRequest)
+//            try context.execute(deleteRequest)
         } catch let error as NSError {
             // TODO: handle the error
         }

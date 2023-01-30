@@ -11,20 +11,28 @@ import OpenAISwift
 /**
  This is the ViewModel that manages the OpenAISwift implementation.
 
- - Version: 0.1
+ - Version: 0.2
 
  */
 final class OpenAIViewModel : ObservableObject {
     
     private var client : OpenAISwift?
     
+    static var shared = OpenAIViewModel()
+    
+
+    @Published var token : OpenAISwift?
+    @Published var tokenUserDefaults : String = UserDefaults.standard.string(forKey: "token") ?? ""
+
     // TODO: - THIS IS TEMPORARY, REMOVE THIS BEFORE MAKING THE CODE PUBLIC XD OR AT LEAST REMEMBER TO NOT PUT MY API
     func setup() {
-        client = OpenAISwift(authToken: "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")
+        token = OpenAISwift(authToken: UserDefaults.standard.string(forKey: "token") ?? "")
+        print(UserDefaults.standard.string(forKey: "token") ?? "")
     }
+    //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
     
     func send(text: String, completion: @escaping((String, MessageType) -> Void)) {
-        client?.sendCompletion(with: text, maxTokens: 500, completionHandler: { result in
+        token?.sendCompletion(with: text, maxTokens: 500, completionHandler: { result in
             switch result {
             case .success(let model):
                 let output = model.choices.first?.text ?? ""
@@ -38,4 +46,12 @@ final class OpenAIViewModel : ObservableObject {
             }
         })
     }
+    
+    ///Function to set a token
+    func setToken(string: String) {
+        self.token = OpenAISwift(authToken: string)
+        UserDefaults.standard.set(string, forKey: "token")
+        setup()
+    }
+    
 }

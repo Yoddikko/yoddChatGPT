@@ -15,7 +15,7 @@ import AVFoundation
  */
 class AudioPlayer {
     var player: AVAudioPlayer?
-    
+        
     
     func playMessageSound(sender : Sender) {
         var path = Bundle.main.path(forResource: "SentMessage", ofType:"mp3")!
@@ -27,7 +27,6 @@ class AudioPlayer {
         let url = URL(fileURLWithPath: path)
         
         do {
-            
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {

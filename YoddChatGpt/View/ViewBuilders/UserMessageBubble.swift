@@ -14,7 +14,7 @@ import SwiftUI
 
  */
 @ViewBuilder
-func createUserMessageBubble (text : String) -> some View {
+func createUserMessageBubble (text : String, primaryColor: Color, secondaryColor: Color) -> some View {
     HStack() {
         Text(text)
             .multilineTextAlignment(.leading)
@@ -24,7 +24,8 @@ func createUserMessageBubble (text : String) -> some View {
             .padding(.trailing, 5)
     }.background {
         ZStack {
-            RoundedRectangle(cornerRadius: 15).foregroundColor(.primary.opacity(0.1))
+            RoundedRectangle(cornerRadius: 15).foregroundColor(primaryColor)
+//                .opacity(0.1))
                 .padding(.leading, 30).padding(.trailing, 5)
         }
     }

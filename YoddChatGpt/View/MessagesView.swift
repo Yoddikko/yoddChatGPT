@@ -13,6 +13,11 @@ struct MessagesView: View {
     @Environment (\.managedObjectContext) var managedObjectContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
     @Environment(\.dismiss) var dismiss
+    
+    
+    @ObservedObject var chatColors = ThemeViewModel.shared
+
+//    @ObservedObject var speechSynthesizer = SpeechSynthesizer()
 
     
     var body: some View {
@@ -31,7 +36,7 @@ struct MessagesView: View {
                         VStack {
                             HStack {
                                 Spacer()
-                                createUserMessageBubble(text: message.body!)
+                                createUserMessageBubble(text: message.body!, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1)
                             }
                             HStack {
                                 Spacer()
@@ -43,9 +48,7 @@ struct MessagesView: View {
                     } else {
                         VStack {
                             HStack() {
-                                createBotMessageBubble(text: message.body!, type: message.type == "text" ? .text : .error)
-                                    .onTapGesture {
-                                    }
+                                BotMessageBubble(primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1, message: message, type: message.type == "text" ? .text : .error)
                                 Spacer()
                             }
                             HStack {
