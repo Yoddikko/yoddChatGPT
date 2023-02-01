@@ -23,6 +23,7 @@ struct BotMessageBubble: View {
     var message : Message
     var type : MessageType
     
+    @State var scale = 0.8
     
     var body: some View {
         Menu {
@@ -44,16 +45,24 @@ struct BotMessageBubble: View {
             
             
             
-            
-            
-            Button(action: {
-                DataController.shared.saveMessage(message: message, context: managedObjectContext)
-            }) {
-                Label("Save", systemImage: "bookmark")
+            if message.saved {
+                Button(action: {
+                    DataController.shared.saveMessage(message: message, context: managedObjectContext)
+                }) {
+                    Label("Unsave", systemImage: "bookmark.fill")
+                }
+            } else {
+                
+                Button(action: {
+                    DataController.shared.saveMessage(message: message, context: managedObjectContext)
+                }) {
+                    Label("Save", systemImage: "bookmark")
+                }
             }
             
             Button(role: .destructive, action: {
-                DataController.shared.deleteData(context: managedObjectContext, message: message)
+                    DataController.shared.deleteData(context: managedObjectContext, message: message)
+            
             }) {
                 HStack {
                     Text("Delete")
@@ -82,20 +91,33 @@ struct BotMessageBubble: View {
                             .padding(.leading, 5)
                         
                     }
-                }.background {
+                }
+                .background {
                     ZStack {
                         HStack {
                             Spacer()
                             if message.saved == true {
-                                Image(systemName: "bookmark")
+                                Image(systemName: "bookmark.fill")
                                     .padding(.trailing, 2)
                             }
                         }
                         
-                        RoundedRectangle(cornerRadius: 15).foregroundColor(secondaryColor)
+                        Rectangle().foregroundColor(secondaryColor)
+                            .cornerRadius(20, corners: [.topRight, .bottomRight, .topLeft])
                             .padding(.trailing, 30).padding(.leading, 5)
                     }
+                    
                 }
+                .scaleEffect(scale)
+                .onAppear{
+                    let baseAnimation = Animation.easeIn(duration: 0.2)
+
+                    withAnimation(baseAnimation) {
+                        scale = 1
+                    }
+                }
+
+                
             }
         }    .buttonStyle(.plain)
             .onChange(of: SpeechSynthesizer.shared.speechSynthesizer.isSpeaking) { state in

@@ -16,6 +16,7 @@ import CoreData
  */
 struct ChatView: View {
     
+    @State var showPrompt = false
     
     // MARK: - Sending message properties
     ///This is the text written in the textfield
@@ -33,6 +34,7 @@ struct ChatView: View {
     @Environment (\.managedObjectContext) var managedObjectContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
     
+    // MARK: - AppStorage
     @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
     
     var body: some View {
@@ -58,7 +60,7 @@ struct ChatView: View {
                                 .focused($textIsFocused)
                             //                    .lineLimit(6)
                             Button(action: {
-                                send()
+                                sendFromKeyboard()
                             }, label: {
                                 Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
                             })
@@ -73,17 +75,21 @@ struct ChatView: View {
 
             
                         .toolbar {
+                            
+                            
                             ToolbarItemGroup(placement: .navigationBarTrailing) {
                                 NavigationLink(destination: {
                                     SettingsView()
                                 }, label: {
-                                    Image(systemName: "list.bullet")
+                                    Image(systemName: "gear")
                                 })
                             }
+                            
+                            
+
                         }
-            
-            
-        }            .fullScreenCover(isPresented: $shouldShowOnBoarding, content: { OnBoardingView(shouldShowOnBoarding: $shouldShowOnBoarding)})
+        }
+        .fullScreenCover(isPresented: $shouldShowOnBoarding, content: { OnBoardingView(shouldShowOnBoarding: $shouldShowOnBoarding)})
 
             .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -100,7 +106,7 @@ struct ChatView: View {
      
      - Version: 0.1
      */
-    func send() {
+    func sendFromKeyboard() {
         //Checks if the text is empty
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
@@ -110,7 +116,6 @@ struct ChatView: View {
         let userMessage = TemporaryMessage(body: text, sender: .user)
         DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text,  context: managedObjectContext)
         audioPlayer.playMessageSound(sender: .user)
-        
         //API call
         OpenAIViewModel.shared.send(text: text, completion: { response, messageType  in
             DispatchQueue.main.async {
@@ -133,9 +138,6 @@ struct ChatView: View {
         })
         self.text = ""
     }
-    
-    
-    
 }
 
 

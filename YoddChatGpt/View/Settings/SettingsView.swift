@@ -27,29 +27,28 @@ struct SettingsView: View {
                     }
                     .onChange(of: accentColor.accentColor) { _ in
                         UserDefaults.standard.set(accentColor.accentColor.toHex(), forKey: "AccentColor")
-                        
                     }
                     
-                    
                     ThemePickerView()
-                    
-                    
-                    
                     
                 })
                 
                 Section("Chat", content: {
                     
-                    // TODO: - Saved messages view
                     NavigationLink(destination: {
                         SavedMessagesView()
                     }, label: {
                         HStack {
                             Text("Saved messages")
                             Spacer()
-                            Image(systemName: "bookmark")
+                            Image(systemName: "bookmark.fill")
                         }
                     })
+                    
+                        
+                    Toggle(isOn: OpenAIViewModel.shared.$showModelType) {
+                        Text("Show model type stamp")
+                    }
                     
                     Button(action: {
                         isPresentingConfirm = true
@@ -75,9 +74,16 @@ struct SettingsView: View {
                 })
                 Section("API", content: {
                     
-                    
-                    
-                    
+                    NavigationLink(destination: {
+                        ChatGPTModelTypesList()
+                    }, label: {
+                        HStack {
+                            Text("Change model type")
+                            Spacer()
+                            Image(systemName: "list.bullet")
+                        }
+                    })
+
                     Button(action: {
                         presentAlert = true
                     }, label: {
@@ -103,8 +109,13 @@ struct SettingsView: View {
                     
                     
                     Link(destination: URL(string: "https://beta.openai.com/account/api-keys")!) {
-                        Text("Get token API")
+                        HStack {
+                            Text("Get token API")
+                            Spacer()
+                            Image(systemName: "link")
+                        }
                     }
+                
                 })
                 
 //                Section("Multipeer", content: {
@@ -117,9 +128,11 @@ struct SettingsView: View {
 //                })
             }
             .navigationTitle("Settings")
-        }.navigationBarTitleDisplayMode(.automatic)
+        }.navigationBarTitleDisplayMode(.inline)
     }
 }
+
+
 //
 //struct SettingsView_Previews: PreviewProvider {
 //    static var previews: some View {

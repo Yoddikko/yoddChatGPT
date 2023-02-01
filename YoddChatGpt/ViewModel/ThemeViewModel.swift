@@ -60,15 +60,15 @@ class ThemeViewModel : ObservableObject {
         case .custom:
             return  (.accentColor, .accentColor)
         case .ice:
-            return (.blue, .teal.opacity(0.6))
+            return (.blue.opacity(0.5), .teal.opacity(0.7))
         case .passion:
-            return (.pink, .red.opacity(0.6))
+            return (.pink.opacity(0.5), .red.opacity(0.6))
         case .sun:
             return (.orange, .orange.opacity(0.6))
         case .sky:
             return (.blue.opacity(0.3), .teal.opacity(0.3))
         case .mint:
-            return (.green, .mint.opacity(0.6))
+            return (.green.opacity(0.5), .mint.opacity(0.5))
         }
     }
     func getThemefromString(stringTheme: String) -> Theme {

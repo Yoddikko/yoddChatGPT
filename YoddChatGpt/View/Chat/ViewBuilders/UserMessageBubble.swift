@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 /**
  This is the viewbuilder that creates the user message bubble.
@@ -15,18 +16,8 @@ import SwiftUI
  */
 @ViewBuilder
 func createUserMessageBubble (text : String, primaryColor: Color, secondaryColor: Color) -> some View {
-    HStack() {
-        Text(text)
-            .multilineTextAlignment(.leading)
-            .padding(.leading, 30)
-            .padding(.vertical, 10)
-            .padding(.horizontal, 10)
-            .padding(.trailing, 5)
-    }.background {
-        ZStack {
-            RoundedRectangle(cornerRadius: 15).foregroundColor(primaryColor)
-                .padding(.leading, 30).padding(.trailing, 5)
-        }
-    }
+    
+
+    
 }
 

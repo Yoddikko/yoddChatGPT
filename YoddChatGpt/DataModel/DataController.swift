@@ -38,9 +38,10 @@ class DataController : ObservableObject {
         message.date = Date()
         message.body = body
         message.id = UUID()
-        message.sender = sender == "bot" ? "bot" : "user"
-        message.type = type == "text" ? "text" : "error"
+        message.sender = sender
+        message.type = type
         message.saved = false
+        message.chatModel = OpenAIViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: OpenAIViewModel.shared.openAiModelType.modelName)
         save(context: context)
     }
     

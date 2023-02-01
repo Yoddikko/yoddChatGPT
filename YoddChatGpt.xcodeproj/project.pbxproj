@@ -20,6 +20,7 @@
 		7193E32529881642004A10D4 /* SavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32429881642004A10D4 /* SavedMessagesView.swift */; };
 		7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */; };
 		7193E32C298825BF004A10D4 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32B298825BF004A10D4 /* OnBoardingView.swift */; };
+		7193E32E29890CB4004A10D4 /* ChatGPTModelTypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32D29890CB4004A10D4 /* ChatGPTModelTypesList.swift */; };
 		71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B2C29812D4B00CB13C2 /* Message.swift */; };
 		71BE9B342982856300CB13C2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B332982856300CB13C2 /* DataController.swift */; };
 		71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3529828BB000CB13C2 /* ChatView.swift */; };
@@ -28,14 +29,18 @@
 		71BE9B3D2982E85D00CB13C2 /* RecievedMessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */; };
 		71BE9B3F2982E8E500CB13C2 /* SentMessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71BE9B3E2982E8E500CB13C2 /* SentMessage.mp3 */; };
 		71BE9B422982F12F00CB13C2 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */; };
-		71BE9B4B2983D8CB00CB13C2 /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B4A2983D8CB00CB13C2 /* TimeStamp.swift */; };
+		71BE9B4B2983D8CB00CB13C2 /* CreateChatStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B4A2983D8CB00CB13C2 /* CreateChatStamps.swift */; };
 		71BE9B4F2983D99B00CB13C2 /* EmptyChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */; };
 		71BE9B512983D9E400CB13C2 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B502983D9E400CB13C2 /* MessagesView.swift */; };
-		71BE9B552983DF7200CB13C2 /* UserMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B542983DF7200CB13C2 /* UserMessageBubble.swift */; };
 		71BE9B572983E75D00CB13C2 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B562983E75D00CB13C2 /* ThemeViewModel.swift */; };
 		71BE9B592983E85A00CB13C2 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B582983E85A00CB13C2 /* SettingsButton.swift */; };
 		71BE9B5B2983EF7D00CB13C2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B5A2983EF7D00CB13C2 /* SettingsView.swift */; };
 		71BE9B5E2983FB5E00CB13C2 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B5D2983FB5E00CB13C2 /* Color+extension.swift */; };
+		71C5B648298A76E300FC88C0 /* UserChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5B647298A76E300FC88C0 /* UserChatBubble.swift */; };
+		71DEEB47298AAEC7004B3708 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEEB46298AAEC7004B3708 /* View+extension.swift */; };
+		71DEEB4C298AAEEE004B3708 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEEB4B298AAEEE004B3708 /* RoundedCorner.swift */; };
+		71DEEB52298AB6EA004B3708 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71DEEB50298AB6EA004B3708 /* Localizable.strings */; };
+		71DEEB54298ABAA7004B3708 /* BotLoadingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEEB53298ABAA7004B3708 /* BotLoadingMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,7 @@
 		7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySavedMessagesView.swift; sourceTree = "<group>"; };
 		7193E32A29882435004A10D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7193E32B298825BF004A10D4 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		7193E32D29890CB4004A10D4 /* ChatGPTModelTypesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTModelTypesList.swift; sourceTree = "<group>"; };
 		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		71BE9B3529828BB000CB13C2 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -61,14 +67,18 @@
 		71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RecievedMessage.mp3; sourceTree = "<group>"; };
 		71BE9B3E2982E8E500CB13C2 /* SentMessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SentMessage.mp3; sourceTree = "<group>"; };
 		71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
-		71BE9B4A2983D8CB00CB13C2 /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
+		71BE9B4A2983D8CB00CB13C2 /* CreateChatStamps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatStamps.swift; sourceTree = "<group>"; };
 		71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyChatView.swift; sourceTree = "<group>"; };
 		71BE9B502983D9E400CB13C2 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
-		71BE9B542983DF7200CB13C2 /* UserMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageBubble.swift; sourceTree = "<group>"; };
 		71BE9B562983E75D00CB13C2 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		71BE9B582983E85A00CB13C2 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		71BE9B5A2983EF7D00CB13C2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		71BE9B5D2983FB5E00CB13C2 /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
+		71C5B647298A76E300FC88C0 /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
+		71DEEB46298AAEC7004B3708 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
+		71DEEB4B298AAEEE004B3708 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		71DEEB51298AB6EA004B3708 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		71DEEB53298ABAA7004B3708 /* BotLoadingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotLoadingMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				7193E32A29882435004A10D4 /* Info.plist */,
+				71DEEB50298AB6EA004B3708 /* Localizable.strings */,
 				712443B52976ECF9007E98AA /* YoddChatGptApp.swift */,
 				71BE9B5C2983FB4A00CB13C2 /* Extensions */,
 				71BE9B3929828F7300CB13C2 /* Helpers */,
@@ -133,6 +144,8 @@
 				71BE9B502983D9E400CB13C2 /* MessagesView.swift */,
 				7193E31D29868320004A10D4 /* BotMessageBubble.swift */,
 				71BE9B4E2983D99B00CB13C2 /* EmptyChatView.swift */,
+				71C5B647298A76E300FC88C0 /* UserChatBubble.swift */,
+				71DEEB53298ABAA7004B3708 /* BotLoadingMessage.swift */,
 				71BE9B472983D88000CB13C2 /* ViewBuilders */,
 			);
 			path = Chat;
@@ -142,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				71BE9B5A2983EF7D00CB13C2 /* SettingsView.swift */,
+				7193E32D29890CB4004A10D4 /* ChatGPTModelTypesList.swift */,
 				7193E3212986A797004A10D4 /* ThemePickerView.swift */,
 				7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */,
 				7193E31F29869793004A10D4 /* ExampleThemeChat.swift */,
@@ -163,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				71BE9B2C29812D4B00CB13C2 /* Message.swift */,
+				71DEEB4A298AAEE7004B3708 /* Shapes */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,8 +222,7 @@
 		71BE9B472983D88000CB13C2 /* ViewBuilders */ = {
 			isa = PBXGroup;
 			children = (
-				71BE9B542983DF7200CB13C2 /* UserMessageBubble.swift */,
-				71BE9B4A2983D8CB00CB13C2 /* TimeStamp.swift */,
+				71BE9B4A2983D8CB00CB13C2 /* CreateChatStamps.swift */,
 				71BE9B582983E85A00CB13C2 /* SettingsButton.swift */,
 			);
 			path = ViewBuilders;
@@ -218,9 +232,18 @@
 			isa = PBXGroup;
 			children = (
 				71BE9B5D2983FB5E00CB13C2 /* Color+extension.swift */,
+				71DEEB46298AAEC7004B3708 /* View+extension.swift */,
 				7193E31B29867E00004A10D4 /* NSManagedObjectContext+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		71DEEB4A298AAEE7004B3708 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				71DEEB4B298AAEEE004B3708 /* RoundedCorner.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +291,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 712443A92976ECF9007E98AA;
 			packageReferences = (
@@ -287,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71DEEB52298AB6EA004B3708 /* Localizable.strings in Resources */,
 				71BE9B3F2982E8E500CB13C2 /* SentMessage.mp3 in Resources */,
 				712443BD2976ECFA007E98AA /* Preview Assets.xcassets in Resources */,
 				712443BA2976ECFA007E98AA /* Assets.xcassets in Resources */,
@@ -303,7 +328,8 @@
 			files = (
 				712443CC2976EE30007E98AA /* OpenAIViewModel.swift in Sources */,
 				71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */,
-				71BE9B4B2983D8CB00CB13C2 /* TimeStamp.swift in Sources */,
+				7193E32E29890CB4004A10D4 /* ChatGPTModelTypesList.swift in Sources */,
+				71BE9B4B2983D8CB00CB13C2 /* CreateChatStamps.swift in Sources */,
 				71BE9B5B2983EF7D00CB13C2 /* SettingsView.swift in Sources */,
 				7193E32029869794004A10D4 /* ExampleThemeChat.swift in Sources */,
 				712443B62976ECF9007E98AA /* YoddChatGptApp.swift in Sources */,
@@ -316,19 +342,33 @@
 				712443C22976ECFA007E98AA /* MessageModel.xcdatamodeld in Sources */,
 				71BE9B4F2983D99B00CB13C2 /* EmptyChatView.swift in Sources */,
 				71BE9B5E2983FB5E00CB13C2 /* Color+extension.swift in Sources */,
+				71DEEB4C298AAEEE004B3708 /* RoundedCorner.swift in Sources */,
 				71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */,
 				7193E3222986A797004A10D4 /* ThemePickerView.swift in Sources */,
+				71DEEB47298AAEC7004B3708 /* View+extension.swift in Sources */,
+				71C5B648298A76E300FC88C0 /* UserChatBubble.swift in Sources */,
 				7193E32529881642004A10D4 /* SavedMessagesView.swift in Sources */,
 				7193E31C29867E00004A10D4 /* NSManagedObjectContext+extension.swift in Sources */,
 				7193E31E29868320004A10D4 /* BotMessageBubble.swift in Sources */,
 				71BE9B422982F12F00CB13C2 /* SpeechSynthesizer.swift in Sources */,
 				7193E32C298825BF004A10D4 /* OnBoardingView.swift in Sources */,
-				71BE9B552983DF7200CB13C2 /* UserMessageBubble.swift in Sources */,
+				71DEEB54298ABAA7004B3708 /* BotLoadingMessage.swift in Sources */,
 				71BE9B512983D9E400CB13C2 /* MessagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		71DEEB50298AB6EA004B3708 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71DEEB51298AB6EA004B3708 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		712443C32976ECFA007E98AA /* Debug */ = {

@@ -46,16 +46,16 @@ struct OnBoardingView: View {
                         
                     }
                     Divider()
-                    HStack  {
-                        Image(systemName: "person.fill")
-                            .foregroundColor(.blue)
-                            .padding(.trailing)
-                        Text("Create or participate in a multipeer lobby to talk at ChatGPT with other people (WIP)")
-                            .font(.title3)
-                            .fontWeight(.light)
-                        Spacer()
-                        
-                    }
+//                    HStack  {
+//                        Image(systemName: "person.fill")
+//                            .foregroundColor(.blue)
+//                            .padding(.trailing)
+//                        Text("Create or participate in a multipeer lobby to talk at ChatGPT with other people (WIP)")
+//                            .font(.title3)
+//                            .fontWeight(.light)
+//                        Spacer()
+//                        
+//                    }
                     Divider()
                 }.padding(.top, 50)
                     .padding(.horizontal, 20)
@@ -71,38 +71,23 @@ struct OnBoardingView: View {
                     TextField("Token", text: $token)
                         .focused($textIsFocused)
                         .textFieldStyle(.roundedBorder)
-                    
-                    
-                    Button(action: {
-                        UserDefaults.standard.set("false", forKey: "OnBoarding")
-                        OpenAIViewModel.shared.setToken(string: token)
-                        shouldShowOnBoarding = false
-                        OpenAIViewModel.shared.setup()
-                        
-                    }, label: {
-                        Text("Continue")
-                    }).disabled(token.isEmpty ? true : false)
-                    
-                    
-                }                        .padding(.horizontal, 30)                    .padding()
-                
-                
-                
-                    .navigationBarBackButtonHidden(true)
-                
-                
-                
-                
+                }.padding(30)
+                Button(action: {
+                    UserDefaults.standard.set("false", forKey: "OnBoarding")
+                    OpenAIViewModel.shared.setToken(string: token)
+                    shouldShowOnBoarding = false
+                    OpenAIViewModel.shared.setup()
+                }, label: {
+                    Text("Continue")
+                }).disabled(token.isEmpty ? true : false)
+                    .buttonStyle(.bordered)
                 Spacer()
-                
             }
             .scrollDismissesKeyboard(.immediately)
 
             .onTapGesture {
                 textIsFocused = false
             }
-
-            
         }.navigationBarBackButtonHidden(true)
     }
 }

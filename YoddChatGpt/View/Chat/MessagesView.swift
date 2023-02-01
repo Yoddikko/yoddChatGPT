@@ -17,31 +17,35 @@ struct MessagesView: View {
     // MARK: - Properties
     @ObservedObject var chatColors = ThemeViewModel.shared
     
+    @State var placeHolderUUID = UUID()
+    
     var body: some View {
         ScrollViewReader { value in
             ScrollView {
                 if isNewDate() {
                     Text(getCurrentDateAsString())
-                        .padding(10)
-                        .font(.callout)
-                        .background {
-                            RoundedRectangle(cornerRadius: 15).foregroundColor(.accentColor.opacity(0.2))
-                        }
+                    //                        .padding(10)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .padding(8)
+                        .background(
+                            .ultraThickMaterial,
+                            in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        )
                 }
                 ForEach (messages) { message in
                     if message.sender == "user" {
                         VStack {
                             HStack {
                                 Spacer()
-                                createUserMessageBubble(text: message.body!, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1)
+                                UserMessageBubble(message: message, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1)
                             }
                             HStack {
                                 Spacer()
-                                createTimeStamp(date: message.date!)
+                                createUserTimeStamp(date: message.date!)
                             }
                         }
                         .id(message.id)
-                        
                     } else {
                         VStack {
                             HStack() {
@@ -49,7 +53,10 @@ struct MessagesView: View {
                                 Spacer()
                             }
                             HStack {
-                                createTimeStamp(date: message.date!)
+                                createBotTimeStamp(date: message.date!)
+                                if OpenAIViewModel.shared.showModelType {
+                                    createModelTypeStamp(modelType: message.chatModel ?? "")
+                                }
                                 Spacer()
                             }
                         }
@@ -57,21 +64,34 @@ struct MessagesView: View {
                             message.saved = newValue
                         })
                         .id(message.id)
-                        
                     }
                 }
                 
-
+                
                 .onAppear{
                     value.scrollTo(messages.last?.id, anchor: .bottom)
-                    
                 }
                 
                 .onChange(of: messages.count) { _ in
                     withAnimation(.easeIn(duration: 0.5)) {
+//                        value.scrollTo(messages.last?.id, anchor: .bottom)
+//                        if messages.last?.sender == "user" {
+                            value.scrollTo(placeHolderUUID, anchor: .bottom)
                         value.scrollTo(messages.last?.id, anchor: .bottom)
+//                        }
                     }
                 }
+
+                if messages.last?.sender == "user"  {
+                    HStack {
+                            BotLoadingMessage( secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1).id(placeHolderUUID)
+                            Spacer().id(placeHolderUUID)
+                    }.id(placeHolderUUID)
+                }
+               
+
+                
+
             }.scrollDismissesKeyboard(.interactively)
             
         }
@@ -88,13 +108,9 @@ struct MessagesView: View {
             return false
         }
     }
-    ///This function returns today's date as string in the "MM/dd/yyyy"  format .
-    ///- Returns: True if there is no message in today's date and false if there's already a message in today's date.
+    ///This function returns today's date as string.
     func getCurrentDateAsString () -> String {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        return dateFormatter.string(from: date)
+        return Date.now.formatted(date: .complete, time: .omitted)
     }
 
 }
