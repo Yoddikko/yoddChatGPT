@@ -19,7 +19,7 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) th
 
 - Free and open source 🍃
 
-- For **iOS 15+** only
+- For **iOS 15+** only 📱
   
 
 ## Screenshots
