@@ -23,6 +23,10 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) th
 
 - Translated in 🇬🇧 🇮🇹
   
+  
+## Download
+[TestFlight](www.google.it) (STILL NOT AVAILABLE)
+If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
 
 ## Screenshots
 
