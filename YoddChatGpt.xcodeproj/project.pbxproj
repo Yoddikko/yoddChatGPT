@@ -24,7 +24,6 @@
 		71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B2C29812D4B00CB13C2 /* Message.swift */; };
 		71BE9B342982856300CB13C2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B332982856300CB13C2 /* DataController.swift */; };
 		71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3529828BB000CB13C2 /* ChatView.swift */; };
-		71BE9B3829828F6B00CB13C2 /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3729828F6B00CB13C2 /* TimeFormatting.swift */; };
 		71BE9B3B2982DDC600CB13C2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B3A2982DDC600CB13C2 /* AudioPlayer.swift */; };
 		71BE9B3D2982E85D00CB13C2 /* RecievedMessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */; };
 		71BE9B3F2982E8E500CB13C2 /* SentMessage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71BE9B3E2982E8E500CB13C2 /* SentMessage.mp3 */; };
@@ -63,7 +62,6 @@
 		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		71BE9B3529828BB000CB13C2 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		71BE9B3729828F6B00CB13C2 /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
 		71BE9B3A2982DDC600CB13C2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		71BE9B3C2982E85D00CB13C2 /* RecievedMessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RecievedMessage.mp3; sourceTree = "<group>"; };
 		71BE9B3E2982E8E500CB13C2 /* SentMessage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SentMessage.mp3; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				71493618298BBF6300980250 /* Localizable.strings */,
 				712443B52976ECF9007E98AA /* YoddChatGptApp.swift */,
 				71BE9B5C2983FB4A00CB13C2 /* Extensions */,
-				71BE9B3929828F7300CB13C2 /* Helpers */,
 				71BE9B312982835A00CB13C2 /* View */,
 				71BE9B322982836E00CB13C2 /* ViewModel */,
 				71BE9B302982835100CB13C2 /* Model */,
@@ -202,14 +199,6 @@
 				71BE9B562983E75D00CB13C2 /* ThemeViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		71BE9B3929828F7300CB13C2 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				71BE9B3729828F6B00CB13C2 /* TimeFormatting.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		71BE9B402982EADC00CB13C2 /* Sounds */ = {
@@ -347,7 +336,6 @@
 				7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */,
 				71BE9B3B2982DDC600CB13C2 /* AudioPlayer.swift in Sources */,
 				71BE9B572983E75D00CB13C2 /* ThemeViewModel.swift in Sources */,
-				71BE9B3829828F6B00CB13C2 /* TimeFormatting.swift in Sources */,
 				71BE9B342982856300CB13C2 /* DataController.swift in Sources */,
 				71DEEB57298ACA00004B3708 /* OnBoarding1.swift in Sources */,
 				71BE9B592983E85A00CB13C2 /* SettingsButton.swift in Sources */,
