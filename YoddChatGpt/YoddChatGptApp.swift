@@ -7,20 +7,34 @@
 
 import SwiftUI
 
+
 @main
 struct YoddChatGptApp: App {
     @StateObject private var dataController = DataController.shared
     @ObservedObject var accentColor = ThemeViewModel.shared
     
+    // MARK: - AppStorage
+    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
     
+
     
     var body: some Scene {
         WindowGroup {
-            ChatView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
-                .accentColor(accentColor.accentColor)
-            
+            if shouldShowOnBoarding {
+                TabView {
+                    OnBoarding1()
+                    OnBoarding2()
+
+//                    OnBoardingView(shouldShowOnBoarding: $shouldShowOnBoarding)
+                }.tabViewStyle(.page(indexDisplayMode: .always))
+
+            } else {
+                ChatView()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+                    .accentColor(accentColor.accentColor)
+            }
         }
+
         
     }
 }

@@ -29,22 +29,15 @@ struct BotMessageBubble: View {
         Menu {
             Button(action: {
                 UIPasteboard.general.setValue(message.body!,
-                                              forPasteboardType: UTType.plainText.identifier)
+                forPasteboardType: UTType.plainText.identifier)
             }) {
                 Label("Copy", systemImage: "doc.on.doc")
             }
-            
-            
-            
             Button(action: {
                 SpeechSynthesizer.shared.readString(text: message.body!)
             }) {
                 Label("Listen", systemImage: "ear")
             }
-            
-            
-            
-            
             if message.saved {
                 Button(action: {
                     DataController.shared.saveMessage(message: message, context: managedObjectContext)
@@ -106,7 +99,6 @@ struct BotMessageBubble: View {
                             .cornerRadius(20, corners: [.topRight, .bottomRight, .topLeft])
                             .padding(.trailing, 30).padding(.leading, 5)
                     }
-                    
                 }
                 .scaleEffect(scale)
                 .onAppear{
@@ -116,8 +108,6 @@ struct BotMessageBubble: View {
                         scale = 1
                     }
                 }
-
-                
             }
         }    .buttonStyle(.plain)
             .onChange(of: SpeechSynthesizer.shared.speechSynthesizer.isSpeaking) { state in

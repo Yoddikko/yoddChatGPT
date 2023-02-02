@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="YoddChatGpt/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="it">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>YoddChatGpt</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="YoddChatGpt/en.lproj/Localizable.strings" source-language="en" target-language="it" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
+    </header>
+    <body>
+      <trans-unit id="              " xml:space="preserve">
+        <source>              </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="                       " xml:space="preserve">
+        <source>                       </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat urna ante, id pretium libero ullamcorper et. Phasellus vehicula nisl sed consequat vehicula. Duis pellentesque nulla eget porttitor molestie. Morbi maximus nulla eu nisl suscipit, nec imperdiet odio ultricies. Donec non accumsan massa. Quisque quis dignissim lacus. Morbi viverra egestas augue, ac aliquet libero. Etiam ut odio et leo sodales placerat. Pellentesque nec ipsum eget eros cursus cursus a ac erat. Morbi ac convallis ipsum. Aenean venenatis aliquet est in vehicula. Sed dictum aliquet molestie." xml:space="preserve">
+        <source> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat urna ante, id pretium libero ullamcorper et. Phasellus vehicula nisl sed consequat vehicula. Duis pellentesque nulla eget porttitor molestie. Morbi maximus nulla eu nisl suscipit, nec imperdiet odio ultricies. Donec non accumsan massa. Quisque quis dignissim lacus. Morbi viverra egestas augue, ac aliquet libero. Etiam ut odio et leo sodales placerat. Pellentesque nec ipsum eget eros cursus cursus a ac erat. Morbi ac convallis ipsum. Aenean venenatis aliquet est in vehicula. Sed dictum aliquet molestie.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="API" xml:space="preserve">
+        <source>API</source>
+        <target>API</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="API Token" xml:space="preserve">
+        <source>API Token</source>
+        <target>Token API</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Are you sure?" xml:space="preserve">
+        <source>Are you sure?</source>
+        <target>Sei sicuro?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ask me something..." xml:space="preserve">
+        <source>Ask me something...</source>
+        <target>Chiedimi qualcosa...</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Can you give me a lorem ipsum?" xml:space="preserve">
+        <source>Can you give me a lorem ipsum?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change API token" xml:space="preserve">
+        <source>Change API token</source>
+        <target>Cambia token API</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change accent color" xml:space="preserve">
+        <source>Change accent color</source>
+        <target>Cambia colore del tema</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change model type" xml:space="preserve">
+        <source>Change model type</source>
+        <target>Cambia il modello</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Chat" xml:space="preserve">
+        <source>Chat</source>
+        <target>Chat</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Continue" xml:space="preserve">
+        <source>Continue</source>
+        <target>Continua</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Copy" xml:space="preserve">
+        <source>Copy</source>
+        <target>Copia</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete" xml:space="preserve">
+        <source>Delete</source>
+        <target>Elimina</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete all messages" xml:space="preserve">
+        <source>Delete all messages</source>
+        <target>Cancella tutti i messaggi</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete all messages?" xml:space="preserve">
+        <source>Delete all messages?</source>
+        <target>Eliminare tutti i messaggi?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete all unsaved messages?" xml:space="preserve">
+        <source>Delete all unsaved messages?</source>
+        <target>Cancellare tutti i messaggi non salvati?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Free and open-source mobile app using the OpenAISwift framework based on OpenAI's famous artificial intelligence." xml:space="preserve">
+        <source>Free and open-source mobile app using the OpenAISwift framework based on OpenAI's famous artificial intelligence.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Get API token" xml:space="preserve">
+        <source>Get API token</source>
+        <target>Prendi token API</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Get the API token" xml:space="preserve">
+        <source>Get the API token</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Get token API" xml:space="preserve">
+        <source>Get token API</source>
+        <target>Prendi token API</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Hello ChatGPT, how are you?" xml:space="preserve">
+        <source>Hello ChatGPT, how are you?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="I'm fine, what about you?" xml:space="preserve">
+        <source>I'm fine, what about you?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Listen" xml:space="preserve">
+        <source>Listen</source>
+        <target>Ascolta</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Paste your token here" xml:space="preserve">
+        <source>Paste your token here</source>
+        <target>Incolla il token qui</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Save" xml:space="preserve">
+        <source>Save</source>
+        <target>Salva</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Saved messages" xml:space="preserve">
+        <source>Saved messages</source>
+        <target>Messaggi salvati</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Settings" xml:space="preserve">
+        <source>Settings</source>
+        <target>Impostazioni</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Show model type stamp" xml:space="preserve">
+        <source>Show model type stamp</source>
+        <target>Mostra il nome del modello</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Theme" xml:space="preserve">
+        <source>Theme</source>
+        <target>Tema</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="To use the app, you must generate a token to access the OpenAI API." xml:space="preserve">
+        <source>To use the app, you must generate a token to access the OpenAI API.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Token" xml:space="preserve">
+        <source>Token</source>
+        <target>Token</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unsave" xml:space="preserve">
+        <source>Unsave</source>
+        <target>Rimuovi</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Yodd's ChatGPT" xml:space="preserve">
+        <source>Yodd's ChatGPT</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You cannot undo this action" xml:space="preserve">
+        <source>You cannot undo this action</source>
+        <target>Quest'azione è irreversibile</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="🤖 Bip bop ask me anything" xml:space="preserve">
+        <source>🤖 Bip bop ask me anything</source>
+        <target>🤖 Bip Bop chiedimi qualcosa</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="🤖 No saved messags" xml:space="preserve">
+        <source>🤖 No saved messags</source>
+        <target>🤖 Nessun messaggio salvato</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

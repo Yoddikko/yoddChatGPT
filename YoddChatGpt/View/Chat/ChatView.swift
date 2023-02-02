@@ -11,7 +11,7 @@ import CoreData
 /**
  This is the view that contains all the other chat related views.
  
- - Version: 0.1
+ - Version: 0.2
  
  */
 struct ChatView: View {
@@ -34,64 +34,59 @@ struct ChatView: View {
     @Environment (\.managedObjectContext) var managedObjectContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
     
-    // MARK: - AppStorage
-    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
-    
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
-                
                 if messages.isEmpty {
                     //Shows an empty chat view
                     EmptyChatView()
                 } else {
                     //View with messages
-                    MessagesView()
-                    
-                        .padding(.top, 1)
-                    
-                        .onTapGesture {
-                            textIsFocused = false
-                        }
-                }
-            }
-                        HStack {
-                            TextField("Ask me something...", text: $text)
-                                .focused($textIsFocused)
-                            //                    .lineLimit(6)
-                            Button(action: {
-                                sendFromKeyboard()
-                            }, label: {
-                                Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
-                            })
-                        }.padding()
-                        .onAppear{
-                            OpenAIViewModel.shared.setup()
-                        }
-                        .onDisappear{
-                            textIsFocused = false
-                        }
-
-
-            
-                        .toolbar {
-                            
-                            
-                            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                NavigationLink(destination: {
-                                    SettingsView()
-                                }, label: {
-                                    Image(systemName: "gear")
-                                })
+                    if #available(iOS 16.0, *) {
+                        MessagesView()
+                            .padding(.top, 1)
+                            .onTapGesture {
+                                textIsFocused = false
                             }
-                            
-                            
-
+                    } else {
+                        MessagesViewOlderiOS()
+                            .padding(.top, 1)
+                            .onTapGesture {
+                                textIsFocused = false
+                            }
+                        
+                    }
+                }
+                HStack {
+                    TextField("Ask me something...", text: $text)
+                        .focused($textIsFocused)
+                    //                    .lineLimit(6)
+                    Button(action: {
+                        sendFromKeyboard()
+                    }, label: {
+                        Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
+                    })
+                }.padding()
+                    .onAppear{
+                        OpenAIViewModel.shared.setup()
+                    }
+                    .onDisappear{
+                        textIsFocused = false
+                    }
+                    .toolbar {
+                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+                            NavigationLink(destination: {
+                                SettingsView()
+                            }, label: {
+                                Image(systemName: "gear")
+                            })
                         }
+                    }
+            }
         }
-        .fullScreenCover(isPresented: $shouldShowOnBoarding, content: { OnBoardingView(shouldShowOnBoarding: $shouldShowOnBoarding)})
-
-            .navigationBarBackButtonHidden(true)
+        
+        
+        .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
