@@ -6,16 +6,12 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
 
 
+
 ## _Chatbot app for OpenAI_
 
-  
-
-
-  
 
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
-It uses the OpenAISwift framework that you can find here
-
+It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) that you can find here
 
 -  Simple chat with essential features 💬
 
