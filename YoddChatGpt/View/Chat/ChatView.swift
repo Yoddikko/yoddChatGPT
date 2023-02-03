@@ -72,7 +72,10 @@ struct ChatView: View {
                 HStack {
                     TextField("Ask me something...", text: $text)
                         .focused($textIsFocused)
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 10)
+                        .onTapGesture {
+                            textIsFocused = true
+                        }
                     Button(action: {
                         sendFromKeyboard()
                     }, label: {

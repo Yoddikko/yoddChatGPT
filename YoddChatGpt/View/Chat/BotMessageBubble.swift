@@ -84,7 +84,7 @@ struct BotMessageBubble: View {
                             .padding(.trailing, 30)
                             .padding(.vertical, 10)
                             .padding(.horizontal, 10)
-                            .padding(.leading, 5)
+                            .padding(.leading, 15)
                     }
                     else if type == .error{
                         Text(message.body!)
@@ -93,7 +93,7 @@ struct BotMessageBubble: View {
                             .padding(.trailing, 30)
                             .padding(.vertical, 10)
                             .padding(.horizontal, 10)
-                            .padding(.leading, 5)
+                            .padding(.leading, 15)
                         
                     }
                 }
@@ -109,7 +109,7 @@ struct BotMessageBubble: View {
                         
                         Rectangle().foregroundColor(secondaryColor)
                             .cornerRadius(20, corners: [.topRight, .bottomRight, .topLeft])
-                            .padding(.trailing, 30).padding(.leading, 5)
+                            .padding(.trailing, 30).padding(.leading, 15)
                     }
                 }
                 .scaleEffect(scale)
@@ -122,9 +122,6 @@ struct BotMessageBubble: View {
                 }
             }
         }    .buttonStyle(.plain)
-            .onChange(of: SpeechSynthesizer.shared.speechSynthesizer.isSpeaking) { state in
-                print(state)
-            }
     }
 }
 

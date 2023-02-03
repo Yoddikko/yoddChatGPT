@@ -196,9 +196,9 @@
 		71BE9B322982836E00CB13C2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				71BE9B3A2982DDC600CB13C2 /* AudioPlayer.swift */,
 				712443CB2976EE30007E98AA /* OpenAIViewModel.swift */,
 				71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */,
-				71BE9B3A2982DDC600CB13C2 /* AudioPlayer.swift */,
 				71BE9B562983E75D00CB13C2 /* ThemeViewModel.swift */,
 			);
 			path = ViewModel;

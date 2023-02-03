@@ -57,12 +57,12 @@ struct UserMessageBubble: View {
                 .padding(.leading, 30)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 10)
-                .padding(.trailing, 5)
+                .padding(.trailing, 15)
         }.background {
             ZStack {
                 Rectangle().foregroundColor(primaryColor)
                     .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft])
-                    .padding(.leading, 30).padding(.trailing, 5)
+                    .padding(.leading, 30).padding(.trailing, 15)
 
             }
         }

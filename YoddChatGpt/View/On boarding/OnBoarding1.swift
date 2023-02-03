@@ -17,7 +17,7 @@ The MIT License (MIT)
 //
 //  Created by Ale on 01/02/23.
 //
-
+import UIKit
 import SwiftUI
 /**
  This is the view that contains the first screen of the onboarding.
@@ -27,6 +27,12 @@ import SwiftUI
  */
 
 struct OnBoarding1: View {
+    
+    //This init is used in order to change the colors of the dots in the page indicators
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .systemBlue
+       UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+       }
     
     @State var delay1 = false
     @State var delay2 = false
@@ -64,12 +70,12 @@ struct OnBoarding1: View {
                                 .padding(.leading, 30)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 10)
-                                .padding(.trailing, 5)
+                                .padding(.trailing, 15)
                         }.background {
                             ZStack {
                                 Rectangle().foregroundColor(.blue)
                                     .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft])
-                                    .padding(.leading, 30).padding(.trailing, 5)
+                                    .padding(.leading, 30).padding(.trailing, 15)
                             }
                         }
                         .scaleEffect(scale1)
@@ -92,15 +98,12 @@ struct OnBoarding1: View {
                         .padding(.trailing, 30)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 10)
-                        .padding(.leading, 5)
-                    
-                    
-                    
+                        .padding(.leading, 15)
                         .background {
                             ZStack {
-                                Rectangle()               .foregroundColor(.blue.opacity(0.8))
+                                Rectangle()               .foregroundColor(.blue.opacity(0.6))
                                     .cornerRadius(20, corners: [.topRight, .bottomRight, .topLeft])
-                                    .padding(.trailing, 30).padding(.leading, 5)
+                                    .padding(.trailing, 30).padding(.leading, 15)
                             }
                         }
                         .scaleEffect(scale2)
@@ -123,12 +126,12 @@ struct OnBoarding1: View {
                                 .padding(.leading, 30)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 10)
-                                .padding(.trailing, 5)
+                                .padding(.trailing, 15)
                         }.background {
                             ZStack {
                                 Rectangle().foregroundColor(.blue)
                                     .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft])
-                                    .padding(.leading, 30).padding(.trailing, 5)
+                                    .padding(.leading, 30).padding(.trailing, 15)
                             }
                         }
                         .scaleEffect(scale3)
@@ -151,12 +154,12 @@ struct OnBoarding1: View {
                         .padding(.trailing, 30)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 10)
-                        .padding(.leading, 5)
+                        .padding(.leading, 15)
                         .background {
                             ZStack {
-                                Rectangle()               .foregroundColor(.blue.opacity(0.8))
+                                Rectangle()               .foregroundColor(.blue.opacity(0.6))
                                     .cornerRadius(20, corners: [.topRight, .bottomRight, .topLeft])
-                                    .padding(.trailing, 30).padding(.leading, 5)
+                                    .padding(.trailing, 30).padding(.leading, 15)
                             }
                         }
                         .scaleEffect(scale4)
