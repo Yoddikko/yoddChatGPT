@@ -67,13 +67,12 @@ struct ChatView: View {
                             .onTapGesture {
                                 textIsFocused = false
                             }
-                        
                     }
                 }
                 HStack {
                     TextField("Ask me something...", text: $text)
                         .focused($textIsFocused)
-                    //                    .lineLimit(6)
+                        .padding(.vertical, 20)
                     Button(action: {
                         sendFromKeyboard()
                     }, label: {

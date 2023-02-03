@@ -19,6 +19,12 @@ The MIT License (MIT)
 //
 
 import SwiftUI
+/**
+ This is the view that contains the first screen of the onboarding.
+ 
+ - Version: 0.1
+ 
+ */
 
 struct OnBoarding1: View {
     

@@ -35,7 +35,6 @@ struct BotMessageBubble: View {
     var secondaryColor : Color
     var message : Message
     var type : MessageType
-    
     @State var scale = 0.8
     
     var body: some View {

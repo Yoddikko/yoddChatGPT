@@ -29,7 +29,6 @@ struct MessagesView: View {
     
     // MARK: - Properties
     @ObservedObject var chatColors = ThemeViewModel.shared
-    
     @State var placeHolderUUID = UUID()
     
     var body: some View {

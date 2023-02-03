@@ -23,7 +23,6 @@ import SwiftUI
 struct SavedMessagesView: View {
     
     @Environment (\.managedObjectContext) var managedObjectContext
-//    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date)], predicate: NSPredicate(format: "saved == true")) var savedMessages : FetchedResults<Message>
     var theme = ThemeViewModel.shared.theme
 

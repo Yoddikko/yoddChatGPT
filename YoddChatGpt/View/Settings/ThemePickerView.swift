@@ -27,7 +27,6 @@ struct ThemePickerView: View {
     var themes = ThemeViewModel.shared.themes
     @State var tappedTheme : Theme = ThemeViewModel.shared.theme
     
-    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
@@ -44,7 +43,6 @@ struct ThemePickerView: View {
                             themeViewModel.setTheme(theme: theme)
                             self.tappedTheme = theme
                         }
-                    
                 }
             }
         }

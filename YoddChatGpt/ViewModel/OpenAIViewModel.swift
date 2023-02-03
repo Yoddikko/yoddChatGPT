@@ -31,17 +31,15 @@ import SwiftUI
 final class OpenAIViewModel : ObservableObject {
     
     private var client : OpenAISwift?
-    
     var openAiModelType : OpenAIModelType = .gpt3(.davinci)
-//    private var openAiModelTypeCodex : OpenAIModelType.Codex?
-//    private var openAiModelTypeGPT3 : OpenAIModelType.GPT3?
-
     static var shared = OpenAIViewModel()
     
     @AppStorage ("showModelType") var showModelType : Bool = false
 
     
     @Published var token : OpenAISwift?
+    
+    ///This is the token that takes from the user defaults. If user defaults it's empty it just get an empty string
     @Published var tokenUserDefaults : String = UserDefaults.standard.string(forKey: "token") ?? ""
 
     func setup() {

@@ -19,26 +19,39 @@ The MIT License (MIT)
 
 import SwiftUI
 import OpenAISwift
+/**
+ This is the settings view with the list of all the settings in the app.
+ 
+ - Version: 0.1
+ 
+ */
+
 
 struct SettingsView: View {
+    // MARK: - Environmental objects
     @Environment (\.managedObjectContext) var managedObjectContext
     
-    @ObservedObject var accentColor  = ThemeViewModel.shared
-    @State var isPresentingConfirm = false
+    // MARK: - ViewModels
+    @ObservedObject var themeViewModel  = ThemeViewModel.shared
     @State var openAIViewModelToken = OpenAIViewModel.shared.tokenUserDefaults
-    @State private var presentAlert = false
+    
+    // MARK: - Other properties
+    
+    ///This is the variable that shows the alert for deleting the messages
+    @State var peresentDeleteMessagesAlert = false
+    ///This is the variable that shows the alert for changing API
+    @State private var presentAPIAlert = false
     
     var body: some View {
-//        NavigationView {
             Form {
                 Section("Theme", content: {
                     
                     
                     HStack {
-                        ColorPicker("Change accent color", selection: $accentColor.accentColor)
+                        ColorPicker("Change accent color", selection: $themeViewModel.accentColor)
                     }
-                    .onChange(of: accentColor.accentColor) { _ in
-                        UserDefaults.standard.set(accentColor.accentColor.toHex(), forKey: "AccentColor")
+                    .onChange(of: themeViewModel.accentColor) { _ in
+                        UserDefaults.standard.set(themeViewModel.accentColor.toHex(), forKey: "AccentColor")
                     }
                     
                     ThemePickerView()
@@ -63,7 +76,7 @@ struct SettingsView: View {
                     }
                     
                     Button(action: {
-                        isPresentingConfirm = true
+                        peresentDeleteMessagesAlert = true
                     }, label: {
                         HStack {
                             Text("Delete all messages")
@@ -72,7 +85,7 @@ struct SettingsView: View {
                         }.foregroundColor(.red)
                     })
                     .confirmationDialog("Are you sure?",
-                                        isPresented: $isPresentingConfirm) {
+                                        isPresented: $peresentDeleteMessagesAlert) {
                         Button("Delete all messages?", role: .destructive) {
                             DataController.shared.deleteAllData(context: managedObjectContext)
                         }
@@ -97,7 +110,7 @@ struct SettingsView: View {
                     })
 
                     Button(action: {
-                        presentAlert = true
+                        presentAPIAlert = true
                     }, label: {
                         HStack {
                             Text("Change API token")
@@ -105,7 +118,7 @@ struct SettingsView: View {
                             Image(systemName: "key")
                         }
                     })
-                    .alert("API Token", isPresented: $presentAlert, actions: {
+                    .alert("API Token", isPresented: $presentAPIAlert, actions: {
                         TextField("Token", text: $openAIViewModelToken)
                     }, message: {
                         HStack {
@@ -113,7 +126,7 @@ struct SettingsView: View {
                         }
                     })
                     .onDisappear{
-                        presentAlert = false
+                        presentAPIAlert = false
                     }
                     .onChange(of: openAIViewModelToken) { token in
                         OpenAIViewModel.shared.setToken(string: token)
@@ -129,15 +142,6 @@ struct SettingsView: View {
                     }
                 
                 })
-                
-//                Section("Multipeer", content: {
-//
-//                    HStack {
-//                        Text("Change multipeer name")
-//                        Spacer()
-//                        Image(systemName: "person")
-//                    }
-//                })
             }
             .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
@@ -145,9 +149,9 @@ struct SettingsView: View {
 }
 
 
-//
-//struct SettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsView()
-//    }
-//}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
+    }
+}

@@ -19,6 +19,12 @@ The MIT License (MIT)
 //
 
 import SwiftUI
+/**
+ This is the view that contains the second screen of the onboarding.
+ 
+ - Version: 0.1
+ 
+ */
 
 struct OnBoarding2: View {
     
@@ -56,7 +62,7 @@ struct OnBoarding2: View {
                 OpenAIViewModel.shared.setToken(string: token)
                 shouldShowOnBoarding = false
                 OpenAIViewModel.shared.setup()
-
+                textFocused = false
             }, label: {
                 Text("Continue")
             }).buttonStyle(.bordered)
