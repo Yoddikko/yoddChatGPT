@@ -40,6 +40,6 @@ If the testflight link is down you can download the source code and build it you
  - [ ] Refactor of the code
  - [ ] Whole documentation and wiki
  - [ ] Some UI improvements
-
+ - [ ] Ipad and mac support
 ## Known issues
  - [ ] There are some problems with the keyboard
