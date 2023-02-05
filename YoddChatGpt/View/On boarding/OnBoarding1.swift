@@ -50,7 +50,7 @@ struct OnBoarding1: View {
         VStack {
             Spacer()
             VStack {
-                Text("Yodd's ChatGPT")
+                Text("Yodd's AI Chat")
                     .font(.title)
                     .fontWeight(.bold)
                 

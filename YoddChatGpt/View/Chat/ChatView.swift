@@ -39,6 +39,8 @@ struct ChatView: View {
     ///Here are stored the messages sent and recieved alongside with CoreData
     @State var models = [TemporaryMessage]()
     
+    @State var messageIsLoading = false
+    
     // MARK: - ViewModels
     var audioPlayer = AudioPlayer()
     @ObservedObject var openAIViewModel = OpenAIViewModel()
@@ -56,13 +58,13 @@ struct ChatView: View {
                 } else {
                     //View with messages
                     if #available(iOS 16.0, *) {
-                        MessagesView()
+                        MessagesView(messageIsLoading: $messageIsLoading)
                             .padding(.top, 1)
                             .onTapGesture {
                                 textIsFocused = false
                             }
                     } else {
-                        MessagesViewOlderiOS()
+                        MessagesViewOlderiOS(messageIsLoading: $messageIsLoading)
                             .padding(.top, 1)
                             .onTapGesture {
                                 textIsFocused = false
@@ -127,6 +129,7 @@ struct ChatView: View {
         DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text,  context: managedObjectContext)
         audioPlayer.playMessageSound(sender: .user)
         //API call
+        messageIsLoading = true
         OpenAIViewModel.shared.send(text: text, completion: { response, messageType  in
             DispatchQueue.main.async {
                 
@@ -144,6 +147,7 @@ struct ChatView: View {
                     DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
                     audioPlayer.playMessageSound(sender: .bot)
                 }
+                messageIsLoading = false
             }
         })
         self.text = ""

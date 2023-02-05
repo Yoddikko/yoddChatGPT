@@ -30,6 +30,7 @@ struct MessagesView: View {
     // MARK: - Properties
     @ObservedObject var chatColors = ThemeViewModel.shared
     @State var placeHolderUUID = UUID()
+    @Binding var messageIsLoading : Bool
     
     var body: some View {
         ScrollViewReader { value in
@@ -94,7 +95,7 @@ struct MessagesView: View {
                         }
                     }
                     
-                    if messages.last?.sender == "user"  {
+                    if messages.last?.sender == "user" && messageIsLoading  {
                         HStack {
                             BotLoadingMessage( secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1).id(placeHolderUUID)
                             Spacer().id(placeHolderUUID)
@@ -137,6 +138,7 @@ struct MessagesViewOlderiOS: View {
     @ObservedObject var chatColors = ThemeViewModel.shared
     
     @State var placeHolderUUID = UUID()
+    @Binding var messageIsLoading : Bool
     
     var body: some View {
         ScrollViewReader { value in
@@ -201,7 +203,7 @@ struct MessagesViewOlderiOS: View {
                     }
                 }
                 
-                if messages.last?.sender == "user"  {
+                if messages.last?.sender == "user" && messageIsLoading {
                     HStack {
                         BotLoadingMessage( secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1).id(placeHolderUUID)
                         Spacer().id(placeHolderUUID)
@@ -234,7 +236,7 @@ struct MessagesViewOlderiOS: View {
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 16.0, *) {
-            MessagesView()
+            MessagesView(messageIsLoading: .constant(false))
         } else {
         }
     }
