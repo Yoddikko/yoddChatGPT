@@ -9,6 +9,7 @@
 
 ## _Chatbot app for OpenAI's ChatGPT_
 
+[Site](https://yoddikko.github.io/yoddChatGPT/)
 
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
 It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift).
