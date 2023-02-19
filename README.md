@@ -1,4 +1,4 @@
-# Yodd's ChatGPT
+# Yodd's AI Chat (aka YoddChatGPT)
 
 
   ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/216307961-81a8d5fa-896d-4ad0-944a-1d215ad5f9b1.png)
@@ -27,6 +27,7 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift).
   
 ## Download
 [TestFlight](https://testflight.apple.com/join/dhsVtTEo)
+![proxy-image](https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png)
 
 If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
 
