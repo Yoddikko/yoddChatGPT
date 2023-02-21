@@ -68,7 +68,7 @@ struct MessagesView: View {
                                 }
                                 HStack {
                                     createBotTimeStamp(date: message.date!)
-                                    if OpenAIViewModel.shared.showModelType {
+                                    if AIChatViewModel.shared.showModelType {
                                         createModelTypeStamp(modelType: message.chatModel ?? "")
                                     }
                                     Spacer()
@@ -175,7 +175,7 @@ struct MessagesViewOlderiOS: View {
                             }
                             HStack {
                                 createBotTimeStamp(date: message.date!)
-                                if OpenAIViewModel.shared.showModelType {
+                                if AIChatViewModel.shared.showModelType {
                                     createModelTypeStamp(modelType: message.chatModel ?? "")
                                 }
                                 Spacer()

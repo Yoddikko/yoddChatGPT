@@ -11,7 +11,7 @@
 		712443BA2976ECFA007E98AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712443B92976ECFA007E98AA /* Assets.xcassets */; };
 		712443BD2976ECFA007E98AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712443BC2976ECFA007E98AA /* Preview Assets.xcassets */; };
 		712443C22976ECFA007E98AA /* MessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 712443C02976ECFA007E98AA /* MessageModel.xcdatamodeld */; };
-		712443CC2976EE30007E98AA /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712443CB2976EE30007E98AA /* OpenAIViewModel.swift */; };
+		712443CC2976EE30007E98AA /* AIChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712443CB2976EE30007E98AA /* AIChatViewModel.swift */; };
 		7149361A298BBF6300980250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71493618298BBF6300980250 /* Localizable.strings */; };
 		7179EAA629811F60004A95CA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7179EAA529811F60004A95CA /* OpenAISwift */; };
 		7193E31C29867E00004A10D4 /* NSManagedObjectContext+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E31B29867E00004A10D4 /* NSManagedObjectContext+extension.swift */; };
@@ -39,6 +39,7 @@
 		71CC6CD029A50C2800B0DB75 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 71CC6CCF29A50C2800B0DB75 /* ChatGPTSwift */; };
 		71CC6CD329A5158600B0DB75 /* ChatGPTSwiftModelTypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CC6CD229A5158600B0DB75 /* ChatGPTSwiftModelTypesList.swift */; };
 		71CC6CD729A516A100B0DB75 /* AILibrariesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CC6CD629A516A100B0DB75 /* AILibrariesList.swift */; };
+		71CC6CD929A56BCC00B0DB75 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CC6CD829A56BCC00B0DB75 /* SafariView.swift */; };
 		71DEEB47298AAEC7004B3708 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEEB46298AAEC7004B3708 /* View+extension.swift */; };
 		71DEEB4C298AAEEE004B3708 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEEB4B298AAEEE004B3708 /* RoundedCorner.swift */; };
 		71DEEB54298ABAA7004B3708 /* BotLoadingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEEB53298ABAA7004B3708 /* BotLoadingMessage.swift */; };
@@ -53,7 +54,7 @@
 		712443B92976ECFA007E98AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		712443BC2976ECFA007E98AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		712443C12976ECFA007E98AA /* YoddChatGpt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoddChatGpt.xcdatamodel; sourceTree = "<group>"; };
-		712443CB2976EE30007E98AA /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
+		712443CB2976EE30007E98AA /* AIChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewModel.swift; sourceTree = "<group>"; };
 		71493619298BBF6300980250 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7193E31B29867E00004A10D4 /* NSManagedObjectContext+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+extension.swift"; sourceTree = "<group>"; };
 		7193E31D29868320004A10D4 /* BotMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMessageBubble.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		71C5B647298A76E300FC88C0 /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
 		71CC6CD229A5158600B0DB75 /* ChatGPTSwiftModelTypesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSwiftModelTypesList.swift; sourceTree = "<group>"; };
 		71CC6CD629A516A100B0DB75 /* AILibrariesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILibrariesList.swift; sourceTree = "<group>"; };
+		71CC6CD829A56BCC00B0DB75 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		71DEEB46298AAEC7004B3708 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		71DEEB4B298AAEEE004B3708 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		71DEEB53298ABAA7004B3708 /* BotLoadingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotLoadingMessage.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				71DEEB55298AC9E1004B3708 /* On boarding */,
 				7193E32929881C9A004A10D4 /* Settings */,
 				7193E32829881C6D004A10D4 /* Chat */,
+				71CC6CD829A56BCC00B0DB75 /* SafariView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				71BE9B3A2982DDC600CB13C2 /* AudioPlayer.swift */,
-				712443CB2976EE30007E98AA /* OpenAIViewModel.swift */,
+				712443CB2976EE30007E98AA /* AIChatViewModel.swift */,
 				71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */,
 				71BE9B562983E75D00CB13C2 /* ThemeViewModel.swift */,
 			);
@@ -348,7 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				712443CC2976EE30007E98AA /* OpenAIViewModel.swift in Sources */,
+				712443CC2976EE30007E98AA /* AIChatViewModel.swift in Sources */,
 				71BE9B3629828BB000CB13C2 /* ChatView.swift in Sources */,
 				71CC6CD329A5158600B0DB75 /* ChatGPTSwiftModelTypesList.swift in Sources */,
 				7193E32E29890CB4004A10D4 /* AIModelTypesList.swift in Sources */,
@@ -370,6 +373,7 @@
 				71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */,
 				7193E3222986A797004A10D4 /* ThemePickerView.swift in Sources */,
 				71DEEB47298AAEC7004B3708 /* View+extension.swift in Sources */,
+				71CC6CD929A56BCC00B0DB75 /* SafariView.swift in Sources */,
 				71DEEB59298AD39B004B3708 /* OnBoarding2.swift in Sources */,
 				71C5B648298A76E300FC88C0 /* UserChatBubble.swift in Sources */,
 				7193E32529881642004A10D4 /* SavedMessagesView.swift in Sources */,

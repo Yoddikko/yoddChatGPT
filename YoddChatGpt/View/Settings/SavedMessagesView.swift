@@ -40,7 +40,7 @@ struct SavedMessagesView: View {
                         HStack {
                             createBotTimeStamp(date: message.date!)
                             createFullTimeStamp(date: message.date!)
-                            if OpenAIViewModel.shared.showModelType {
+                            if AIChatViewModel.shared.showModelType {
                                 createModelTypeStamp(modelType: message.chatModel ?? "")
                             }
                             Spacer()

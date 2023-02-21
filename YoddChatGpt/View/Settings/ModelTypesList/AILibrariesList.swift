@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AILibrariesList: View {
-    @State var library: AILibrary = OpenAIViewModel.shared.getSelectedLibrary()
+    @State var library: AILibrary = AIChatViewModel.shared.getSelectedLibrary()
     var libraries : [AILibrary] = [.OpenAISwift, .ChatGPT]
     var body: some View {
         VStack {
@@ -26,14 +26,14 @@ struct AILibrariesList: View {
             }
             
         }.onChange(of: library) { newValue in
-            OpenAIViewModel.shared.changeLibrary(AILibrary: newValue)
+            AIChatViewModel.shared.changeLibrary(AILibrary: newValue)
             print(newValue)
 //            print(OpenAIViewModel.shared.selectedAILibrary)
-            print(OpenAIViewModel.shared.getSelectedLibrary())
+            print(AIChatViewModel.shared.getSelectedLibrary())
         }
         
         .onAppear {
-            self.library = OpenAIViewModel.shared.getSelectedLibrary()
+            self.library = AIChatViewModel.shared.getSelectedLibrary()
         }
         
 

@@ -19,10 +19,11 @@ The MIT License (MIT)
 //
 
 import SwiftUI
+
 /**
  This is the view that contains the second screen of the onboarding.
  
- - Version: 0.1
+ - Version: 0.2
  
  */
 
@@ -31,6 +32,10 @@ struct OnBoarding2: View {
     @State var token = ""
     @FocusState var textFocused : Bool
     @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
+    // whether or not to show the Safari ViewController
+    @State var showSafari = false
+    // initial URL string
+    @State var urlString = "https://beta.openai.com/account/api-keys"
 
     var body: some View {
         VStack {
@@ -44,7 +49,12 @@ struct OnBoarding2: View {
                 .padding(.horizontal)
                 .padding(.top, 1)
             
-            Link("Get API token", destination: URL(string: "https://beta.openai.com/account/api-keys")!)
+            Button(action: {
+                self.urlString = "https://beta.openai.com/account/api-keys"
+                self.showSafari = true
+            }) {
+                Text("Get API token")
+            }
                 .padding(.top)
 
             TextField("API Token", text: $token)
@@ -59,9 +69,9 @@ struct OnBoarding2: View {
             
             Button(action: {
                 UserDefaults.standard.set("false", forKey: "OnBoarding")
-                OpenAIViewModel.shared.setToken(string: token)
+                AIChatViewModel.shared.setToken(string: token)
                 shouldShowOnBoarding = false
-                OpenAIViewModel.shared.setup()
+                AIChatViewModel.shared.setup()
                 textFocused = false
             }, label: {
                 Text("Continue")
@@ -70,6 +80,10 @@ struct OnBoarding2: View {
         }.onTapGesture {
             textFocused = false
         }
+        .sheet(isPresented: $showSafari) {
+            SafariView(url:URL(string: self.urlString)!)
+        }
+
     }
 }
 
@@ -78,3 +92,5 @@ struct OnBoarding2_Previews: PreviewProvider {
         OnBoarding2()
     }
 }
+
+

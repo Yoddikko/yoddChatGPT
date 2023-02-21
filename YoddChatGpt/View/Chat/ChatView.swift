@@ -43,7 +43,7 @@ struct ChatView: View {
     
     // MARK: - ViewModels
     var audioPlayer = AudioPlayer()
-    @ObservedObject var openAIViewModel = OpenAIViewModel()
+    @ObservedObject var openAIViewModel = AIChatViewModel()
     
     // MARK: - Environmental objects and fetch requests
     @Environment (\.managedObjectContext) var managedObjectContext
@@ -85,7 +85,7 @@ struct ChatView: View {
                     })
                 }.padding()
                     .onAppear{
-                        OpenAIViewModel.shared.setup()
+                        AIChatViewModel.shared.setup()
                     }
                     .onDisappear{
                         textIsFocused = false
@@ -130,8 +130,8 @@ struct ChatView: View {
         audioPlayer.playMessageSound(sender: .user)
         //API call
         messageIsLoading = true
-        if OpenAIViewModel.shared.selectedAILibrary == .ChatGPT {
-            OpenAIViewModel.shared.sendChatGPTSwift(text: text, completion: {
+        if AIChatViewModel.shared.selectedAILibrary == .ChatGPT {
+            AIChatViewModel.shared.sendChatGPTSwift(text: text, completion: {
                 response, messageType  in
                     DispatchQueue.main.async {
                         
@@ -154,7 +154,7 @@ struct ChatView: View {
             })
         }
         else {
-            OpenAIViewModel.shared.sendOpenAIViewModel(text: text, completion: { response, messageType  in
+            AIChatViewModel.shared.sendOpenAIViewModel(text: text, completion: { response, messageType  in
                 DispatchQueue.main.async {
                     
                     //Saves the bot message and checks if it's an error message or a normal text

@@ -26,16 +26,16 @@ import OpenAISwift
 
 struct AIModelTypesList: View {
     
-    @State private var selection = OpenAIViewModel.shared.allOpenAISwiftModels.firstIndex { tuple in
-        tuple.0.modelName == OpenAIViewModel.shared.openAiModelType.modelName
+    @State private var selection = AIChatViewModel.shared.allOpenAISwiftModels.firstIndex { tuple in
+        tuple.0.modelName == AIChatViewModel.shared.openAiModelType.modelName
     }
     @State var selectedLibrary : AILibrary? = nil
     var body: some View {
         
-        List (0..<OpenAIViewModel.shared.allOpenAISwiftModels.count, id: \.self, selection: $selection) { index in
+        List (0..<AIChatViewModel.shared.allOpenAISwiftModels.count, id: \.self, selection: $selection) { index in
             HStack {
                 
-                Text(OpenAIViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: OpenAIViewModel.shared.allOpenAISwiftModels[index].0.modelName))
+                Text(AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.allOpenAISwiftModels[index].0.modelName))
                 Spacer()
                 if selection == index {
                     if selectedLibrary == .OpenAISwift {
@@ -52,11 +52,11 @@ struct AIModelTypesList: View {
                 }
                 
             }.onChange(of: selection) { selection in
-                OpenAIViewModel.shared.setOpenAIViewModelType(openAIModelTypeString: OpenAIViewModel.shared.allOpenAISwiftModels[selection!].0.modelName)
+                AIChatViewModel.shared.setOpenAIViewModelType(openAIModelTypeString: AIChatViewModel.shared.allOpenAISwiftModels[selection!].0.modelName)
 //                OpenAIViewModel.shared.setup()
             }
             .onAppear {
-                self.selectedLibrary = OpenAIViewModel.shared.getSelectedLibrary()
+                self.selectedLibrary = AIChatViewModel.shared.getSelectedLibrary()
             }
         }
 

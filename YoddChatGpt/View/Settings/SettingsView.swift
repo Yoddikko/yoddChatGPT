@@ -33,7 +33,7 @@ struct SettingsView: View {
     
     // MARK: - ViewModels
     @ObservedObject var themeViewModel  = ThemeViewModel.shared
-    @State var openAIViewModelToken = OpenAIViewModel.shared.tokenUserDefaults
+    @State var openAIViewModelToken = AIChatViewModel.shared.tokenUserDefaults
     
     // MARK: - Other properties
     
@@ -41,7 +41,11 @@ struct SettingsView: View {
     @State var peresentDeleteMessagesAlert = false
     ///This is the variable that shows the alert for changing API
     @State private var presentAPIAlert = false
-    
+    // whether or not to show the Safari ViewController
+    @State var showSafari = false
+    // initial URL string
+    @State var urlString = "https://beta.openai.com/account/api-keys"
+
     var body: some View {
             Form {
                 Section("Theme", content: {
@@ -71,7 +75,7 @@ struct SettingsView: View {
                     })
                     
                         
-                    Toggle(isOn: OpenAIViewModel.shared.$showModelType) {
+                    Toggle(isOn: AIChatViewModel.shared.$showModelType) {
                         Text("Show model type stamp")
                     }
                     
@@ -129,22 +133,25 @@ struct SettingsView: View {
                         presentAPIAlert = false
                     }
                     .onChange(of: openAIViewModelToken) { token in
-                        OpenAIViewModel.shared.setToken(string: token)
+                        AIChatViewModel.shared.setToken(string: token)
                     }
                     
                     
-                    Link(destination: URL(string: "https://beta.openai.com/account/api-keys")!) {
-                        HStack {
-                            Text("Get token API")
-                            Spacer()
-                            Image(systemName: "link")
-                        }
+                    Button(action: {
+                        self.urlString = "https://beta.openai.com/account/api-keys"
+                        self.showSafari = true
+                    }) {
+                        Text("Get API token")
                     }
-                
+
                 })
             }
+            .sheet(isPresented: $showSafari) {
+                SafariView(url:URL(string: self.urlString)!)
+            }
+        
             .navigationTitle("Settings")
-        .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -25,14 +25,14 @@ import SwiftUI
 /**
  This is the ViewModel that manages the OpenAISwift implementation.
 
- - Version: 0.2
-
+ - Version: 0.3
+ 
  */
-final class OpenAIViewModel : ObservableObject {
+final class AIChatViewModel : ObservableObject {
     
     private var client : OpenAISwift?
     var openAiModelType : OpenAIModelType = .gpt3(.davinci)
-    static var shared = OpenAIViewModel()
+    static var shared = AIChatViewModel()
     @AppStorage ("showModelType") var showModelType : Bool = false
 
     
