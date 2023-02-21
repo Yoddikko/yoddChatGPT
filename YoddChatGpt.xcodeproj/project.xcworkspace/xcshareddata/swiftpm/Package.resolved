@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "chatgptswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alfianlosari/ChatGPTSwift",
+      "state" : {
+        "revision" : "2fb57623d63ee88ceb3912c3b2b1806a6f6e1337",
+        "version" : "0.0.4"
+      }
+    },
+    {
       "identity" : "openaiswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/adamrushy/OpenAISwift",

@@ -130,26 +130,53 @@ struct ChatView: View {
         audioPlayer.playMessageSound(sender: .user)
         //API call
         messageIsLoading = true
-        OpenAIViewModel.shared.send(text: text, completion: { response, messageType  in
-            DispatchQueue.main.async {
-                
-                //Saves the bot message and checks if it's an error message or a normal text
-                if messageType == .text {
-                    var botMessage = TemporaryMessage(body: response, sender: .bot)
-                    botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
-                    self.models.append(botMessage)
-                    DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", context: managedObjectContext)
-                    audioPlayer.playMessageSound(sender: .bot)
-                } else if messageType == .error {
-                    var botMessage = TemporaryMessage(body: response, sender: .bot)
-                    botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
-                    self.models.append(botMessage)
-                    DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
-                    audioPlayer.playMessageSound(sender: .bot)
+        if OpenAIViewModel.shared.selectedAILibrary == .ChatGPT {
+            OpenAIViewModel.shared.sendChatGPTSwift(text: text, completion: {
+                response, messageType  in
+                    DispatchQueue.main.async {
+                        
+                        //Saves the bot message and checks if it's an error message or a normal text
+                        if messageType == .text {
+                            var botMessage = TemporaryMessage(body: response, sender: .bot)
+                            botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
+                            self.models.append(botMessage)
+                            DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", context: managedObjectContext)
+                            audioPlayer.playMessageSound(sender: .bot)
+                        } else if messageType == .error {
+                            var botMessage = TemporaryMessage(body: response, sender: .bot)
+                            botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
+                            self.models.append(botMessage)
+                            DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
+                            audioPlayer.playMessageSound(sender: .bot)
+                        }
+                        messageIsLoading = false
+                    }
+            })
+        }
+        else {
+            OpenAIViewModel.shared.sendOpenAIViewModel(text: text, completion: { response, messageType  in
+                DispatchQueue.main.async {
+                    
+                    //Saves the bot message and checks if it's an error message or a normal text
+                    if messageType == .text {
+                        var botMessage = TemporaryMessage(body: response, sender: .bot)
+                        botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
+                        self.models.append(botMessage)
+                        DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", context: managedObjectContext)
+                        audioPlayer.playMessageSound(sender: .bot)
+                    } else if messageType == .error {
+                        var botMessage = TemporaryMessage(body: response, sender: .bot)
+                        botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
+                        self.models.append(botMessage)
+                        DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
+                        audioPlayer.playMessageSound(sender: .bot)
+                    }
+                    messageIsLoading = false
                 }
-                messageIsLoading = false
-            }
-        })
+            })
+
+        }
+
         self.text = ""
     }
 }

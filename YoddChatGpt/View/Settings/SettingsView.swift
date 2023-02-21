@@ -100,7 +100,7 @@ struct SettingsView: View {
                 Section("API", content: {
                     
                     NavigationLink(destination: {
-                        ChatGPTModelTypesList()
+                        AILibrariesList()
                     }, label: {
                         HStack {
                             Text("Change model type")

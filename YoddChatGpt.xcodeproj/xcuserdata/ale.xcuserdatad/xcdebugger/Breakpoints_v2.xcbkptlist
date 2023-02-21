@@ -174,9 +174,9 @@
             filePath = "YoddChatGpt/ViewModel/OpenAIViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "send(text:completion:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "sendOpenAIViewModel(text:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -224,7 +224,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "setTheme(theme:)"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,8 +238,8 @@
             filePath = "YoddChatGpt/DataModel/DataController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "saveMessage(message:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -338,6 +338,225 @@
             endingLineNumber = "42"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C50A727C-9023-4AE6-BE3F-9E4157784594"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/View/Settings/ModelTypesList/AILibrariesList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ChatGPTSwiftModelTypesList"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - 9e0e54bb73a5ff65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of YoddChatGpt.ChatGPTSwiftModelTypesList.selectedLibrary : Swift.Optional&lt;YoddChatGpt.AILibrary&gt;"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - e1981b594b7612f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YoddChatGpt.ChatGPTSwiftModelTypesList.selectedLibrary.getter : Swift.Optional&lt;YoddChatGpt.AILibrary&gt;"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - c84ed7feff550864"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YoddChatGpt.ChatGPTSwiftModelTypesList.selectedLibrary.setter : Swift.Optional&lt;YoddChatGpt.AILibrary&gt;"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - 554e3a1f674de093"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YoddChatGpt.ChatGPTSwiftModelTypesList.selectedLibrary.modify : Swift.Optional&lt;YoddChatGpt.AILibrary&gt;"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - 5b5ca1e2b565fb2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YoddChatGpt.ChatGPTSwiftModelTypesList.selectedLibrary.modify : Swift.Optional&lt;YoddChatGpt.AILibrary&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - 9dad741bf85710c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YoddChatGpt.ChatGPTSwiftModelTypesList.$selectedLibrary.getter : SwiftUI.Binding&lt;Swift.Optional&lt;YoddChatGpt.AILibrary&gt;&gt;"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "0F9B35A8-06FD-4B6C-BC53-5590CFE60450 - 30a96c51c288eb24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YoddChatGpt.ChatGPTSwiftModelTypesList.init() -&gt; YoddChatGpt.ChatGPTSwiftModelTypesList"
+                  moduleName = "YoddChatGpt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ale/Documents/GitHub/yoddChatGPT/YoddChatGpt/View/Settings/ModelTypesList/ChatGPTSwiftModelTypesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19948B28-3E9E-465C-A7B8-5B02CDAF6DA3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/ViewModel/OpenAIViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "getLibraryFromString(string:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82F2478F-9BFD-4920-A6E8-46D5C085B820"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/ViewModel/OpenAIViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "changeLibrary(AILibrary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "265D68EE-A464-4A73-879D-4D28031A779E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/ViewModel/OpenAIViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "changeLibrary(AILibrary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAF94522-0CB3-4A98-8CFC-A576A3EFE579"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/Extensions/NSManagedObjectContext+extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "NSManagedObjectContext"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "477227FB-0E3A-4725-B3C8-236BAD629FAB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YoddChatGpt/View/Chat/ChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "sendFromKeyboard()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

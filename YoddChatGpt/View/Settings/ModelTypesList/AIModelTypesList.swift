@@ -12,7 +12,7 @@ The MIT License (MIT)
 
 
 //
-//  ChatGPTModelTypesList.swift
+//  AIModelTypesList.swift
 //  YoddChatGpt
 //
 //  Created by Ale on 31/01/23.
@@ -24,36 +24,48 @@ import OpenAISwift
 // TODO: - REFACTOR
 // MARK: - THIS VIEW AND THE FUNCTIONS OF OPENAIVIEWMODEL THAT USES ARE A MESS, THIS AND THE VIEWMODEL WILL HAVE HEAVY REVAMPS BUT ARE OK FOR NOW
 
-struct ChatGPTModelTypesList: View {
+struct AIModelTypesList: View {
     
-    @State private var selection = OpenAIViewModel.shared.allModels.firstIndex { tuple in
+    @State private var selection = OpenAIViewModel.shared.allOpenAISwiftModels.firstIndex { tuple in
         tuple.0.modelName == OpenAIViewModel.shared.openAiModelType.modelName
     }
-
+    @State var selectedLibrary : AILibrary? = nil
     var body: some View {
-        List (0..<OpenAIViewModel.shared.allModels.count, id: \.self, selection: $selection) {index in
+        
+        List (0..<OpenAIViewModel.shared.allOpenAISwiftModels.count, id: \.self, selection: $selection) { index in
             HStack {
                 
-                Text(OpenAIViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: OpenAIViewModel.shared.allModels[index].0.modelName))
+                Text(OpenAIViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: OpenAIViewModel.shared.allOpenAISwiftModels[index].0.modelName))
                 Spacer()
                 if selection == index {
-                    Image(systemName: "checkmark.circle.fill")
-                        .scaledToFit()
-                        .foregroundColor(ThemeViewModel.shared.accentColor)
-                    
+                    if selectedLibrary == .OpenAISwift {
+                        Image(systemName: "checkmark.circle.fill")
+                            .scaledToFit()
+                            .foregroundColor(ThemeViewModel.shared.accentColor)
+                    }
+                    else {
+                        Image(systemName: "checkmark.circle.fill")
+                            .scaledToFit()
+                            .foregroundColor(.gray)
+
+                    }
                 }
                 
             }.onChange(of: selection) { selection in
-                OpenAIViewModel.shared.setOpenAIViewModelType(openAIModelTypeString: OpenAIViewModel.shared.allModels[selection!].0.modelName)
-                OpenAIViewModel.shared.setup()
+                OpenAIViewModel.shared.setOpenAIViewModelType(openAIModelTypeString: OpenAIViewModel.shared.allOpenAISwiftModels[selection!].0.modelName)
+//                OpenAIViewModel.shared.setup()
+            }
+            .onAppear {
+                self.selectedLibrary = OpenAIViewModel.shared.getSelectedLibrary()
             }
         }
+
     }
 }
 
 struct ChatGPTModelTypesList_Previews: PreviewProvider {
     static var previews: some View {
-        ChatGPTModelTypesList()
+        AIModelTypesList()
     }
 }
 

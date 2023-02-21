@@ -65,7 +65,7 @@ struct OnBoarding1: View {
                     HStack {
                         Spacer()
                         HStack() {
-                            Text("Hello ChatGPT, how are you?")
+                            Text("Hello bot, how are you?")
                                 .multilineTextAlignment(.leading)
                                 .padding(.leading, 30)
                                 .padding(.vertical, 10)

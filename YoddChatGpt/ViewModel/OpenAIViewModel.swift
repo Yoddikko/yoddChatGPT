@@ -19,9 +19,9 @@ The MIT License (MIT)
 //
 
 import Foundation
-import OpenAISwift
+import OpenAISwift //External framework
+import ChatGPTSwift //External framework
 import SwiftUI
-
 /**
  This is the ViewModel that manages the OpenAISwift implementation.
 
@@ -33,17 +33,22 @@ final class OpenAIViewModel : ObservableObject {
     private var client : OpenAISwift?
     var openAiModelType : OpenAIModelType = .gpt3(.davinci)
     static var shared = OpenAIViewModel()
-    
     @AppStorage ("showModelType") var showModelType : Bool = false
 
     
-    @Published var token : OpenAISwift?
-    
+    @Published var token : OpenAISwift? //this is for the OpenAISwift library, it is the default one because all the app initially was based just on this library
+    @Published var chatGPTSwift : ChatGPTAPI?
+    @Published var selectedAILibrary : AILibrary?
     ///This is the token that takes from the user defaults. If user defaults it's empty it just get an empty string
     @Published var tokenUserDefaults : String = UserDefaults.standard.string(forKey: "token") ?? ""
 
     func setup() {
+        let AILibraryUserDefaults = UserDefaults.standard.string(forKey: "AILibrary")
+        selectedAILibrary = getLibraryFromString(string: AILibraryUserDefaults ?? "")
         token = OpenAISwift(authToken: UserDefaults.standard.string(forKey: "token") ?? "")
+        
+        chatGPTSwift = ChatGPTAPI(apiKey: UserDefaults.standard.string(forKey: "token") ?? "")
+        
         let openAIModelTypeString : String =  UserDefaults.standard.string(forKey: "openAiModelType") ?? ""
         if !openAIModelTypeString.isEmpty {
             self.openAiModelType = getOpenAIModelTypeFromString(openAIModelTypeString: openAIModelTypeString)
@@ -52,7 +57,26 @@ final class OpenAIViewModel : ObservableObject {
         }
     }
     
-    func send(text: String, completion: @escaping((String, MessageType) -> Void)) {
+    
+    func sendChatGPTSwift(text: String, completion: @escaping((String, MessageType) -> Void)) {
+        Task {
+            do {
+                let response = try await chatGPTSwift?.sendMessage(text: text)
+                let messageType : MessageType = .text
+                print("ChatGPT: \(String(describing: response))")
+                completion(response ?? "", messageType)
+
+            } catch {
+                print(error.localizedDescription)
+                let messageType : MessageType = .error
+                let response = "API error, check your connection or change model type"
+                completion(response, messageType)
+
+            }
+        }
+    }
+
+    func sendOpenAIViewModel(text: String, completion: @escaping((String, MessageType) -> Void)) {
         print(self.openAiModelType)
         token?.sendCompletion(with: text, model: self.openAiModelType, maxTokens: 500, completionHandler: { result in
             switch result {
@@ -101,6 +125,7 @@ final class OpenAIViewModel : ObservableObject {
         }
     }
     
+    
     func getOpenAIModelNameFromString (openAIModelTypeString : String) -> String  {
         switch openAIModelTypeString {
         case "text-davinci-003":
@@ -122,10 +147,10 @@ final class OpenAIViewModel : ObservableObject {
     }
 
     func returnModelDescription (index : Int) -> String {
-        return allModels[index].1
+        return allOpenAISwiftModels[index].1
     }
     
-    let allModels : [(OpenAIModelType, String)]  = [
+    let allOpenAISwiftModels : [(OpenAIModelType, String)]  = [
         (.gpt3(.davinci), "Most capable GPT-3 model. Can do any task the other models can do, often with higher quality, longer output and better instruction-following. Also supports inserting completions within text."),
         (.gpt3(.ada), "Capable of very simple tasks, usually the fastest model in the GPT-3 series, and lowest cost."),
         (.gpt3(.babbage), "Capable of straightforward tasks, very fast, and lower cost."),
@@ -133,7 +158,34 @@ final class OpenAIViewModel : ObservableObject {
         (.codex(.davinci), "Most capable Codex model. Particularly good at translating natural language to code. In addition to completing code, also supports inserting completions within code."),
         (.codex(.cushman), "Almost as capable as davinci Codex, but slightly faster. This speed advantage may make it preferable for real-time applications.")
     ]
-
+    
+    func getLibraryFromString (string: String) -> AILibrary {
+        switch string {
+        case "OpenAISwift":
+            return .OpenAISwift
+        case "ChatGPT":
+            return .ChatGPT
+        default:
+            return .OpenAISwift
+        }
+    }
+    
+    func changeLibrary (AILibrary : AILibrary) {
+        self.selectedAILibrary = AILibrary
+        UserDefaults.standard.set(AILibrary.rawValue, forKey: "AILibrary")
+    }
+    
+    func getSelectedLibrary () -> AILibrary {
+        return selectedAILibrary!
+    }
+        
 }
+
+
+enum AILibrary: String, CaseIterable, Identifiable {
+    case OpenAISwift, ChatGPT
+    var id: Self { self }
+}
+
 
 
