@@ -12,7 +12,7 @@
 [Site](https://yoddikko.github.io/yoddChatGPT/)
 
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
-It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift).
+It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & ([ChatGPTSwift framework]https://github.com/alfianlosari/ChatGPTSwift)
 
 -  Simple chat with essential features 💬
 
