@@ -1,4 +1,4 @@
-# Yodd's ChatGPT
+# Yodd's AI Chat (aka YoddChatGPT)
 
 
   ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/216307961-81a8d5fa-896d-4ad0-944a-1d215ad5f9b1.png)
@@ -9,6 +9,7 @@
 
 ## _Chatbot app for OpenAI's ChatGPT_
 
+[Site](https://yoddikko.github.io/yoddChatGPT/)
 
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
 It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift).
@@ -25,7 +26,12 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift).
   
   
 ## Download
-[TestFlight](https://testflight.apple.com/join/dhsVtTEo)
+[<img alt="AppStoreLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png" />]()
+
+[<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/dhsVtTEo)
+
+
+
 
 If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
 
