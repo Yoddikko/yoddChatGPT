@@ -1,4 +1,4 @@
-# Yodd's AI Chat (aka YoddChatGPT)
+# Yodd's AI Chat (aka YoddChatGPT) 
 
 ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
 
