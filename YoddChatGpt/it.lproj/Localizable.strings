@@ -103,3 +103,10 @@
 /* No comment provided by engineer. */
 "You cannot undo this action" = "Quest'azione è irreversibile";
 
+"ChatGPT is the same API of the web version. It uses the ChatGPTSwift library and most importantly it can remember the conversation. It speaks only english and in general could be less stable than OpenAISwift library." = "ChatGPT è la stessa API della versione web. Usa la libreria ChatGPTSwift e ricorda le conversazioni. Parla solo inglese e potrebbe essere meno stabile rispetto alla libreria OpenAISwift.";
+
+"Library" = "Libreria";
+
+"OpenAISwift library" = "Libreria OpenAISwift";
+
+"ChatGPT library" = "Libreria ChatGPT";
