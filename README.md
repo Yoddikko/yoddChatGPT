@@ -1,7 +1,8 @@
 # Yodd's AI Chat (aka YoddChatGPT)
 
+![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
 
-  ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/216307961-81a8d5fa-896d-4ad0-944a-1d215ad5f9b1.png)
+
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  ![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
