@@ -126,7 +126,7 @@ struct ChatView: View {
      
      The message is both saved in CoreData and in a temporary message array. After that the API call is made using OpenAIViewModel. Then the result of the API call will be saved within CoreData and in the temporary messages.
      
-     - Version: 0.1
+     - Version: 0.2
      */
     func sendFromKeyboard() {
         //Checks if the text is empty
