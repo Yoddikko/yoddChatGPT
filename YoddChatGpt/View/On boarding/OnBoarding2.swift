@@ -49,13 +49,19 @@ struct OnBoarding2: View {
                 .padding(.horizontal)
                 .padding(.top, 1)
             
+            Text("This app was not made by OpeanAI. This is an independent and completely free project that connects to OpenAI's public API. The app is not affiliated with OpenAI in any way, and if OpenAI would like to request closure of the project they could contact me.")
+                .fontWeight(.heavy)
+                .foregroundColor(.red)
+                .padding()
+
+            
             Button(action: {
                 self.urlString = "https://beta.openai.com/account/api-keys"
                 self.showSafari = true
             }) {
                 Text("Get API token")
             }
-                .padding(.top)
+                .padding(.horizontal)
 
             TextField("API Token", text: $token)
                 .focused($textFocused)

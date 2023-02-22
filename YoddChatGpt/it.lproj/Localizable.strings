@@ -110,3 +110,5 @@
 "OpenAISwift library" = "Libreria OpenAISwift";
 
 "ChatGPT library" = "Libreria ChatGPT";
+
+"This app was not made by OpeanAI. This is an independent and completely free project that connects to OpenAI's public API. The app is not affiliated with OpenAI in any way, and if OpenAI would like to request closure of the project they could contact me." = "Quest'app non è stata fatta da OpeanAI. Questo è un progetto indipendente e completamente gratuito che si collega alle API pubbliche di OpenAI. L'applicazione non è in alcun modo affiliata ad OpenAI e se quest'ultima volesse chiedere la chiusura del progetto potrebbe contattarmi.";

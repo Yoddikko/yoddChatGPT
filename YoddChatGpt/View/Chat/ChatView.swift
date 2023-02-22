@@ -72,12 +72,22 @@ struct ChatView: View {
                     }
                 }
                 HStack {
-                    TextField("Ask me something...", text: $text)
-                        .focused($textIsFocused)
-                        .padding(.vertical, 10)
-                        .onTapGesture {
-                            textIsFocused = true
-                        }
+                    if #available(iOS 16.0, *) {
+                        TextField("Ask me something...", text: $text, axis: .vertical)
+                            .focused($textIsFocused)
+                            .padding(.vertical, 10)
+                            .onTapGesture {
+                                textIsFocused = true
+                            }
+                    } else {
+                        TextField("Ask me something...", text: $text)
+                            .lineLimit(5)
+                            .focused($textIsFocused)
+                            .padding(.vertical, 10)
+                            .onTapGesture {
+                                textIsFocused = true
+                            }
+                    }
                     Button(action: {
                         sendFromKeyboard()
                     }, label: {
@@ -187,4 +197,5 @@ struct ChatView_Previews: PreviewProvider {
         ChatView()
     }
 }
+
 
