@@ -1,7 +1,8 @@
-# Yodd's AI Chat (aka YoddChatGPT)
+# Yodd's AI Chat (aka YoddChatGPT) 
+
+![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
 
 
-  ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/216307961-81a8d5fa-896d-4ad0-944a-1d215ad5f9b1.png)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  ![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
@@ -28,7 +29,7 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & 
 ## Download
 [<img alt="AppStoreLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png" />]()
 
-[<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/dhsVtTEo)
+[<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/YsQzO7o6)
 
 
 
