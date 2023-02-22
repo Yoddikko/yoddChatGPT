@@ -33,7 +33,7 @@ struct SettingsView: View {
     
     // MARK: - ViewModels
     @ObservedObject var themeViewModel  = ThemeViewModel.shared
-    @State var openAIViewModelToken = AIChatViewModel.shared.tokenUserDefaults
+    @State var openAIViewModelToken = UserDefaults.standard.string(forKey: "token") ?? ""
     
     // MARK: - Other properties
     
