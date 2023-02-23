@@ -64,12 +64,5 @@ If the testflight link is down you can download the source code and build it you
 
 ![Group 1](https://user-images.githubusercontent.com/92546954/216307644-b0bf3cbb-e323-48b2-9258-f44b987541ab.png)
 
-
-  
-## To Do
- - [ ] Refactor of the code
- - [ ] Whole documentation and wiki
- - [ ] Some UI improvements
- - [ ] Ipad and mac support
 ## Known issues
  - [ ] There are some problems with the keyboard
