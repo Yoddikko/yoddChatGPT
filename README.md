@@ -13,6 +13,7 @@
   
 ![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
+[![SwiftLint Sindre](https://img.shields.io/badge/SwiftLint-Sindre-hotpink.svg)](https://github.com/sindresorhus/swiftlint-sindre)
 
 [![Yoddikko - yoddchatgpt](https://img.shields.io/static/v1?label=Yoddikko&message=yoddchatgpt&color=blue&logo=github)](https://github.com/Yoddikko/yoddchatgpt "Go to GitHub repo")
 [![stars - yoddchatgpt](https://img.shields.io/github/stars/Yoddikko/yoddchatgpt?style=social)](https://github.com/Yoddikko/yoddchatgpt)
@@ -29,7 +30,7 @@
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
 It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & [ChatGPTSwift framework](https://github.com/alfianlosari/ChatGPTSwift)
 
-<h6> NOTE: Apparenlty you need to have some credits on your account, if you don't have them is looks that adding a payment method to your account is enough </h6>
+<h6> NOTE: Apparenlty you need to have some credits on your OpenAI account, if you don't have them is looks that adding a payment method to your account is enough </h6>
 
  - Simple chat with essential features 💬
 
