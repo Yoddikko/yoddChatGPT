@@ -42,8 +42,7 @@ struct OnBoarding2: View {
             Text("Get the API token")
                 .font(.title)
                 .fontWeight(.bold)
-            
-            
+                        
             Text("To use the app, you must generate a token to access the OpenAI API.")
                 .fontWeight(.light)
                 .padding(.horizontal)
@@ -53,7 +52,11 @@ struct OnBoarding2: View {
                 .fontWeight(.heavy)
                 .foregroundColor(.red)
                 .padding()
-
+            
+            Text("NOTE: Apparenlty you need to have some credits on your OpenAI account, if you don't have them is looks that adding a payment method to your account is enough")
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .padding()
             
             Button(action: {
                 self.urlString = "https://beta.openai.com/account/api-keys"
@@ -71,7 +74,6 @@ struct OnBoarding2: View {
                     RoundedRectangle(cornerRadius: 14)
                         .stroke(Color.secondary, lineWidth: 2))
                 .padding()
-            
             
             Button(action: {
                 UserDefaults.standard.set("false", forKey: "OnBoarding")
