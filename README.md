@@ -50,7 +50,7 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & 
 
 <div align="center">
 
-[<img alt="AppStoreLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png" />]()
+[<img alt="AppStoreLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png" />](https://apps.apple.com/us/app/yoddaichat/id1672839275)
 [<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/YsQzO7o6)
 
 If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
