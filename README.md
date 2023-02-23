@@ -21,6 +21,8 @@
 [![GitHub release](https://img.shields.io/github/release/Yoddikko/yoddchatgpt?include_prereleases=&sort=semver&color=blue)](https://github.com/Yoddikko/yoddchatgpt/releases/)
 [![issues - yoddchatgpt](https://img.shields.io/github/issues/Yoddikko/yoddchatgpt)](https://github.com/Yoddikko/yoddchatgpt/issues)
 
+<a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Wiki </a>
+
 </div>
 
 <div align="center">
