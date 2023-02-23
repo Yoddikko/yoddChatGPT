@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  OnBoarding2.swift
 //  YoddChatGpt
@@ -30,8 +29,8 @@ import SwiftUI
 struct OnBoarding2: View {
     
     @State var token = ""
-    @FocusState var textFocused : Bool
-    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
+    @FocusState var textFocused: Bool
+    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding: Bool = true
     // whether or not to show the Safari ViewController
     @State var showSafari = false
     // initial URL string
@@ -89,7 +88,7 @@ struct OnBoarding2: View {
             textFocused = false
         }
         .sheet(isPresented: $showSafari) {
-            SafariView(url:URL(string: self.urlString)!)
+            SafariView(url: URL(string: self.urlString)!)
         }
 
     }
@@ -100,5 +99,3 @@ struct OnBoarding2_Previews: PreviewProvider {
         OnBoarding2()
     }
 }
-
-

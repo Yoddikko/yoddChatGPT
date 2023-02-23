@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  BotLoadingMessage.swift
 //  YoddChatGpt
@@ -28,7 +27,7 @@ struct BotLoadingMessage: View {
 
     @State var scale = 0.8
 
-    var secondaryColor : Color
+    var secondaryColor: Color
 
     var body: some View {
         HStack {
@@ -47,7 +46,7 @@ struct BotLoadingMessage: View {
             
             Circle()
                 .foregroundColor(.secondary)
-                .frame(width: 5, height:  5)
+                .frame(width: 5, height: 5)
                 .scaleEffect(scale2)
                 .onAppear {
                     let baseAnimation = Animation.easeInOut(duration: 1)
@@ -70,10 +69,6 @@ struct BotLoadingMessage: View {
                         scale3 = 0.5
                     }
                 }
-
-            
-            
-            
         }
             .padding(.trailing, 30)
             .padding(.vertical, 10)

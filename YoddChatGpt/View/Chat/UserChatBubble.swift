@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  UserMessageBubble.swift
 //  YoddChatGpt
@@ -24,12 +23,11 @@ import UniformTypeIdentifiers
 struct UserMessageBubble: View {
     @Environment (\.managedObjectContext) var managedObjectContext
 
-    var message : Message
-    var primaryColor : Color
-    var secondaryColor : Color
+    var message: Message
+    var primaryColor: Color
+    var secondaryColor: Color
     
     @State var scale = 0.8
-    
     
     var body: some View {
         Menu {
@@ -81,6 +79,6 @@ struct UserMessageBubble: View {
 
 struct UserChatBubble_Previews: PreviewProvider {
     static var previews: some View {
-        UserMessageBubble(message:Message(), primaryColor: Color(.blue), secondaryColor: Color(.systemTeal))
+        UserMessageBubble(message: Message(), primaryColor: Color(.blue), secondaryColor: Color(.systemTeal))
     }
 }

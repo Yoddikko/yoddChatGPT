@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  ChatView.swift
 //  YoddChatGpt
@@ -33,9 +32,9 @@ struct ChatView: View {
     
     // MARK: - Sending message properties
     ///This is the text written in the textfield
-    @State var text : String = ""
+    @State var text: String = ""
     ///This is what manages the focus state of the keyboard
-    @FocusState var textIsFocused : Bool
+    @FocusState var textIsFocused: Bool
     ///Here are stored the messages sent and recieved alongside with CoreData
     @State var models = [TemporaryMessage]()
     
@@ -47,7 +46,7 @@ struct ChatView: View {
     
     // MARK: - Environmental objects and fetch requests
     @Environment (\.managedObjectContext) var managedObjectContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages: FetchedResults<Message>
     
     var body: some View {
         NavigationView {
@@ -111,13 +110,9 @@ struct ChatView: View {
                     }
             }
         }
-        
-        
         .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
     }
-    
-    
     
     /**
      This is the function that manages the sending and recieving of messages using `CoreData` and `OpenAIViewModel`.
@@ -191,11 +186,8 @@ struct ChatView: View {
     }
 }
 
-
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
     }
 }
-
-

@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  File.swift
 //  YoddChatGpt
@@ -26,20 +25,19 @@ import SwiftUI
  - Version: 0.1
  
  */
-class ThemeViewModel : ObservableObject {
+class ThemeViewModel: ObservableObject {
     
     static let shared = ThemeViewModel()
     
-    var themes : [Theme] = [.native, .custom, .ice, .passion, .sun, .sky, .mint]
+    var themes: [Theme] = [.native, .custom, .ice, .passion, .sun, .sky, .mint]
     
-    var accentColorUserDefaults : String = UserDefaults.standard.string(forKey: "AccentColor") ?? ""
+    var accentColorUserDefaults: String = UserDefaults.standard.string(forKey: "AccentColor") ?? ""
     
-    var themeColorUserDefaults : String = UserDefaults.standard.string(forKey: "ThemeColor") ?? ""
+    var themeColorUserDefaults: String = UserDefaults.standard.string(forKey: "ThemeColor") ?? ""
     
+    @Published var accentColor: Color
     
-    @Published var accentColor : Color
-    
-    @Published var theme : Theme
+    @Published var theme: Theme
     
     init () {
         if self.accentColorUserDefaults.isEmpty {
@@ -56,11 +54,10 @@ class ThemeViewModel : ObservableObject {
         }
     }
     
-    func setTheme(theme : Theme) {
+    func setTheme(theme: Theme) {
         UserDefaults.standard.set("\(theme)", forKey: "ThemeColor")
         self.theme = theme
     }
-    
     
     func getAccentColor () -> Color {
         return accentColor

@@ -26,13 +26,12 @@ import OpenAISwift
  
  */
 
-
 struct SettingsView: View {
     // MARK: - Environmental objects
     @Environment (\.managedObjectContext) var managedObjectContext
     
     // MARK: - ViewModels
-    @ObservedObject var themeViewModel  = ThemeViewModel.shared
+    @ObservedObject var themeViewModel = ThemeViewModel.shared
     @State var openAIViewModelToken = UserDefaults.standard.string(forKey: "token") ?? ""
     
     // MARK: - Other properties
@@ -49,8 +48,6 @@ struct SettingsView: View {
     var body: some View {
             Form {
                 Section("Theme", content: {
-                    
-                    
                     HStack {
                         ColorPicker("Change accent color", selection: $themeViewModel.accentColor)
                     }
@@ -73,8 +70,6 @@ struct SettingsView: View {
                             Image(systemName: "bookmark.fill")
                         }
                     })
-                    
-                        
                     Toggle(isOn: AIChatViewModel.shared.$showModelType) {
                         Text("Show model type stamp")
                     }
@@ -135,8 +130,6 @@ struct SettingsView: View {
                     .onChange(of: openAIViewModelToken) { token in
                         AIChatViewModel.shared.setTokenOpenAISwift(string: token)
                     }
-                    
-                    
                     Button(action: {
                         self.urlString = "https://beta.openai.com/account/api-keys"
                         self.showSafari = true
@@ -147,15 +140,13 @@ struct SettingsView: View {
                 })
             }
             .sheet(isPresented: $showSafari) {
-                SafariView(url:URL(string: self.urlString)!)
+                SafariView(url: URL(string: self.urlString)!)
             }
         
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

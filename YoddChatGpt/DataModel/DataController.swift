@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  DataController.swift
 //  YoddChatGpt
@@ -22,7 +21,7 @@ import Foundation
 import CoreData
 
 //Multiple NSEntityDescriptions claim the NSManagedObject subclass 'Message' so +entity is unable to disambiguate
-class DataController : ObservableObject {
+class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "MessageModel")
 
     static let shared = DataController()
@@ -30,23 +29,22 @@ class DataController : ObservableObject {
     init() {
         container.loadPersistentStores { desc, error in
             if let error = error {
+                // swiftlint:disable:next no_direct_standard_out_logs
                 print("ERROR >>> Failed to load the data \(error.localizedDescription)")
             }
         }
     }
-    
     
     func save(context: NSManagedObjectContext) {
         do {
             try context.save()
 //            print("Data saved")
         } catch {
-            print("ERROR >>> Data couldn't be saved")
+//            print("ERROR >>> Data couldn't be saved")
         }
     }
     
-    
-    func addMessage (body : String, sender: String, type : String, context : NSManagedObjectContext) {
+    func addMessage (body: String, sender: String, type: String, context: NSManagedObjectContext) {
         let message = Message(context: context)
         message.date = Date()
         message.body = body
@@ -63,7 +61,7 @@ class DataController : ObservableObject {
         save(context: context)
     }
     
-    func saveMessage (message: Message, context : NSManagedObjectContext) {
+    func saveMessage (message: Message, context: NSManagedObjectContext) {
         if message.saved == false {
             message.saved = true
         } else {
@@ -72,24 +70,24 @@ class DataController : ObservableObject {
         save(context: context)
     }
 
-    
-    func deleteData (context : NSManagedObjectContext, message : Message) {
+    func deleteData (context: NSManagedObjectContext, message: Message) {
             context.delete(message)
     }
     
-    func deleteAllData (context : NSManagedObjectContext) {
+    func deleteAllData (context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Message")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
             try context.executeAndMergeChanges(using: deleteRequest)
         } catch let error as NSError {
+            // swiftlint:disable:next no_direct_standard_out_logs
             print(error)
             // TODO: handle the error
         }
     }
     
-    func deleteAllUnsavedData (context : NSManagedObjectContext) {
+    func deleteAllUnsavedData (context: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Message")
         fetchRequest.predicate = NSPredicate(format: "saved == %@", "\(false)")
 
@@ -98,11 +96,9 @@ class DataController : ObservableObject {
         do {
             try context.executeAndMergeChanges(using: deleteRequest)
         } catch let error as NSError {
+            // swiftlint:disable:next no_direct_standard_out_logs
             print(error)
             // TODO: handle the error
-
         }
     }
-
-    
 }

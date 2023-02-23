@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  OpenAISwift.swift
 //  YoddChatGpt
@@ -26,23 +25,21 @@ extension AIChatViewModel {
     
     ///Sending messages with the OpenAISiwft library
     func sendOpenAIViewModel(text: String, completion: @escaping((String, MessageType) -> Void)) {
-        print(self.openAIModelType)
+//        print(self.openAIModelType)
         OpenAISwiftClient?.sendCompletion(with: text, model: self.openAIModelType, maxTokens: 500, completionHandler: { result in
             switch result {
             case .success(let model):
                 let output = model.choices.first?.text ?? ""
-                let messageType : MessageType = .text
-                print("ChatGPT: \(output)")
+                let messageType: MessageType = .text
+//                print("ChatGPT: \(output)")
                 completion(output, messageType)
             case .failure(let error):
                 let output = error.localizedDescription
-                let messageType : MessageType = .error
+                let messageType: MessageType = .error
                 completion(output, messageType)
             }
         })
     }
-    
-    
     
     ///Function to set a token for OpenAISiwft
     func setTokenOpenAISwift(string: String) {
@@ -52,13 +49,12 @@ extension AIChatViewModel {
     }
     
     //MARK: Model type functions
-    func setOpenAIViewModelType(openAIModelTypeString : String) {
+    func setOpenAIViewModelType(openAIModelTypeString: String) {
         self.openAIModelType = getOpenAIModelTypeFromString(openAIModelTypeString: openAIModelTypeString)
         UserDefaults.standard.set(openAIModelTypeString, forKey: "openAiModelType")
     }
-    
-    
-    func getOpenAIModelTypeFromString (openAIModelTypeString : String) -> OpenAIModelType  {
+
+    func getOpenAIModelTypeFromString (openAIModelTypeString: String) -> OpenAIModelType  {
         switch openAIModelTypeString {
         case "text-davinci-003":
             return .gpt3(.davinci)
@@ -77,7 +73,7 @@ extension AIChatViewModel {
         }
     }
     
-    func getOpenAIModelNameFromString (openAIModelTypeString : String) -> String  {
+    func getOpenAIModelNameFromString (openAIModelTypeString: String) -> String  {
         switch openAIModelTypeString {
         case "text-davinci-003":
             return "ChatGPT Davinci"
@@ -97,9 +93,7 @@ extension AIChatViewModel {
         
     }
     
-    func returnModelDescription (index : Int) -> String {
+    func returnModelDescription (index: Int) -> String {
         return allOpenAISwiftModels[index].1
     }
-    
-    
 }

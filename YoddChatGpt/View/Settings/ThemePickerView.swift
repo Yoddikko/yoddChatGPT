@@ -10,7 +10,6 @@ The MIT License (MIT)
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  ThemePickerView.swift
 //  YoddChatGpt
@@ -25,14 +24,14 @@ struct ThemePickerView: View {
     // MARK: - ViewModels and properties
     var themeViewModel = ThemeViewModel.shared
     var themes = ThemeViewModel.shared.themes
-    @State var tappedTheme : Theme = ThemeViewModel.shared.theme
+    @State var tappedTheme: Theme = ThemeViewModel.shared.theme
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
                 
                 ForEach (themes, id: \.self) { theme in
-                    ExampleThemeChat(primaryColor:  themeViewModel.getColorsFromThemeEnum(theme: theme).0, secondaryColor: themeViewModel.getColorsFromThemeEnum(theme: theme).1, theme: theme)
+                    ExampleThemeChat(primaryColor: themeViewModel.getColorsFromThemeEnum(theme: theme).0, secondaryColor: themeViewModel.getColorsFromThemeEnum(theme: theme).1, theme: theme)
                         .frame(width: 100, height: 150).clipShape(RoundedRectangle(cornerRadius: 15))
                         .background {
                             if tappedTheme == theme {

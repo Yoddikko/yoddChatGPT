@@ -19,7 +19,6 @@ The MIT License (MIT)
 
 import SwiftUI
 
-
 //MARK: ChatGPTSwift library
 extension AIChatViewModel {
     
@@ -28,13 +27,13 @@ extension AIChatViewModel {
         Task {
             do {
                 let response = try await chatGPTSwiftClient?.sendMessage(text: text)
-                let messageType : MessageType = .text
-                print("ChatGPT: \(String(describing: response))")
+                let messageType: MessageType = .text
+//                print("ChatGPT: \(String(describing: response))")
                 completion(response ?? "", messageType)
                 
             } catch {
-                print(error.localizedDescription)
-                let messageType : MessageType = .error
+//                print(error.localizedDescription)
+                let messageType: MessageType = .error
                 let response = "API error, check your connection or change model type"
                 completion(response, messageType)
             }

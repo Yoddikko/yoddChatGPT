@@ -10,7 +10,6 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 //
 //  MessagesView.swift
 //  YoddChatGpt
@@ -24,13 +23,13 @@ struct MessagesView: View {
     
     // MARK: - Environmental objects and fetch requests
     @Environment (\.managedObjectContext) var managedObjectContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages: FetchedResults<Message>
     @Environment(\.dismiss) var dismiss
     
     // MARK: - Properties
     @ObservedObject var chatColors = ThemeViewModel.shared
     @State var placeHolderUUID = UUID()
-    @Binding var messageIsLoading : Bool
+    @Binding var messageIsLoading: Bool
     
     var body: some View {
         ScrollViewReader { value in
@@ -131,14 +130,14 @@ struct MessagesViewOlderiOS: View {
     
     // MARK: - Environmental objects and fetch requests
     @Environment (\.managedObjectContext) var managedObjectContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages : FetchedResults<Message>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var messages: FetchedResults<Message>
     @Environment(\.dismiss) var dismiss
     
     // MARK: - Properties
     @ObservedObject var chatColors = ThemeViewModel.shared
     
     @State var placeHolderUUID = UUID()
-    @Binding var messageIsLoading : Bool
+    @Binding var messageIsLoading: Bool
     
     var body: some View {
         ScrollViewReader { value in
@@ -187,8 +186,6 @@ struct MessagesViewOlderiOS: View {
                         .id(message.id)
                     }
                 }
-                
-                
                 .onAppear{
                     value.scrollTo(messages.last?.id, anchor: .bottom)
                 }
@@ -230,8 +227,6 @@ struct MessagesViewOlderiOS: View {
     }
     
 }
-
-
 
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
