@@ -29,6 +29,7 @@
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
 It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & [ChatGPTSwift framework](https://github.com/alfianlosari/ChatGPTSwift)
 
+<h6> NOTE: Apparenlty you need to have some credits on your account, if you don't have them is looks that adding a payment method to your account is enough </h6>
 
  - Simple chat with essential features 💬
 
