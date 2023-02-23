@@ -1,12 +1,17 @@
-
-# Yodd's AI Chat (aka YoddChatGPT) 
+<div align="center">
+ 
+<h1>Yodd's AI Chat </h1>
+<h6>aka YoddChatGPT </h6>
 
 ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
 
 
+</div>
 <div align="center">
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  ![Swift](https://img.shields.io/badge/iOS%20-15-green)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=flate&logo=paypal&logoColor=white)](https://paypal.me/yoddk)
+  
+![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
 
 [![Yoddikko - yoddchatgpt](https://img.shields.io/static/v1?label=Yoddikko&message=yoddchatgpt&color=blue&logo=github)](https://github.com/Yoddikko/yoddchatgpt "Go to GitHub repo")
@@ -17,26 +22,29 @@
 
 </div>
 
-## _Chatbot app for OpenAI's ChatGPT_
-
-[Site](https://yoddikko.github.io/yoddChatGPT/)
-
+<div align="center">
+<h2> Free chatbot app for OpenAI's ChatGPT </h2>
+</div>
 
 Yodd's ChatGPT is a free and open source implementation of the OpenAI API in Swift for iOS.
 It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & [ChatGPTSwift framework](https://github.com/alfianlosari/ChatGPTSwift)
 
--  Simple chat with essential features 💬
 
-- Clean, highly customizable and reactive interface ✨
+ - Simple chat with essential features 💬
 
-- Free and open source 🍃
+ - Clean, highly customizable and reactive interface ✨
 
-- For **iOS 15+** only 📱
+ - Free and open source 🍃
 
-- Translated in 🇬🇧 🇮🇹
+ - For **iOS 15+** only 📱
+
+ - Translated in 🇬🇧 🇮🇹
+
+<div align="center">
+
+<h2> Download </h2>
  
-  
-## Download
+</div>
 
 <div align="center">
 
