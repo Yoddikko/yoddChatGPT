@@ -1,7 +1,9 @@
 <div align="center">
-<h1>Yodd's AI Chat (aka YoddChatGPT) </h1> 
+ 
+<h1>Yodd's AI Chat </h1>
+<h6>aka YoddChatGPT </h6>
 
- ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
+![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
 
 
 </div>
