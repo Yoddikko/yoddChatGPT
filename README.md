@@ -13,7 +13,7 @@
   
 ![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
-[![SwiftLint Sindre](https://img.shields.io/badge/SwiftLint-Sindre-hotpink.svg)](https://github.com/sindresorhus/swiftlint-sindre)
+[![SwiftLint Sindre](https://img.shields.io/badge/SwiftLint-AirBnb-hotpink.svg)](https://github.com/airbnb/swift/blob/master/Sources/AirbnbSwiftFormatTool/swiftlint.yml)
 
 [![Yoddikko - yoddchatgpt](https://img.shields.io/static/v1?label=Yoddikko&message=yoddchatgpt&color=blue&logo=github)](https://github.com/Yoddikko/yoddchatgpt "Go to GitHub repo")
 [![stars - yoddchatgpt](https://img.shields.io/github/stars/Yoddikko/yoddchatgpt?style=social)](https://github.com/Yoddikko/yoddchatgpt)
