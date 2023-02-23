@@ -27,7 +27,7 @@ import OpenAISwift
 struct AIModelTypesList: View {
     
     @State private var selection = AIChatViewModel.shared.allOpenAISwiftModels.firstIndex { tuple in
-        tuple.0.modelName == AIChatViewModel.shared.openAiModelType.modelName
+        tuple.0.modelName == AIChatViewModel.shared.openAIModelType.modelName
     }
     @State var selectedLibrary : AILibrary? = nil
     var body: some View {

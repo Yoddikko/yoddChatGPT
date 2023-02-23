@@ -55,7 +55,7 @@ class DataController : ObservableObject {
         message.type = type
         message.saved = false
         if AIChatViewModel.shared.selectedAILibrary == .OpenAISwift {
-            message.chatModel = AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.openAiModelType.modelName)
+            message.chatModel = AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.openAIModelType.modelName)
         }
         if AIChatViewModel.shared.selectedAILibrary == .ChatGPT {
             message.chatModel = "ChatGPT"

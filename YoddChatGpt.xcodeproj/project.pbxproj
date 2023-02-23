@@ -14,6 +14,10 @@
 		712443CC2976EE30007E98AA /* AIChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712443CB2976EE30007E98AA /* AIChatViewModel.swift */; };
 		7149361A298BBF6300980250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71493618298BBF6300980250 /* Localizable.strings */; };
 		7179EAA629811F60004A95CA /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7179EAA529811F60004A95CA /* OpenAISwift */; };
+		7188A78429A7848F00384404 /* YoddChatGptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188A78329A7848F00384404 /* YoddChatGptTests.swift */; };
+		7188A78D29A7B7AD00384404 /* AILibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188A78C29A7B7AD00384404 /* AILibrary.swift */; };
+		7188A78F29A7B80A00384404 /* OpenAISwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188A78E29A7B80A00384404 /* OpenAISwift.swift */; };
+		7188A79229A7B84D00384404 /* ChatGPTSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188A79129A7B84D00384404 /* ChatGPTSwift.swift */; };
 		7193E31C29867E00004A10D4 /* NSManagedObjectContext+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E31B29867E00004A10D4 /* NSManagedObjectContext+extension.swift */; };
 		7193E31E29868320004A10D4 /* BotMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E31D29868320004A10D4 /* BotMessageBubble.swift */; };
 		7193E32029869794004A10D4 /* ExampleThemeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E31F29869793004A10D4 /* ExampleThemeChat.swift */; };
@@ -48,6 +52,16 @@
 		71EEBFF9298CFB6C0044CD51 /* NextImplementations.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 71EEBFF8298CFB6C0044CD51 /* NextImplementations.rtf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7188A78529A7848F00384404 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 712443AA2976ECF9007E98AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 712443B12976ECF9007E98AA;
+			remoteInfo = YoddChatGpt;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		712443B22976ECF9007E98AA /* YoddChatGpt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoddChatGpt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		712443B52976ECF9007E98AA /* YoddChatGptApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoddChatGptApp.swift; sourceTree = "<group>"; };
@@ -56,6 +70,11 @@
 		712443C12976ECFA007E98AA /* YoddChatGpt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoddChatGpt.xcdatamodel; sourceTree = "<group>"; };
 		712443CB2976EE30007E98AA /* AIChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewModel.swift; sourceTree = "<group>"; };
 		71493619298BBF6300980250 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7188A78129A7848F00384404 /* YoddChatGptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoddChatGptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7188A78329A7848F00384404 /* YoddChatGptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoddChatGptTests.swift; sourceTree = "<group>"; };
+		7188A78C29A7B7AD00384404 /* AILibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILibrary.swift; sourceTree = "<group>"; };
+		7188A78E29A7B80A00384404 /* OpenAISwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAISwift.swift; sourceTree = "<group>"; };
+		7188A79129A7B84D00384404 /* ChatGPTSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSwift.swift; sourceTree = "<group>"; };
 		7193E31B29867E00004A10D4 /* NSManagedObjectContext+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+extension.swift"; sourceTree = "<group>"; };
 		7193E31D29868320004A10D4 /* BotMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotMessageBubble.swift; sourceTree = "<group>"; };
 		7193E31F29869793004A10D4 /* ExampleThemeChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleThemeChat.swift; sourceTree = "<group>"; };
@@ -100,6 +119,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7188A77E29A7848F00384404 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				712443B42976ECF9007E98AA /* YoddChatGpt */,
+				7188A78229A7848F00384404 /* YoddChatGptTests */,
 				712443B32976ECF9007E98AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				712443B22976ECF9007E98AA /* YoddChatGpt.app */,
+				7188A78129A7848F00384404 /* YoddChatGptTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +172,24 @@
 				712443BC2976ECFA007E98AA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7188A78229A7848F00384404 /* YoddChatGptTests */ = {
+			isa = PBXGroup;
+			children = (
+				7188A78329A7848F00384404 /* YoddChatGptTests.swift */,
+			);
+			path = YoddChatGptTests;
+			sourceTree = "<group>";
+		};
+		7188A79029A7B80F00384404 /* AI ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				712443CB2976EE30007E98AA /* AIChatViewModel.swift */,
+				7188A78E29A7B80A00384404 /* OpenAISwift.swift */,
+				7188A79129A7B84D00384404 /* ChatGPTSwift.swift */,
+			);
+			path = "AI ViewModels";
 			sourceTree = "<group>";
 		};
 		7193E32829881C6D004A10D4 /* Chat */ = {
@@ -186,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				71BE9B2C29812D4B00CB13C2 /* Message.swift */,
+				7188A78C29A7B7AD00384404 /* AILibrary.swift */,
 				71DEEB4A298AAEE7004B3708 /* Shapes */,
 			);
 			path = Model;
@@ -205,8 +252,8 @@
 		71BE9B322982836E00CB13C2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7188A79029A7B80F00384404 /* AI ViewModels */,
 				71BE9B3A2982DDC600CB13C2 /* AudioPlayer.swift */,
-				712443CB2976EE30007E98AA /* AIChatViewModel.swift */,
 				71BE9B412982F12F00CB13C2 /* SpeechSynthesizer.swift */,
 				71BE9B562983E75D00CB13C2 /* ThemeViewModel.swift */,
 			);
@@ -292,6 +339,24 @@
 			productReference = 712443B22976ECF9007E98AA /* YoddChatGpt.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7188A78029A7848F00384404 /* YoddChatGptTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7188A78929A7848F00384404 /* Build configuration list for PBXNativeTarget "YoddChatGptTests" */;
+			buildPhases = (
+				7188A77D29A7848F00384404 /* Sources */,
+				7188A77E29A7848F00384404 /* Frameworks */,
+				7188A77F29A7848F00384404 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7188A78629A7848F00384404 /* PBXTargetDependency */,
+			);
+			name = YoddChatGptTests;
+			productName = YoddChatGptTests;
+			productReference = 7188A78129A7848F00384404 /* YoddChatGptTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -299,11 +364,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					712443B12976ECF9007E98AA = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					7188A78029A7848F00384404 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 712443B12976ECF9007E98AA;
 					};
 				};
 			};
@@ -326,6 +395,7 @@
 			projectRoot = "";
 			targets = (
 				712443B12976ECF9007E98AA /* YoddChatGpt */,
+				7188A78029A7848F00384404 /* YoddChatGptTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +411,13 @@
 				712443BA2976ECFA007E98AA /* Assets.xcassets in Resources */,
 				71BE9B3D2982E85D00CB13C2 /* RecievedMessage.mp3 in Resources */,
 				71EEBFF9298CFB6C0044CD51 /* NextImplementations.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7188A77F29A7848F00384404 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +437,7 @@
 				7193E32029869794004A10D4 /* ExampleThemeChat.swift in Sources */,
 				712443B62976ECF9007E98AA /* YoddChatGptApp.swift in Sources */,
 				7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */,
+				7188A78D29A7B7AD00384404 /* AILibrary.swift in Sources */,
 				71BE9B3B2982DDC600CB13C2 /* AudioPlayer.swift in Sources */,
 				71BE9B572983E75D00CB13C2 /* ThemeViewModel.swift in Sources */,
 				71BE9B342982856300CB13C2 /* DataController.swift in Sources */,
@@ -381,11 +459,29 @@
 				7193E31E29868320004A10D4 /* BotMessageBubble.swift in Sources */,
 				71BE9B422982F12F00CB13C2 /* SpeechSynthesizer.swift in Sources */,
 				71DEEB54298ABAA7004B3708 /* BotLoadingMessage.swift in Sources */,
+				7188A78F29A7B80A00384404 /* OpenAISwift.swift in Sources */,
 				71BE9B512983D9E400CB13C2 /* MessagesView.swift in Sources */,
+				7188A79229A7B84D00384404 /* ChatGPTSwift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7188A77D29A7848F00384404 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7188A78429A7848F00384404 /* YoddChatGptTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7188A78629A7848F00384404 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 712443B12976ECF9007E98AA /* YoddChatGpt */;
+			targetProxy = 7188A78529A7848F00384404 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		71493618298BBF6300980250 /* Localizable.strings */ = {
@@ -583,6 +679,44 @@
 			};
 			name = Release;
 		};
+		7188A78729A7848F00384404 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AH7YQ86734;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ale.YoddChatGptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoddChatGpt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YoddChatGpt";
+			};
+			name = Debug;
+		};
+		7188A78829A7848F00384404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AH7YQ86734;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ale.YoddChatGptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoddChatGpt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YoddChatGpt";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -600,6 +734,15 @@
 			buildConfigurations = (
 				712443C62976ECFA007E98AA /* Debug */,
 				712443C72976ECFA007E98AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7188A78929A7848F00384404 /* Build configuration list for PBXNativeTarget "YoddChatGptTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7188A78729A7848F00384404 /* Debug */,
+				7188A78829A7848F00384404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

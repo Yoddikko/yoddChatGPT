@@ -133,7 +133,7 @@ struct SettingsView: View {
                         presentAPIAlert = false
                     }
                     .onChange(of: openAIViewModelToken) { token in
-                        AIChatViewModel.shared.setToken(string: token)
+                        AIChatViewModel.shared.setTokenOpenAISwift(string: token)
                     }
                     
                     
