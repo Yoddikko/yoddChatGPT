@@ -19,10 +19,7 @@ The MIT License (MIT)
 
 import Foundation
 
-
 enum AILibrary: String, CaseIterable, Identifiable {
     case OpenAISwift, ChatGPT
     var id: Self { self }
 }
-
-

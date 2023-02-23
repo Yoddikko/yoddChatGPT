@@ -29,15 +29,12 @@ import SwiftUI
  - Version: 0.1
 
  */
-class SpeechSynthesizer : ObservableObject {
-    
+class SpeechSynthesizer: ObservableObject {
     static let shared = SpeechSynthesizer()
-        
     @Published var speechSynthesizer = AVSpeechSynthesizer()
-    
-    
-    ///This function read the text using the right synthesis voice language (if available, otherwise it will use en-US language)
-    func readString (text : String) {
+/// This function read the text using the right synthesis voice language (if available, otherwise it will use
+/// en-US language)
+    func readString (text: String) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.pitchMultiplier = 1.0
         utterance.rate = 0.5

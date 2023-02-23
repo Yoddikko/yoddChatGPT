@@ -19,17 +19,14 @@ The MIT License (MIT)
 
 import SwiftUI
 
-
 @main
 struct YoddChatGptApp: App {
     @StateObject private var dataController = DataController.shared
     @ObservedObject var accentColor = ThemeViewModel.shared
     
     // MARK: - AppStorage
-    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding : Bool = true
-    
+    @AppStorage ("shouldShowOnBoarding") var shouldShowOnBoarding: Bool = true
 
-    
     var body: some Scene {
         WindowGroup {
             if shouldShowOnBoarding {
@@ -47,6 +44,5 @@ struct YoddChatGptApp: App {
             }
         }
 
-        
     }
 }

@@ -350,8 +350,8 @@
             filePath = "YoddChatGpt/View/Settings/ModelTypesList/AILibrariesList.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -585,10 +585,10 @@
             filePath = "YoddChatGpt/ViewModel/AI ViewModels/AIChatViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "AIChatViewModel"
-            landmarkType = "3">
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "changeLibrary(AILibrary:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
