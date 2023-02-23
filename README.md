@@ -8,6 +8,7 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  ![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=flate&logo=paypal&logoColor=white)](https://paypal.me/yoddk)
 
 [![Yoddikko - yoddchatgpt](https://img.shields.io/static/v1?label=Yoddikko&message=yoddchatgpt&color=blue&logo=github)](https://github.com/Yoddikko/yoddchatgpt "Go to GitHub repo")
 [![stars - yoddchatgpt](https://img.shields.io/github/stars/Yoddikko/yoddchatgpt?style=social)](https://github.com/Yoddikko/yoddchatgpt)
