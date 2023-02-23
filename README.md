@@ -1,11 +1,22 @@
-# Yodd's AI Chat (aka YoddChatGPT) 
+
+
+#Yodd's AI Chat (aka YoddChatGPT) 
 
 ![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
 
 
+<div align="center">
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  ![Swift](https://img.shields.io/badge/iOS%20-15-green)
 ![Swift](https://img.shields.io/static/v1?style=flat&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
+
+[![Yoddikko - yoddchatgpt](https://img.shields.io/static/v1?label=Yoddikko&message=yoddchatgpt&color=blue&logo=github)](https://github.com/Yoddikko/yoddchatgpt "Go to GitHub repo")
+[![stars - yoddchatgpt](https://img.shields.io/github/stars/Yoddikko/yoddchatgpt?style=social)](https://github.com/Yoddikko/yoddchatgpt)
+[![forks - yoddchatgpt](https://img.shields.io/github/forks/Yoddikko/yoddchatgpt?style=social)](https://github.com/Yoddikko/yoddchatgpt)
+[![GitHub release](https://img.shields.io/github/release/Yoddikko/yoddchatgpt?include_prereleases=&sort=semver&color=blue)](https://github.com/Yoddikko/yoddchatgpt/releases/)
+[![issues - yoddchatgpt](https://img.shields.io/github/issues/Yoddikko/yoddchatgpt)](https://github.com/Yoddikko/yoddchatgpt/issues)
+
+</div>
 
 ## _Chatbot app for OpenAI's ChatGPT_
 
