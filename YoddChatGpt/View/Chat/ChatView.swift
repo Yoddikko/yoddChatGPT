@@ -110,6 +110,28 @@ struct ChatView: View {
                     }
             }
         }
+        
+//        .onAppear {
+//            var messageAppStore1 = TemporaryMessage(body: "THE APP IS NOW OUT ON THE APPSTORE 🎉", sender: .bot)
+//            var messageAppStore2 = TemporaryMessage(body: "Download it here", sender: .bot)
+//            var messageAppStore3 = TemporaryMessage(body: "https://apps.apple.com/us/app/yoddaichat/id1672839275", sender: .bot)
+//
+
+//            var message1 = TemporaryMessage(body: "Dimmi qualcosa di assurdo sull'universo", sender: .user)
+//            var message2 = TemporaryMessage(body: "Sapevate che l'universo si sta espandendo a un ritmo sempre più rapido? Gli scienziati stimano che l'universo raddoppia le sue dimensioni ogni 10-20 miliardi di anni.", sender: .bot)
+//            var message3 = TemporaryMessage(body: "Assurdo, dimmi di più per favore!", sender: .user)
+//            var message4 = TemporaryMessage(body: "Gli scienziati hanno anche scoperto che l'universo è pieno di materia ed energia oscura, che costituiscono il 95% dell'universo. Si sta ancora cercando di capire cosa siano queste misteriose sostanze.", sender: .bot)
+//            var message5 = TemporaryMessage(body: "E' fantastico, grazie bot ❤️", sender: .user)
+//            var message6 = TemporaryMessage(body: "Non c'è di che! È sempre un piacere condividere fatti interessanti sull'universo.", sender: .bot)
+//            DataController.shared.addMessage(body: messageAppStore1.body, sender: "bot", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: messageAppStore2.body, sender: "bot", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: messageAppStore3.body, sender: "bot", type: "link", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message4.body, sender: "bot", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message5.body, sender: "user", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message6.body, sender: "bot", type: "text", context: managedObjectContext)
+//
+//        }
+        
         .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
     }

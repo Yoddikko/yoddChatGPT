@@ -20,7 +20,7 @@ The MIT License (MIT)
 import SwiftUI
 
 /**
- This is the ViewModel that manages the accent color in all the app.
+ This is the ViewModel that manages the accent color and chat theme in all the app.
  
  - Version: 0.1
  

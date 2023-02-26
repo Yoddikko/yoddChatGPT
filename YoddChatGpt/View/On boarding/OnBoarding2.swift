@@ -52,11 +52,6 @@ struct OnBoarding2: View {
                 .foregroundColor(.red)
                 .padding()
             
-            Text("NOTE: Apparenlty you need to have some credits on your OpenAI account, if you don't have them is looks that adding a payment method to your account is enough")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .padding()
-            
             Button(action: {
                 self.urlString = "https://beta.openai.com/account/api-keys"
                 self.showSafari = true
@@ -84,13 +79,22 @@ struct OnBoarding2: View {
                 Text("Continue")
             }).buttonStyle(.bordered)
             Spacer()
+            
+            VStack {
+                    Text("By continuing you agree to have read the disclaimer")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                
+                DisclaimerView()
+                    
+            }
         }.onTapGesture {
             textFocused = false
         }
+        
         .sheet(isPresented: $showSafari) {
             SafariView(url: URL(string: self.urlString)!)
         }
-
     }
 }
 

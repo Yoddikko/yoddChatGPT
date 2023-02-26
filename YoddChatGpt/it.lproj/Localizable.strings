@@ -114,3 +114,6 @@
 "This app was not made by OpeanAI. This is an independent and completely free project that connects to OpenAI's public API. The app is not affiliated with OpenAI in any way, and if OpenAI would like to request closure of the project they could contact me." = "Quest'app non è stata fatta da OpeanAI. Questo è un progetto indipendente e completamente gratuito che si collega alle API pubbliche di OpenAI. L'applicazione non è in alcun modo affiliata ad OpenAI e se quest'ultima volesse chiedere la chiusura del progetto potrebbe contattarmi.";
 
 "NOTE: Apparenlty you need to have some credits on your OpenAI account, if you don't have them is looks that adding a payment method to your account is enough" = "NOTA: apparentemente è necessario avere dei crediti sul proprio account OpenAI, se non li si ha è sufficiente aggiungere un metodo di pagamento al proprio account";
+ 
+"By continuing you agree to have read the disclaimer" = "Continuando confermi di aver letto il disclaimer";
+ 

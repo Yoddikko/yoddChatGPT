@@ -30,7 +30,7 @@ struct OnBoarding1: View {
     //This init is used in order to change the colors of the dots in the page indicators
     init() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .systemBlue
-       UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.systemBlue.withAlphaComponent(0.5)
        }
     
     @State var delay1 = false
