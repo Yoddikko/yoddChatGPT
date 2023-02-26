@@ -3,9 +3,6 @@
 <h1>Yodd's AI Chat </h1>
 <h6>aka YoddChatGPT </h6>
 
-![iPhone_Spotlight_40_3x](https://user-images.githubusercontent.com/92546954/220462149-86dfdc1b-00ee-4697-919b-b83b04008ec7.png) 
-
-
 </div>
 <div align="center">
 
@@ -21,7 +18,11 @@
 [![GitHub release](https://img.shields.io/github/release/Yoddikko/yoddchatgpt?include_prereleases=&sort=semver&color=blue)](https://github.com/Yoddikko/yoddchatgpt/releases/)
 [![issues - yoddchatgpt](https://img.shields.io/github/issues/Yoddikko/yoddchatgpt)](https://github.com/Yoddikko/yoddchatgpt/issues)
 
+<a href = "https://github.com/Yoddikko/yoddChatGPT/wiki"> Wiki </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Code documentation </a> 
+
 </div>
+
+![Group 1(1)](https://user-images.githubusercontent.com/92546954/221043995-423e756e-f5ac-45fc-9506-5a948250563a.png)
 
 <div align="center">
 <h2> Free chatbot app for OpenAI's ChatGPT </h2>
@@ -50,7 +51,7 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift) & 
 
 <div align="center">
 
-[<img alt="AppStoreLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png" />]()
+[<img alt="AppStoreLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945025-697ad2cf-3f87-451a-95e5-ac191d4f20e0.png" />](https://apps.apple.com/us/app/yoddaichat/id1672839275)
 [<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/YsQzO7o6)
 
 If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
@@ -63,12 +64,18 @@ If the testflight link is down you can download the source code and build it you
 
 ![Group 1](https://user-images.githubusercontent.com/92546954/216307644-b0bf3cbb-e323-48b2-9258-f44b987541ab.png)
 
-
-  
-## To Do
- - [ ] Refactor of the code
- - [ ] Whole documentation and wiki
- - [ ] Some UI improvements
- - [ ] Ipad and mac support
 ## Known issues
  - [ ] There are some problems with the keyboard
+ 
+ 
+# DISCLAIMER
+>
+>Last updated February 26, 2023
+>
+> ## APP DISCLAIMER
+>
+> The information provided by Yodd AI Chat on our mobile application is for general informational purposes only. All information on  our mobile application is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on our mobile application. UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF OUR MOBILE APPLICATION OR RELIANCE ON ANY INFORMATION PROVIDED ON OUR MOBILE APPLICATION. YOUR USE OF OUR MOBILE APPLICATION AND YOUR RELIANCE ON ANY INFORMATION ON OUR MOBILE APPLICATION IS SOLELY AT YOUR OWN RISK.
+> 
+> ## EXTERNAL LINKS DISCLAIMER
+> 
+> Our mobile application may contain (or you may be sent through our mobile application) links to other websites or content belonging to or originating    from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR THE  ACCURACY OR RELIABILITY OF ANY INFORMATION OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH THE SITE OR ANY WEBSITE OR FEATURE LINKED IN ANY BANNER OR OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
