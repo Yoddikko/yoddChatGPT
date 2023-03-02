@@ -19,7 +19,7 @@ The MIT License (MIT)
 
 import SwiftUI
 
-@main
+ @main
 struct YoddChatGptApp: App {
     @StateObject private var dataController = DataController.shared
     @ObservedObject var accentColor = ThemeViewModel.shared

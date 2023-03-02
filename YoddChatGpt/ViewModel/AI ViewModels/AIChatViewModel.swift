@@ -78,7 +78,7 @@ final class AIChatViewModel: ObservableObject {
         case "ChatGPT":
             return .ChatGPT
         default:
-            return .OpenAISwift
+            return .ChatGPT
         }
     }
     

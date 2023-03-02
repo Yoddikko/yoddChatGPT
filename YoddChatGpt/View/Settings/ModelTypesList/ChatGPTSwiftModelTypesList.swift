@@ -48,7 +48,7 @@ struct ChatGPTSwiftModelTypesList: View {
             }
             
             HStack {
-                Text("ChatGPT is the same API of the web version. It uses the ChatGPTSwift library and most importantly it can remember the conversation. It speaks only english and in general could be less stable than OpenAISwift library.")
+                Text("ChatGPT is the same API of the web version. It uses the ChatGPTSwift library and most importantly it can remember the conversation.")
                     .font(.footnote)
                     .foregroundColor(.secondary)
             }.padding()
