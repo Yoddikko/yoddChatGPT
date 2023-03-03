@@ -128,7 +128,7 @@ struct SettingsView: View {
                         presentAPIAlert = false
                     }
                     .onChange(of: openAIViewModelToken) { token in
-                        AIChatViewModel.shared.setTokenOpenAISwift(string: token)
+                        AIChatViewModel.shared.setAPItoken(string: token)
                     }
                     Button(action: {
                         self.urlString = "https://beta.openai.com/account/api-keys"

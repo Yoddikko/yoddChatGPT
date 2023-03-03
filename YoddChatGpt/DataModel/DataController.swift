@@ -44,7 +44,7 @@ class DataController: ObservableObject {
         }
     }
     
-    func addMessage (body: String, sender: String, type: String, context: NSManagedObjectContext) {
+    func addMessage (body: String, sender: String, type: String, aiLibrary: AILibrary? = .none, outputType: OutputType, context: NSManagedObjectContext) {
         let message = Message(context: context)
         message.date = Date()
         message.body = body
@@ -52,11 +52,16 @@ class DataController: ObservableObject {
         message.sender = sender
         message.type = type
         message.saved = false
-        if AIChatViewModel.shared.selectedAILibrary == .OpenAISwift {
-            message.chatModel = AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.openAIModelType.modelName)
+        if outputType == .text {
+            if aiLibrary == .OpenAISwift {
+                message.chatModel = AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.openAIModelType.modelName)
+            }
+            if aiLibrary == .ChatGPT {
+                message.chatModel = "ChatGPT"
+            }
         }
-        if AIChatViewModel.shared.selectedAILibrary == .ChatGPT {
-            message.chatModel = "ChatGPT"
+        if outputType == .image {
+            message.chatModel = "Dall-E"
         }
         save(context: context)
     }

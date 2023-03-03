@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "openai#usage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI#usage",
+      "state" : {
+        "revision" : "21e43d1e079dd519c27a8c1df8b238330dd42fb2",
+        "version" : "0.0.4"
+      }
+    },
+    {
       "identity" : "openaiswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/adamrushy/OpenAISwift",

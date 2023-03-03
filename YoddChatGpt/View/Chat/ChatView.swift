@@ -19,6 +19,7 @@ The MIT License (MIT)
 
 import SwiftUI
 import CoreData
+import OpenAI
 
 /**
  This is the view that contains all the other chat related views.
@@ -42,7 +43,7 @@ struct ChatView: View {
     
     // MARK: - ViewModels
     var audioPlayer = AudioPlayer()
-    @ObservedObject var openAIViewModel = AIChatViewModel()
+    @ObservedObject var aiChatViewModel = AIChatViewModel()
     
     // MARK: - Environmental objects and fetch requests
     @Environment (\.managedObjectContext) var managedObjectContext
@@ -87,11 +88,33 @@ struct ChatView: View {
                                 textIsFocused = true
                             }
                     }
-                    Button(action: {
-                        sendFromKeyboard()
-                    }, label: {
-                        Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
-                    })
+                    if aiChatViewModel.outputType == .text {
+                        Button(action: {
+                            aiChatViewModel.outputType = .image
+                            AIChatViewModel.shared.outputType = .image
+                        }, label: {
+                            Image(systemName: "photo.circle.fill").resizable().frame(width: 30, height: 30)
+                        })
+                    }
+                    HStack {
+                        if aiChatViewModel.outputType == .image {
+                            Button(action: {
+                                aiChatViewModel.outputType = .text
+                                AIChatViewModel.shared.outputType = .text
+                            }, label: {
+                                Image(systemName: "message.circle.fill").resizable().frame(width: 30, height: 30)
+                            })
+                        }
+                        Button(action: {
+                            if aiChatViewModel.outputType == .image {
+                                sendFromKeyboardOutputImage()
+                            } else {
+                                sendFromKeyboardOutputText()
+                            }
+                        }, label: {
+                            Image(systemName: "arrow.right.circle.fill").resizable().frame(width: 30, height: 30)
+                        })
+                    }
                 }.padding()
                     .onAppear{
                         AIChatViewModel.shared.setup()
@@ -111,26 +134,32 @@ struct ChatView: View {
             }
         }
         
-//        .onAppear {
+        .onAppear {
 //            var messageAppStore1 = TemporaryMessage(body: "THE APP IS NOW OUT ON THE APPSTORE 🎉", sender: .bot)
 //            var messageAppStore2 = TemporaryMessage(body: "Download it here", sender: .bot)
 //            var messageAppStore3 = TemporaryMessage(body: "https://apps.apple.com/us/app/yoddaichat/id1672839275", sender: .bot)
 //
-
+            
+//            var message1 = TemporaryMessage(body: "Tell me something crazy about the universe", sender: .user)
+//            var message2 = TemporaryMessage(body: "Did you know that the universe is expanding at an accelerating rate? Scientists estimate that the universe is doubling in size ever 10 to 20 billion years.", sender: .bot)
+//            var message3 = TemporaryMessage(body: "No way, tell me more, please!", sender: .user)
+//            var message4 = TemporaryMessage(body: "Scientists have also discovered that the universe is filled with dark matter and dark energy, which make up 95% of the universe. They are still trying to understand what these mysterious substances are", sender: .bot)
+//            var message5 = TemporaryMessage(body: "That's amazing, thank you bot ❤️", sender: .user)
+//            var message6 = TemporaryMessage(body: "You're welcome! It's always a pleasure to share interesting facts about the universe.", sender: .bot)
 //            var message1 = TemporaryMessage(body: "Dimmi qualcosa di assurdo sull'universo", sender: .user)
 //            var message2 = TemporaryMessage(body: "Sapevate che l'universo si sta espandendo a un ritmo sempre più rapido? Gli scienziati stimano che l'universo raddoppia le sue dimensioni ogni 10-20 miliardi di anni.", sender: .bot)
 //            var message3 = TemporaryMessage(body: "Assurdo, dimmi di più per favore!", sender: .user)
 //            var message4 = TemporaryMessage(body: "Gli scienziati hanno anche scoperto che l'universo è pieno di materia ed energia oscura, che costituiscono il 95% dell'universo. Si sta ancora cercando di capire cosa siano queste misteriose sostanze.", sender: .bot)
 //            var message5 = TemporaryMessage(body: "E' fantastico, grazie bot ❤️", sender: .user)
 //            var message6 = TemporaryMessage(body: "Non c'è di che! È sempre un piacere condividere fatti interessanti sull'universo.", sender: .bot)
-//            DataController.shared.addMessage(body: messageAppStore1.body, sender: "bot", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: messageAppStore2.body, sender: "bot", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: messageAppStore3.body, sender: "bot", type: "link", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message1.body, sender: "user", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message2.body, sender: "bot", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message3.body, sender: "user", type: "text", context: managedObjectContext)
 //            DataController.shared.addMessage(body: message4.body, sender: "bot", type: "text", context: managedObjectContext)
 //            DataController.shared.addMessage(body: message5.body, sender: "user", type: "text", context: managedObjectContext)
 //            DataController.shared.addMessage(body: message6.body, sender: "bot", type: "text", context: managedObjectContext)
-//
-//        }
+
+        }
         
         .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -145,7 +174,7 @@ struct ChatView: View {
      
      - Version: 0.2
      */
-    func sendFromKeyboard() {
+    func sendFromKeyboardOutputText() {
         //Checks if the text is empty
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
@@ -153,11 +182,12 @@ struct ChatView: View {
         
         //Saves the user message
         let userMessage = TemporaryMessage(body: text, sender: .user)
-        DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text,  context: managedObjectContext)
+        DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text,  outputType: .text, context: managedObjectContext)
         audioPlayer.playMessageSound(sender: .user)
         //API call
         messageIsLoading = true
         if AIChatViewModel.shared.selectedAILibrary == .ChatGPT {
+            let library: AILibrary = .ChatGPT
             AIChatViewModel.shared.sendChatGPTSwift(text: text, completion: {
                 response, messageType  in
                     DispatchQueue.main.async {
@@ -167,20 +197,22 @@ struct ChatView: View {
                             var botMessage = TemporaryMessage(body: response, sender: .bot)
                             botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
                             self.models.append(botMessage)
-                            DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", context: managedObjectContext)
+                            DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", aiLibrary: library, outputType: .text, context: managedObjectContext)
                             audioPlayer.playMessageSound(sender: .bot)
                         } else if messageType == .error {
                             var botMessage = TemporaryMessage(body: response, sender: .bot)
                             botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
                             self.models.append(botMessage)
-                            DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
+                            DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", aiLibrary: library, outputType: .text, context: managedObjectContext)
                             audioPlayer.playMessageSound(sender: .bot)
                         }
                         messageIsLoading = false
                     }
             })
         }
-        else {
+        else if AIChatViewModel.shared.selectedAILibrary == .OpenAISwift {
+            let library: AILibrary = .OpenAISwift
+
             AIChatViewModel.shared.sendOpenAIViewModel(text: text, completion: { response, messageType  in
                 DispatchQueue.main.async {
                     
@@ -189,21 +221,42 @@ struct ChatView: View {
                         var botMessage = TemporaryMessage(body: response, sender: .bot)
                         botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
                         self.models.append(botMessage)
-                        DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", context: managedObjectContext)
+                        DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "text", aiLibrary: library, outputType: .text, context: managedObjectContext)
                         audioPlayer.playMessageSound(sender: .bot)
                     } else if messageType == .error {
                         var botMessage = TemporaryMessage(body: response, sender: .bot)
                         botMessage.body = botMessage.body.trimmingCharacters(in: .whitespacesAndNewlines)
                         self.models.append(botMessage)
-                        DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", context: managedObjectContext)
+                        DataController.shared.addMessage(body: botMessage.body, sender: "bot", type: "error", aiLibrary: library, outputType: .text, context: managedObjectContext)
                         audioPlayer.playMessageSound(sender: .bot)
                     }
                     messageIsLoading = false
                 }
-            })
-
+                
+                }
+            )}
+        self.text = ""
+    }
+    
+    func sendFromKeyboardOutputImage() {
+        AIChatViewModel.shared.outputType = .image
+        let userMessage = TemporaryMessage(body: text, sender: .user)
+        DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text, outputType: .image, context: managedObjectContext)
+        audioPlayer.playMessageSound(sender: .user)
+        messageIsLoading = true
+        let query = OpenAI.ImagesQuery(prompt: text, n: 1, size: "1024x1024")
+        AIChatViewModel.shared.openAIClient.images(query: query) { result in
+            //Handle result here
+            do {
+                let resultData = try result.get()
+                DataController.shared.addMessage(body: resultData.data.first!.url, sender: "bot", type: "image", outputType: .image, context: managedObjectContext)
+                messageIsLoading = false
+            } catch {
+                //error
+                DataController.shared.addMessage(body: "Error while generating image", sender: "bot", type: "error", outputType: .text, context: managedObjectContext)
+                messageIsLoading = false
+            }
         }
-
         self.text = ""
     }
 }

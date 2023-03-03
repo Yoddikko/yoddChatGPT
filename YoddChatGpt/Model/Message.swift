@@ -32,5 +32,9 @@ enum Sender {
 }
 
 enum MessageType {
-    case text, error
+    case text, error, image
+}
+
+enum OutputType {
+    case text, image
 }

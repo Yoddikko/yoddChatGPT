@@ -19,6 +19,7 @@ The MIT License (MIT)
 
 import SwiftUI
 import OpenAISwift
+import ChatGPTSwift
 
 //MARK: OpenAISwift library functions
 extension AIChatViewModel {
@@ -39,13 +40,6 @@ extension AIChatViewModel {
                 completion(output, messageType)
             }
         })
-    }
-    
-    ///Function to set a token for OpenAISiwft
-    func setTokenOpenAISwift(string: String) {
-        self.OpenAISwiftClient = OpenAISwift(authToken: string)
-        UserDefaults.standard.set(string, forKey: "token")
-        setup()
     }
     
     //MARK: Model type functions

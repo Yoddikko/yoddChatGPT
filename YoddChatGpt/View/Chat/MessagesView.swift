@@ -62,7 +62,8 @@ struct MessagesView: View {
                         } else {
                             VStack {
                                 HStack() {
-                                    BotMessageBubble(messageState: message.saved, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1, message: message, type: message.type == "text" ? .text : .error)
+                                    
+                                    BotMessageBubble(messageState: message.saved, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1, message: message, type: message.type == "text" ? .text : message.type == "error" ? .error : .image)
                                     Spacer()
                                 }
                                 HStack {

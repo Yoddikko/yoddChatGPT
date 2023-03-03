@@ -18,7 +18,7 @@ The MIT License (MIT)
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
+import UIKit
 
 struct BotMessageBubble: View {
     // MARK: - Environmental objects
@@ -38,16 +38,11 @@ struct BotMessageBubble: View {
     
     var body: some View {
         Menu {
-            Button(action: {
-                UIPasteboard.general.setValue(message.body!,
-                forPasteboardType: UTType.plainText.identifier)
-            }) {
-                Label("Copy", systemImage: "doc.on.doc")
+            if type == .text || type == .error {
+                textMessageMenu(message: message)
             }
-            Button(action: {
-                SpeechSynthesizer.shared.readString(text: message.body!)
-            }) {
-                Label("Listen", systemImage: "ear")
+            else if type == .image {
+                imageMessageMenu(message: message)
             }
             if message.saved {
                 Button(action: {
@@ -56,7 +51,6 @@ struct BotMessageBubble: View {
                     Label("Unsave", systemImage: "bookmark.fill")
                 }
             } else {
-                
                 Button(action: {
                     DataController.shared.saveMessage(message: message, context: managedObjectContext)
                 }) {
@@ -66,7 +60,6 @@ struct BotMessageBubble: View {
             
             Button(role: .destructive, action: {
                     DataController.shared.deleteData(context: managedObjectContext, message: message)
-            
             }) {
                 HStack {
                     Text("Delete")
@@ -74,27 +67,16 @@ struct BotMessageBubble: View {
                     Image(systemName: "trash")
                 }
             }
+
         } label: {
             HStack {
                 HStack {
-                    if type == .text {
-                        Text(message.body!)
-                            .multilineTextAlignment(.leading)
-                            .padding(.trailing, 30)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 10)
-                            .padding(.leading, 15)
-                    }
-                    else if type == .error{
-                        Text(message.body!)
-                            .foregroundColor(.red)
-                            .multilineTextAlignment(.leading)
-                            .padding(.trailing, 30)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 10)
-                            .padding(.leading, 15)
-                        
-                    }
+                    createMessageBubble(messageType: type, messageBody: message.body!)
+                        .padding(.trailing, 30)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
+                        .padding(.leading, 15)
+
                 }
                 .background {
                     ZStack {
@@ -128,4 +110,26 @@ struct BotMessageBubble_Previews: PreviewProvider {
     static var previews: some View {
         BotMessageBubble(messageState: true, primaryColor: .blue, secondaryColor: .teal, message: Message(), type: .text)
     }
+}
+
+func downloadImage (url: String) {
+    let url = URL(string: url)!
+    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        if let error = error {
+            // handle error
+            print(error)
+            return
+        }
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            // handle error
+            return
+        }
+        if let data = data {
+            if UIImage(data: data) != nil {
+                let image = UIImage(data: data)!
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            }
+        }
+    }
+    task.resume()
 }

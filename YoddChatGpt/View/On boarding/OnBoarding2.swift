@@ -71,7 +71,7 @@ struct OnBoarding2: View {
             
             Button(action: {
                 UserDefaults.standard.set("false", forKey: "OnBoarding")
-                AIChatViewModel.shared.setTokenOpenAISwift(string: token)
+                AIChatViewModel.shared.setAPItoken(string: token)
                 shouldShowOnBoarding = false
                 AIChatViewModel.shared.setup()
                 textFocused = false

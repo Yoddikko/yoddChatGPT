@@ -20,6 +20,7 @@ The MIT License (MIT)
 import Foundation
 import OpenAISwift // External framework
 import ChatGPTSwift // External framework
+import OpenAI //External framework
 import SwiftUI
 /**
  This is the viewmodel that manages the implementation of AI libraries .
@@ -34,8 +35,13 @@ final class AIChatViewModel: ObservableObject {
     
     static var shared = AIChatViewModel()
     
+    @Published var openAIClient = OpenAI(apiToken: "")
+    
     ///This variable keeps in the appstorage a bool value that if it's true it show the model type of the AI in the chat
     @AppStorage ("showModelType") var showModelType: Bool = false
+    
+    ///This variable determine if the output will be recieved as a text or an image
+    @Published var outputType: OutputType = .text
     
     //MARK: OpenAISwift properties
     var openAIModelType: OpenAIModelType = .gpt3(.davinci)
@@ -58,7 +64,7 @@ final class AIChatViewModel: ObservableObject {
         selectedAILibrary = getLibraryFromString(string: AILibraryUserDefaults ?? "")
         
         OpenAISwiftClient = OpenAISwift(authToken: UserDefaults.standard.string(forKey: "token") ?? "")
-        
+        openAIClient = OpenAI(apiToken: UserDefaults.standard.string(forKey: "token") ?? "")
         chatGPTSwiftClient = ChatGPTAPI(apiKey: UserDefaults.standard.string(forKey: "token") ?? "")
         
         //This pretty ugly chunk of function gets the model type of OpenAISwift and sets it
@@ -69,6 +75,13 @@ final class AIChatViewModel: ObservableObject {
             self.openAIModelType = .gpt3(.davinci)
         }
     }
+    
+    ///Function to set a token in user defaults and then start the setup process
+    func setAPItoken(string: String) {
+        UserDefaults.standard.set(string, forKey: "token")
+        setup()
+    }
+
     
     //MARK: Library
     func getLibraryFromString (string: String) -> AILibrary {
@@ -90,6 +103,7 @@ final class AIChatViewModel: ObservableObject {
     func getSelectedLibrary () -> AILibrary {
         return selectedAILibrary!
     }
+    
     
     //MARK: OpenAISwift properties
     let allOpenAISwiftModels: [(OpenAIModelType, String)] = [
