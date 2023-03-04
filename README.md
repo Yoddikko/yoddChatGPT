@@ -57,6 +57,8 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift), [
 [<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/YsQzO7o6)
 
 If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
+
+<b> Testflight is for beta versions while Appstore is for stable versions </b>
   
 </div>
 
