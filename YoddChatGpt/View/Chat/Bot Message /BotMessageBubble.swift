@@ -71,7 +71,7 @@ struct BotMessageBubble: View {
         } label: {
             HStack {
                 HStack {
-                    createMessageBubble(messageType: type, messageBody: message.body!)
+                    createMessageBubble(messageType: type, messageBody: message.body!, messageData: message.data ?? Data())
                         .padding(.trailing, 30)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 10)
@@ -110,26 +110,4 @@ struct BotMessageBubble_Previews: PreviewProvider {
     static var previews: some View {
         BotMessageBubble(messageState: true, primaryColor: .blue, secondaryColor: .teal, message: Message(), type: .text)
     }
-}
-
-func downloadImage (url: String) {
-    let url = URL(string: url)!
-    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-        if let error = error {
-            // handle error
-            print(error)
-            return
-        }
-        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-            // handle error
-            return
-        }
-        if let data = data {
-            if UIImage(data: data) != nil {
-                let image = UIImage(data: data)!
-                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-            }
-        }
-    }
-    task.resume()
 }

@@ -36,5 +36,5 @@ enum MessageType {
 }
 
 enum OutputType {
-    case text, image
+    case text, image, none
 }

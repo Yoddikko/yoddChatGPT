@@ -8,7 +8,7 @@
 import SwiftUI
 
 @ViewBuilder
-func createMessageBubble(messageType: MessageType, messageBody: String) -> some View {
+func createMessageBubble(messageType: MessageType, messageBody: String, messageData: Data) -> some View {
     switch messageType {
     case .text:
         Text(messageBody)
@@ -17,12 +17,9 @@ func createMessageBubble(messageType: MessageType, messageBody: String) -> some 
         Text(messageBody)
             .foregroundColor(.red)
     case .image:
-        AsyncImage(url: URL(string: messageBody)) { image in
-            image.resizable()
+        Image(uiImage: UIImage(data: messageData) ?? UIImage())
+            .resizable()
                 .cornerRadius(15, corners: [.topLeft, .topRight, .bottomRight])
                 .scaledToFit()
-        } placeholder: {
-            Rectangle().scaledToFit()
-        }
     }
 }

@@ -19,6 +19,8 @@ The MIT License (MIT)
 
 import SwiftUI
 import OpenAISwift
+import StoreKit
+
 /**
  This is the settings view with the list of all the settings in the app.
  
@@ -41,7 +43,10 @@ struct SettingsView: View {
     ///This is the variable that shows the alert for changing API
     @State private var presentAPIAlert = false
     // whether or not to show the Safari ViewController
-    @State var showSafari = false
+    @State var showOpenAI = false
+    @State var showGitHub = false
+    @State var showFAQ = false
+    
     // initial URL string
     @State var urlString = "https://beta.openai.com/account/api-keys"
 
@@ -131,18 +136,44 @@ struct SettingsView: View {
                         AIChatViewModel.shared.setAPItoken(string: token)
                     }
                     Button(action: {
-                        self.urlString = "https://beta.openai.com/account/api-keys"
-                        self.showSafari = true
+                        self.showOpenAI = true
                     }) {
                         Text("Get API token")
                     }
 
                 })
+                Section("Other", content: {
+                    
+                    Button(action: {
+                        self.showGitHub = true
+                    }) {
+                        Text("GitHub")
+                    }
+                    
+                    Button(action: {
+                        self.showFAQ = true
+                    }) {
+                        Text("FAQ")
+                    }
+                    
+                    Button(action: {
+                        rateApp()
+                    }) {
+                        Text("Rate the app")
+                    }
+
+                })
             }
-            .sheet(isPresented: $showSafari) {
-                SafariView(url: URL(string: self.urlString)!)
+            .sheet(isPresented: $showOpenAI) {
+                SafariView(url: URL(string: "https://beta.openai.com/account/api-keys")!)
             }
-        
+            .sheet(isPresented: $showGitHub) {
+                SafariView(url: URL(string: "https://github.com/Yoddikko/yoddChatGPT")!)
+            }
+            .sheet(isPresented: $showFAQ) {
+                SafariView(url: URL(string: "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ")!)
+            }
+
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
     }
@@ -151,5 +182,20 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+    }
+}
+
+@ViewBuilder
+func sectionAPI () -> some View {
+    
+}
+
+func rateApp() {
+    if #available(iOS 10.3, *) {
+        SKStoreReviewController.requestReview()
+        
+    } else if let url = URL(string: "https://apps.apple.com/us/app/yoddaichat/id1672839275") {
+        UIApplication.shared.openURL(url)
+        
     }
 }

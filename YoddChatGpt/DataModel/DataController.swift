@@ -19,6 +19,7 @@ The MIT License (MIT)
 
 import Foundation
 import CoreData
+import UIKit
 
 //Multiple NSEntityDescriptions claim the NSManagedObject subclass 'Message' so +entity is unable to disambiguate
 class DataController: ObservableObject {
@@ -44,7 +45,7 @@ class DataController: ObservableObject {
         }
     }
     
-    func addMessage (body: String, sender: String, type: String, aiLibrary: AILibrary? = .none, outputType: OutputType, context: NSManagedObjectContext) {
+    func addMessage (body: String, sender: String, type: String, aiLibrary: AILibrary? = .none, data: UIImage = UIImage(), outputType: OutputType, context: NSManagedObjectContext) {
         let message = Message(context: context)
         message.date = Date()
         message.body = body
@@ -52,16 +53,20 @@ class DataController: ObservableObject {
         message.sender = sender
         message.type = type
         message.saved = false
-        if outputType == .text {
-            if aiLibrary == .OpenAISwift {
-                message.chatModel = AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.openAIModelType.modelName)
+        if outputType != .none {
+            
+            if outputType == .text {
+                if aiLibrary == .OpenAISwift {
+                    message.chatModel = AIChatViewModel.shared.getOpenAIModelNameFromString(openAIModelTypeString: AIChatViewModel.shared.openAIModelType.modelName)
+                }
+                if aiLibrary == .ChatGPT {
+                    message.chatModel = "ChatGPT"
+                }
             }
-            if aiLibrary == .ChatGPT {
-                message.chatModel = "ChatGPT"
+            if outputType == .image {
+                message.data = data.pngData()
+                message.chatModel = "Dall-E"
             }
-        }
-        if outputType == .image {
-            message.chatModel = "Dall-E"
         }
         save(context: context)
     }

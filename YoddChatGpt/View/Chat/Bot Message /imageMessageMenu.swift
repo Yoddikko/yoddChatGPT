@@ -10,9 +10,13 @@ import SwiftUI
 @ViewBuilder
 func imageMessageMenu (message: Message) -> some View {
     Button(action: {
-        downloadImage(url: message.body!)
+        downloadImage(image: UIImage(data: message.data!) ?? UIImage())
     }) {
         Label("Download", systemImage: "arrow.down.circle")
     }
 
+}
+
+func downloadImage(image: UIImage) {
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
 }

@@ -134,7 +134,7 @@ struct ChatView: View {
             }
         }
         
-        .onAppear {
+//        .onAppear {
 //            var messageAppStore1 = TemporaryMessage(body: "THE APP IS NOW OUT ON THE APPSTORE 🎉", sender: .bot)
 //            var messageAppStore2 = TemporaryMessage(body: "Download it here", sender: .bot)
 //            var messageAppStore3 = TemporaryMessage(body: "https://apps.apple.com/us/app/yoddaichat/id1672839275", sender: .bot)
@@ -152,18 +152,20 @@ struct ChatView: View {
 //            var message4 = TemporaryMessage(body: "Gli scienziati hanno anche scoperto che l'universo è pieno di materia ed energia oscura, che costituiscono il 95% dell'universo. Si sta ancora cercando di capire cosa siano queste misteriose sostanze.", sender: .bot)
 //            var message5 = TemporaryMessage(body: "E' fantastico, grazie bot ❤️", sender: .user)
 //            var message6 = TemporaryMessage(body: "Non c'è di che! È sempre un piacere condividere fatti interessanti sull'universo.", sender: .bot)
-//            DataController.shared.addMessage(body: message1.body, sender: "user", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: message2.body, sender: "bot", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: message3.body, sender: "user", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: message4.body, sender: "bot", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: message5.body, sender: "user", type: "text", context: managedObjectContext)
-//            DataController.shared.addMessage(body: message6.body, sender: "bot", type: "text", context: managedObjectContext)
+//            DataController.shared.addMessage(body: message1.body, sender: "user", type: "text", outputType: .text, context: managedObjectContext)
+//            DataController.shared.addMessage(body: message2.body, sender: "bot", type: "text", outputType: .text, context: managedObjectContext)
+//            DataController.shared.addMessage(body: message3.body, sender: "user", type: "text", outputType: .text, context: managedObjectContext)
+//            DataController.shared.addMessage(body: message4.body, sender: "bot", type: "text", outputType: .text, context: managedObjectContext)
+//            DataController.shared.addMessage(body: message5.body, sender: "user", type: "text", outputType: .text, context: managedObjectContext)
+//            DataController.shared.addMessage(body: message6.body, sender: "bot", type: "text", outputType: .text, context: managedObjectContext)
 
-        }
+//        }
         
         .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    //TODO: Refactor the sending function maybe using async await
     
     /**
      This is the function that manages the sending and recieving of messages using `CoreData` and `OpenAIViewModel`.
@@ -211,6 +213,10 @@ struct ChatView: View {
             })
         }
         else if AIChatViewModel.shared.selectedAILibrary == .OpenAISwift {
+            guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+                return
+            }
+
             let library: AILibrary = .OpenAISwift
 
             AIChatViewModel.shared.sendOpenAIViewModel(text: text, completion: { response, messageType  in
@@ -239,9 +245,12 @@ struct ChatView: View {
     }
     
     func sendFromKeyboardOutputImage() {
+        guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
         AIChatViewModel.shared.outputType = .image
         let userMessage = TemporaryMessage(body: text, sender: .user)
-        DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text, outputType: .image, context: managedObjectContext)
+        DataController.shared.addMessage(body: userMessage.body, sender: "user", type: text, outputType: .none, context: managedObjectContext)
         audioPlayer.playMessageSound(sender: .user)
         messageIsLoading = true
         let query = OpenAI.ImagesQuery(prompt: text, n: 1, size: "1024x1024")
@@ -249,8 +258,19 @@ struct ChatView: View {
             //Handle result here
             do {
                 let resultData = try result.get()
-                DataController.shared.addMessage(body: resultData.data.first!.url, sender: "bot", type: "image", outputType: .image, context: managedObjectContext)
-                messageIsLoading = false
+//                let image = saveImage(url: resultData.data.first!.url)
+                let url = resultData.data.first!.url
+                let task = URLSession.shared.dataTask(with: URL(string: url)!) { result,response,error  in
+                    if let result = result {
+                        if UIImage(data: result) != nil {
+                            let image = UIImage(data: result)!
+                            DataController.shared.addMessage(body: "", sender: "bot", type: "image", data: image, outputType: .image, context: managedObjectContext)
+                            messageIsLoading = false
+                        }
+                    }
+                }
+                task.resume()
+
             } catch {
                 //error
                 DataController.shared.addMessage(body: "Error while generating image", sender: "bot", type: "error", outputType: .text, context: managedObjectContext)
@@ -260,6 +280,30 @@ struct ChatView: View {
         self.text = ""
     }
 }
+
+//func saveImage (url: String) -> UIImage? {
+//    var image = UIImage()
+//    let url = URL(string: url)!
+//    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//        if let error = error {
+//            // handle error
+//            return
+//        }
+//        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+//            // handle error
+//            return
+//        }
+//        if let data = data {
+//            if UIImage(data: data) != nil {
+//                let tmpImage = UIImage(data: data)!
+//                image = tmpImage
+////                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//            }
+//        }
+//    }
+//    task.resume()
+//    return image
+//}
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {

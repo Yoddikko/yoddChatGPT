@@ -82,7 +82,6 @@ final class AIChatViewModel: ObservableObject {
         setup()
     }
 
-    
     //MARK: Library
     func getLibraryFromString (string: String) -> AILibrary {
         switch string {
@@ -103,7 +102,6 @@ final class AIChatViewModel: ObservableObject {
     func getSelectedLibrary () -> AILibrary {
         return selectedAILibrary!
     }
-    
     
     //MARK: OpenAISwift properties
     let allOpenAISwiftModels: [(OpenAIModelType, String)] = [
