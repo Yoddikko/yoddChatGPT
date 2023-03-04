@@ -67,7 +67,6 @@ If the testflight link is down you can download the source code and build it you
 
 ## Screenshots
 
-
 ![Group 6](https://user-images.githubusercontent.com/92546954/222904065-a5eb9905-2f40-407e-a6a8-7bf14429c5dd.png)
 
 ## Known issues
