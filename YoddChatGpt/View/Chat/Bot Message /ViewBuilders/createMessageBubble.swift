@@ -17,9 +17,7 @@ func createMessageBubble(messageType: MessageType, messageBody: String, messageD
         Text(messageBody)
             .foregroundColor(.red)
     case .image:
-        if messageData != nil {
             createImageMessageBubble(messageData: messageData)
-        }
     }
 }
 
@@ -29,6 +27,4 @@ func createImageMessageBubble(messageData: Data) -> some View {
         .resizable()
         .cornerRadius(15, corners: [.topLeft, .topRight, .bottomRight])
         .scaledToFit()
-    
-
 }

@@ -60,15 +60,23 @@ struct OnBoarding2: View {
             }
                 .padding(.horizontal)
 
-            TextField("API Token", text: $token)
-                .focused($textFocused)
-                .padding()
-
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14)
-                        .stroke(Color.secondary, lineWidth: 2))
-                .padding()
-            
+            if #available(iOS 16.0, *) {
+                
+                TextField("API Token", text: $token)
+                    .focused($textFocused)
+                    .padding()
+                
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(Color.secondary, lineWidth: 2))
+                    .padding()
+            } else {
+                TextField("API Token", text: $token)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(Color.secondary, lineWidth: 2))
+                    .padding()
+            }
             Button(action: {
                 UserDefaults.standard.set("false", forKey: "OnBoarding")
                 AIChatViewModel.shared.setAPItoken(string: token)

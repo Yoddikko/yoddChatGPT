@@ -1075,7 +1075,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FA5F94FD-6916-41C3-A315-A1BE766D9A91"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YoddChatGpt/DataModel/DataController.swift"
@@ -1091,7 +1091,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "262F79CD-CBA6-4350-A5A8-196D19BF6B9F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YoddChatGpt/DataModel/DataController.swift"
