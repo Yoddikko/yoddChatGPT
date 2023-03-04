@@ -124,11 +124,11 @@ struct SettingsView: View {
                         }
                     })
                     .alert("API Token", isPresented: $presentAPIAlert, actions: {
-                    }, message: {
                         TextField("Token", text: $openAIViewModelToken)
-                        HStack {
+
+                    }, message: {
                             Text("Paste your token here")
-                        }
+                        
                     })
                     
                     .onDisappear{
