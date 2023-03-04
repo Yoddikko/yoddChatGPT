@@ -71,11 +71,22 @@ struct BotMessageBubble: View {
         } label: {
             HStack {
                 HStack {
-                    createMessageBubble(messageType: type, messageBody: message.body!, messageData: message.data ?? Data())
-                        .padding(.trailing, 30)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
-                        .padding(.leading, 15)
+                    if type != .image {
+                        createMessageBubble(messageType: type, messageBody: message.body!, messageData: message.data ?? Data())
+                            .padding(.trailing, 30)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .padding(.leading, 15)
+                    } else {
+                        Image(uiImage: UIImage(data: message.data ?? Data()) ?? UIImage())
+                            .resizable()
+                            .cornerRadius(15, corners: [.topLeft, .topRight, .bottomRight])
+                            .scaledToFit()
+                            .padding(.trailing, 30)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .padding(.leading, 15)
+                    }
 
                 }
                 .background {

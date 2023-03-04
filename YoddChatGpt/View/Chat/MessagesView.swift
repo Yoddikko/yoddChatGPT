@@ -205,6 +205,7 @@ struct MessagesViewOlderiOS: View {
                     HStack {
                         BotLoadingMessage( secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1).id(placeHolderUUID)
                         Spacer().id(placeHolderUUID)
+                        
                     }.id(placeHolderUUID)
                 }
             }

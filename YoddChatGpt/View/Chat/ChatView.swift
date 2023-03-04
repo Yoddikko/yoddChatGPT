@@ -265,6 +265,7 @@ struct ChatView: View {
                         if UIImage(data: result) != nil {
                             let image = UIImage(data: result)!
                             DataController.shared.addMessage(body: "", sender: "bot", type: "image", data: image, outputType: .image, context: managedObjectContext)
+                            
                             messageIsLoading = false
                         }
                     }

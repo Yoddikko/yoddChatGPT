@@ -47,6 +47,13 @@ class DataController: ObservableObject {
     
     func addMessage (body: String, sender: String, type: String, aiLibrary: AILibrary? = .none, data: UIImage = UIImage(), outputType: OutputType, context: NSManagedObjectContext) {
         let message = Message(context: context)
+        if outputType == .image {
+            if data.pngData() != nil {
+                message.data = data.pngData()
+                message.chatModel = "Dall-E"
+            }
+        }
+
         message.date = Date()
         message.body = body
         message.id = UUID()
@@ -62,10 +69,6 @@ class DataController: ObservableObject {
                 if aiLibrary == .ChatGPT {
                     message.chatModel = "ChatGPT"
                 }
-            }
-            if outputType == .image {
-                message.data = data.pngData()
-                message.chatModel = "Dall-E"
             }
         }
         save(context: context)
