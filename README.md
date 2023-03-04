@@ -20,6 +20,8 @@
 
 <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki"> Wiki </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Code documentation </a> ◦ <a href= "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ"> FAQ </a>
 
+Use the <a href = "https://github.com/Yoddikko/yoddChatGPT/discussions/categories/show-and-tell"> discussions </a> to give feedbacks, ask for features and share anything with Yodd AI Chat.
+
 </div>
 
 ![Group 1(1)](https://user-images.githubusercontent.com/92546954/221043995-423e756e-f5ac-45fc-9506-5a948250563a.png)
