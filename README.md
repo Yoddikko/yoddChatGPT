@@ -20,6 +20,8 @@
 
 <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki"> Wiki </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Code documentation </a> ◦ <a href= "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ"> FAQ </a>
 
+Use the <a href = "https://github.com/Yoddikko/yoddChatGPT/discussions/categories/show-and-tell"> discussions </a> to give feedbacks, ask for features and share anything with Yodd AI Chat.
+
 </div>
 
 ![Group 1(1)](https://user-images.githubusercontent.com/92546954/221043995-423e756e-f5ac-45fc-9506-5a948250563a.png)
@@ -57,12 +59,13 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift), [
 [<img alt="TestFlightLink" width="100px" src="https://user-images.githubusercontent.com/92546954/219945377-9b6c7f21-61f4-4cf9-bb8c-84cbac55f129.png" />](https://testflight.apple.com/join/YsQzO7o6)
 
 If the testflight link is down you can download the source code and build it yourself, or you can install the IPA.
+
+<b> Testflight is for beta versions while Appstore is for stable versions </b>
   
 </div>
 
 
 ## Screenshots
-
 
 ![Group 6](https://user-images.githubusercontent.com/92546954/222904065-a5eb9905-2f40-407e-a6a8-7bf14429c5dd.png)
 
