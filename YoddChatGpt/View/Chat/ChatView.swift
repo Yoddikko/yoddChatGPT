@@ -158,7 +158,7 @@ struct ChatView: View {
 //            DataController.shared.addMessage(body: message4.body, sender: "bot", type: "text", outputType: .text, context: managedObjectContext)
 //            DataController.shared.addMessage(body: message5.body, sender: "user", type: "text", outputType: .text, context: managedObjectContext)
 //            DataController.shared.addMessage(body: message6.body, sender: "bot", type: "text", outputType: .text, context: managedObjectContext)
-
+//
 //        }
         
         .navigationBarBackButtonHidden(true)

@@ -23,6 +23,7 @@ import UIKit
 struct BotMessageBubble: View {
     // MARK: - Environmental objects
     @Environment (\.managedObjectContext) var managedObjectContext
+    @Environment(\.colorScheme) var colorScheme
     
     // MARK: - ViewModels
     @StateObject var speechSynthesizer = SpeechSynthesizer.shared
@@ -77,6 +78,7 @@ struct BotMessageBubble: View {
                             .padding(.vertical, 10)
                             .padding(.horizontal, 10)
                             .padding(.leading, 15)
+                            .foregroundColor(colorScheme == .light ? .black : .white)
                     } else {
                         Image(uiImage: UIImage(data: message.data ?? Data()) ?? UIImage())
                             .resizable()

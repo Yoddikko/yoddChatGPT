@@ -142,72 +142,74 @@ struct MessagesViewOlderiOS: View {
     
     var body: some View {
         ScrollViewReader { value in
-            ScrollView {
-                if isNewDate() {
-                    Text(getCurrentDateAsString())
-                    //                        .padding(10)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .padding(8)
-                        .background(
-                            .ultraThickMaterial,
-                            in: RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        )
-                }
-                ForEach (messages) { message in
-                    if message.sender == "user" {
-                        VStack {
-                            HStack {
-                                Spacer()
-                                UserMessageBubble(message: message, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1)
-                            }
-                            HStack {
-                                Spacer()
-                                createUserTimeStamp(date: message.date!)
-                            }
-                        }
-                        .id(message.id)
-                    } else {
-                        VStack {
-                            HStack() {
-                                BotMessageBubble(messageState: message.saved, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1, message: message, type: message.type == "text" ? .text : .error)
-                                Spacer()
-                            }
-                            HStack {
-                                createBotTimeStamp(date: message.date!)
-                                if AIChatViewModel.shared.showModelType {
-                                    createModelTypeStamp(modelType: message.chatModel ?? "")
+                ScrollView {
+                    if isNewDate() {
+                        Text(getCurrentDateAsString())
+                        //                        .padding(10)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                            .padding(8)
+                            .background(
+                                .ultraThickMaterial,
+                                in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            )
+                    }
+                    ForEach (messages) { message in
+                        if message.sender == "user" {
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    UserMessageBubble(message: message, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1)
                                 }
-                                Spacer()
+                                HStack {
+                                    Spacer()
+                                    createUserTimeStamp(date: message.date!)
+                                }
+                            }
+                            .id(message.id)
+                        } else {
+                            VStack {
+                                HStack() {
+                                    
+                                    BotMessageBubble(messageState: message.saved, primaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).0, secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1, message: message, type: message.type == "text" ? .text : message.type == "error" ? .error : .image)
+                                    Spacer()
+                                }
+                                HStack {
+                                    createBotTimeStamp(date: message.date!)
+                                    if AIChatViewModel.shared.showModelType {
+                                        createModelTypeStamp(modelType: message.chatModel ?? "")
+                                    }
+                                    Spacer()
+                                }
+                            }
+                            .onChange(of: message.saved, perform: { newValue in
+                                message.saved = newValue
+                            })
+                            .id(message.id)
+                        }
+                    }
+                    .onAppear{
+                        value.scrollTo(messages.last?.id, anchor: .bottom)
+                    }
+                    
+                    .onChange(of: messages.count) { _ in
+                        withAnimation(.easeIn(duration: 0.5)) {
+                            if messages.last?.sender == "user" {
+                                value.scrollTo(placeHolderUUID, anchor: .bottom)
+                            } else {
+                                value.scrollTo(messages.last?.id, anchor: .bottom)
+                                
                             }
                         }
-                        .onChange(of: message.saved, perform: { newValue in
-                            message.saved = newValue
-                        })
-                        .id(message.id)
+                    }
+                    
+                    if messages.last?.sender == "user" && messageIsLoading  {
+                        HStack {
+                            BotLoadingMessage( secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1).id(placeHolderUUID)
+                            Spacer().id(placeHolderUUID)
+                        }.id(placeHolderUUID)
                     }
                 }
-                .onAppear{
-                    value.scrollTo(messages.last?.id, anchor: .bottom)
-                }
-                
-                .onChange(of: messages.count) { _ in
-                    withAnimation(.easeIn(duration: 0.5)) {
-                        //                        value.scrollTo(messages.last?.id, anchor: .bottom)
-                        //                        if messages.last?.sender == "user" {
-                        value.scrollTo(placeHolderUUID, anchor: .bottom)
-                        value.scrollTo(messages.last?.id, anchor: .bottom)
-                        //                        }
-                    }
-                }
-                
-                if messages.last?.sender == "user" && messageIsLoading {
-                    HStack {
-                        BotLoadingMessage( secondaryColor: chatColors.getColorsFromThemeEnum(theme: chatColors.theme).1).id(placeHolderUUID)
-                        Spacer().id(placeHolderUUID)
-                    }.id(placeHolderUUID)
-                }
-            }
         }
     }
     

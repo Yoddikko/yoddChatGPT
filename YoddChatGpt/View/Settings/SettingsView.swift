@@ -46,6 +46,7 @@ struct SettingsView: View {
     @State var showOpenAI = false
     @State var showGitHub = false
     @State var showFAQ = false
+    @State var showForum = false
     
     // initial URL string
     @State var urlString = "https://beta.openai.com/account/api-keys"
@@ -168,11 +169,17 @@ struct SettingsView: View {
                 }
                 
                 Button(action: {
+                    self.showForum = true
+                }) {
+                    Text("Forum")
+                }
+
+                
+                Button(action: {
                     rateApp()
                 }) {
                     Text("Rate the app")
                 }
-                
             })
         }
         .sheet(isPresented: $showAPIModal) {
@@ -202,9 +209,14 @@ struct SettingsView: View {
         .sheet(isPresented: $showGitHub) {
             SafariView(url: URL(string: "https://github.com/Yoddikko/yoddChatGPT")!)
         }
+
         .sheet(isPresented: $showFAQ) {
             SafariView(url: URL(string: "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ")!)
         }
+        .sheet(isPresented: $showForum) {
+            SafariView(url: URL(string:   "https://github.com/Yoddikko/yoddChatGPT/discussions")!)
+        }
+
         
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)

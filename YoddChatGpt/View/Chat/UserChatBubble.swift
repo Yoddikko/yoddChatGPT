@@ -21,6 +21,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct UserMessageBubble: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment (\.managedObjectContext) var managedObjectContext
 
     var message: Message
@@ -51,6 +52,7 @@ struct UserMessageBubble: View {
 
         HStack() {
             Text(message.body!)
+                .foregroundColor(colorScheme == .light ? .black : .white)
                 .multilineTextAlignment(.leading)
                 .padding(.leading, 30)
                 .padding(.vertical, 10)
