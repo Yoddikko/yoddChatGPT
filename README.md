@@ -67,7 +67,7 @@ If the testflight link is down you can download the source code and build it you
 
 ## Screenshots
 
-![Group 6](https://user-images.githubusercontent.com/92546954/222904065-a5eb9905-2f40-407e-a6a8-7bf14429c5dd.png)
+![Group 71111](https://user-images.githubusercontent.com/92546954/222952887-0f4f22ca-0b14-4aa1-9738-f4b35a2a59b5.png)
 
 ## Known issues
  - [ ] There are some problems with the keyboard
