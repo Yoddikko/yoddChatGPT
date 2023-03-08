@@ -18,7 +18,7 @@
 [![GitHub release](https://img.shields.io/github/release/Yoddikko/yoddchatgpt?include_prereleases=&sort=semver&color=blue)](https://github.com/Yoddikko/yoddchatgpt/releases/)
 [![issues - yoddchatgpt](https://img.shields.io/github/issues/Yoddikko/yoddchatgpt)](https://github.com/Yoddikko/yoddchatgpt/issues)
 
-<a href = "https://github.com/Yoddikko/yoddChatGPT/wiki"> Wiki </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Code documentation </a> ◦ <a href= "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ"> FAQ </a>
+<a href = "https://github.com/Yoddikko/yoddChatGPT/wiki"> Wiki </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Code documentation </a> ◦ <a href= "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ"> FAQ </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/discussions"> Discussions </a>
 
 Use the <a href = "https://github.com/Yoddikko/yoddChatGPT/discussions/categories/show-and-tell"> discussions </a> to give feedbacks, ask for features and share anything with Yodd AI Chat.
 
@@ -67,7 +67,7 @@ If the testflight link is down you can download the source code and build it you
 
 ## Screenshots
 
-![Group 6](https://user-images.githubusercontent.com/92546954/222904065-a5eb9905-2f40-407e-a6a8-7bf14429c5dd.png)
+![Group 71111](https://user-images.githubusercontent.com/92546954/222952887-0f4f22ca-0b14-4aa1-9738-f4b35a2a59b5.png)
 
 ## Known issues
  - [ ] There are some problems with the keyboard
