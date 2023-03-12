@@ -29,6 +29,7 @@
 		7193E32529881642004A10D4 /* SavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32429881642004A10D4 /* SavedMessagesView.swift */; };
 		7193E32729881C15004A10D4 /* EmptySavedMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */; };
 		7193E32E29890CB4004A10D4 /* AIModelTypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193E32D29890CB4004A10D4 /* AIModelTypesList.swift */; };
+		719C5DA229BDF4540056E7F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 719C5DA029BDF4540056E7F0 /* InfoPlist.strings */; };
 		71ABB15929B1059B00F16D4D /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 71ABB15829B1059B00F16D4D /* OpenAI */; };
 		71ABB15B29B105BA00F16D4D /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABB15A29B105BA00F16D4D /* OpenAI.swift */; };
 		71BE9B2D29812D4B00CB13C2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE9B2C29812D4B00CB13C2 /* Message.swift */; };
@@ -94,6 +95,8 @@
 		7193E32629881C15004A10D4 /* EmptySavedMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySavedMessagesView.swift; sourceTree = "<group>"; };
 		7193E32A29882435004A10D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7193E32D29890CB4004A10D4 /* AIModelTypesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModelTypesList.swift; sourceTree = "<group>"; };
+		719C5DA129BDF4540056E7F0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		719C5DA329BDF4540056E7F0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		71ABB15A29B105BA00F16D4D /* OpenAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
 		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -165,6 +168,7 @@
 			children = (
 				7120C35329A816E400C3B410 /* YoddChatGpt.entitlements */,
 				7193E32A29882435004A10D4 /* Info.plist */,
+				719C5DA029BDF4540056E7F0 /* InfoPlist.strings */,
 				71493618298BBF6300980250 /* Localizable.strings */,
 				712443B52976ECF9007E98AA /* YoddChatGptApp.swift */,
 				71EEBFF8298CFB6C0044CD51 /* NextImplementations.rtf */,
@@ -421,6 +425,7 @@
 				en,
 				Base,
 				it,
+				fr,
 			);
 			mainGroup = 712443A92976ECF9007E98AA;
 			packageReferences = (
@@ -444,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7149361A298BBF6300980250 /* Localizable.strings in Resources */,
+				719C5DA229BDF4540056E7F0 /* InfoPlist.strings in Resources */,
 				71BE9B3F2982E8E500CB13C2 /* SentMessage.mp3 in Resources */,
 				712443BD2976ECFA007E98AA /* Preview Assets.xcassets in Resources */,
 				712443BA2976ECFA007E98AA /* Assets.xcassets in Resources */,
@@ -551,8 +557,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				71493619298BBF6300980250 /* it */,
+				719C5DA329BDF4540056E7F0 /* fr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		719C5DA029BDF4540056E7F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				719C5DA129BDF4540056E7F0 /* fr */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -609,7 +624,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -664,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -694,7 +709,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -731,7 +746,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

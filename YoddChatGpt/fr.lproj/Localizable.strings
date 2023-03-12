@@ -1,0 +1,144 @@
+/* No comment provided by engineer. */
+" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat urna ante, id pretium libero ullamcorper et. Phasellus vehicula nisl sed consequat vehicula. Duis pellentesque nulla eget porttitor molestie. Morbi maximus nulla eu nisl suscipit, nec imperdiet odio ultricies. Donec non accumsan massa. Quisque quis dignissim lacus. Morbi viverra egestas augue, ac aliquet libero. Etiam ut odio et leo sodales placerat. Pellentesque nec ipsum eget eros cursus cursus a ac erat. Morbi ac convallis ipsum. Aenean venenatis aliquet est in vehicula. Sed dictum aliquet molestie." = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat urna ante, id pretium libero ullamcorper et. Phasellus vehicula nisl sed consequat vehicula. Duis pellentesque nulla eget porttitor molestie. Morbi maximus nulla eu nisl suscipit, nec imperdiet odio ultricies. Donec non accumsan massa. Quisque quis dignissim lacus. Morbi viverra egestas augue, ac aliquet libero. Etiam ut odio et leo sodales placerat. Pellentesque nec ipsum eget eros cursus cursus a ac erat. Morbi ac convallis ipsum. Aenean venenatis aliquet est in vehicula. Sed dictum aliquet molestie.";
+
+/* No comment provided by engineer. */
+"🤖 Bip bop ask me anything" = "🤖 Bip bop demande moi n'importe quoi";
+
+/* No comment provided by engineer. */
+"API" = "API";
+
+/* No comment provided by engineer. */
+"API Token" = "API Token";
+
+/* No comment provided by engineer. */
+"Are you sure?" = "Êtes vous sûr ?";
+
+/* No comment provided by engineer. */
+"Ask me something..." = "Demande moi quelque chose...";
+
+/* No comment provided by engineer. */
+"Can you give me a lorem ipsum?" = "Pouvez-vous me donner un lorem ipsum ?";
+
+/* No comment provided by engineer. */
+"Change accent color" = "Changer la couleur accent";
+
+/* No comment provided by engineer. */
+"Change API token" = "Changer le token API";
+
+/* No comment provided by engineer. */
+"Change model type" = "Changer le type de modèle";
+
+/* No comment provided by engineer. */
+"Chat" = "Chat";
+
+/* No comment provided by engineer. */
+"ChatGPT" = "ChatGPT";
+
+/* No comment provided by engineer. */
+"ChatGPT is the same API of the web version. It uses the ChatGPTSwift library and most importantly it can remember the conversation." = "ChatGPT est la même API de la version Web. Il utilise la bibliothèque ChatGPTSwift et surtout, il peut se souvenir de la conversation.";
+
+/* No comment provided by engineer. */
+"ChatGPT library" = "Bibliothèque ChatGPT";
+
+/* No comment provided by engineer. */
+"Continue" = "Continuer";
+
+/* No comment provided by engineer. */
+"Copy" = "Copier";
+
+/* No comment provided by engineer. */
+"Delete" = "Supprimer";
+
+/* No comment provided by engineer. */
+"Delete all messages" = "Supprimer tous les messages";
+
+/* No comment provided by engineer. */
+"Delete all messages?" = "Supprimer tous les messages ?";
+
+/* No comment provided by engineer. */
+"Delete all unsaved messages?" = "Supprimer tous les messages non sauvegardés ?";
+
+/* No comment provided by engineer. */
+"Done" = "Terminé";
+
+/* No comment provided by engineer. */
+"Download" = "Télécharger";
+
+/* No comment provided by engineer. */
+"FAQ" = "FAQ";
+
+/* No comment provided by engineer. */
+"Forum" = "Forum";
+
+/* No comment provided by engineer. */
+"Free and open-source mobile app using the OpenAISwift framework based on OpenAI's famous artificial intelligence." = "Application mobile gratuite et open-source utilisant le framework OpenAISwift basé sur la célèbre intelligence artificielle d'OpenAI.";
+
+/* No comment provided by engineer. */
+"Get API token" = "Obtenir le token API";
+
+/* No comment provided by engineer. */
+"Get the API token" = "Obtenir le jeton API";
+
+/* No comment provided by engineer. */
+"GitHub" = "Github";
+
+/* No comment provided by engineer. */
+"Hello bot, how are you?" = "Bonjour robot, comment vas-tu ?";
+
+/* No comment provided by engineer. */
+"I'm fine, what about you?" = "Ça va, et toi?";
+
+/* No comment provided by engineer. */
+"Library" = "Bibliothèque ";
+
+/* No comment provided by engineer. */
+"Listen" = "Écouter";
+
+/* No comment provided by engineer. */
+"OpenAISwift library" = "Bibliothèque OpenAISwift";
+
+/* No comment provided by engineer. */
+"Other" = "Autre";
+
+/* No comment provided by engineer. */
+"Paste your token here" = "Coller votre token ici";
+
+/* No comment provided by engineer. */
+"Rate the app" = "Évaluer l'app";
+
+/* No comment provided by engineer. */
+"Save" = "Enregistrer";
+
+/* No comment provided by engineer. */
+"Saved messages" = "Messages enregistrés";
+
+/* No comment provided by engineer. */
+"Settings" = "Réglages";
+
+/* No comment provided by engineer. */
+"Show model type stamp" = "Afficher le tampon du type de modèle";
+
+/* No comment provided by engineer. */
+"Theme" = "Thème";
+
+/* No comment provided by engineer. */
+"This app was not made by OpeanAI. This is an independent and completely free project that connects to OpenAI's public API. The app is not affiliated with OpenAI in any way, and if OpenAI would like to request closure of the project they could contact me." = "Cette application n'a pas été créée par OpeanAI. Il s'agit d'un projet indépendant et entièrement gratuit qui se connecte à l'API publique d'OpenAI. L'application n'est en aucun cas affiliée à OpenAI, et si OpenAI souhaite demander la clôture du projet, ils peuvent me contacter.";
+
+/* No comment provided by engineer. */
+"To use the app, you must generate a token to access the OpenAI API." = "Pour utiliser l'application, vous devez générer un token pour accéder à l'API OpenAI.";
+
+/* No comment provided by engineer. */
+"Token" = "Token";
+
+/* No comment provided by engineer. */
+"Unsave" = "Annuler l'enregistrement";
+
+/* No comment provided by engineer. */
+"Yodd's AI Chat" = "Yodd's AI Chat";
+
+/* No comment provided by engineer. */
+"You cannot undo this action" = "Vous ne pouvez pas annuler cette action";
+
+"🤖 No saved messages" = "🤖 Pas de message enregistré";
+
+"By continuing, you confirm that you have read and accept the disclaimer" = "En continuant, vous confirmez avoir lu et acceptez la clause de non-responsabilité";

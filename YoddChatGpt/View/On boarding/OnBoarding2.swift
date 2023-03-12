@@ -89,7 +89,7 @@ struct OnBoarding2: View {
             Spacer()
             
             VStack {
-                    Text("By continuing you agree to have read the disclaimer")
+                    Text("By continuing, you confirm that you have read and accept the disclaimer")
                         .font(.footnote)
                         .foregroundColor(.gray)
                 

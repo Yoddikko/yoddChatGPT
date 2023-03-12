@@ -22,7 +22,7 @@ import SwiftUI
 struct EmptySavedMessagesView: View {
     var body: some View {
         Spacer()
-        Text("🤖 No saved messags").foregroundColor(.secondary)
+        Text("🤖 No saved messages").foregroundColor(.secondary)
         Spacer()
     }
 }

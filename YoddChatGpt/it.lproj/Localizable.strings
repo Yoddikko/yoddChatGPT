@@ -34,7 +34,7 @@
 "Continue" = "Continua";
 
 /* Sub-title of the button.*/
-"By continuing you agree to have read the disclaimer" = "Continuando confermi di aver letto il disclaimer";
+" By continuing, you confirm that you have read and accept the disclaimer" = "Continuando confermi di aver letto il disclaimer";
 
 /* Disclaimer text.*/
 "APP DISCLAIMER" = "DISCLAIMER APP";
@@ -49,7 +49,7 @@
 //MARK: SettingsView
 
 /* No comment provided by engineer. */
-"🤖 No saved messags" = "🤖 Nessun messaggio salvato";
+"🤖 No saved messages" = "🤖 Nessun messaggio salvato";
 
 /* Settings view navigation title. */
 "Settings" = "Impostazioni";

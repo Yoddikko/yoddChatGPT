@@ -1,0 +1,9 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Yodd AI Chat";
+
+/* Bundle name */
+"CFBundleName" = "YoddChatGpt";
+
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "L'application permet aux utilisateurs d'enregistrer les images générées par l'IA dans la photothèque";
+
