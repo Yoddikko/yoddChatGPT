@@ -97,6 +97,7 @@
 		7193E32D29890CB4004A10D4 /* AIModelTypesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModelTypesList.swift; sourceTree = "<group>"; };
 		719C5DA129BDF4540056E7F0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		719C5DA329BDF4540056E7F0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		719C5DA429BDFA000056E7F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		71ABB15A29B105BA00F16D4D /* OpenAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
 		71BE9B2C29812D4B00CB13C2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		71BE9B332982856300CB13C2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -423,7 +424,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				it,
 				fr,
 			);
@@ -558,6 +558,7 @@
 			children = (
 				71493619298BBF6300980250 /* it */,
 				719C5DA329BDF4540056E7F0 /* fr */,
+				719C5DA429BDFA000056E7F0 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
