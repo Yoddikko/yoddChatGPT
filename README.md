@@ -45,7 +45,7 @@ It uses the [OpenAISwift framework](https://github.com/adamrushy/OpenAISwift), [
 
  - For **iOS 15+** only 📱
 
- - Translated in 🇬🇧 🇮🇹
+ - Translated in 🇬🇧 🇮🇹 🇫🇷
 
 <div align="center">
 
@@ -68,6 +68,10 @@ If the testflight link is down you can download the source code and build it you
 ## Screenshots
 
 ![Group 71111](https://user-images.githubusercontent.com/92546954/222952887-0f4f22ca-0b14-4aa1-9738-f4b35a2a59b5.png)
+
+## Contributors
+
+Special thanks to [@Keyhou](https://github.com/Keyhou) for the 🇫🇷 translation.
 
 ## Known issues
  - [ ] There are some problems with the keyboard
