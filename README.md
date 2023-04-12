@@ -18,6 +18,9 @@
 [![GitHub release](https://img.shields.io/github/release/Yoddikko/yoddchatgpt?include_prereleases=&sort=semver&color=blue)](https://github.com/Yoddikko/yoddchatgpt/releases/)
 [![issues - yoddchatgpt](https://img.shields.io/github/issues/Yoddikko/yoddchatgpt)](https://github.com/Yoddikko/yoddchatgpt/issues)
 
+
+## ⚠️⚠️ As OpenAI's API is now very limited and one has to pay for the ability to write messages/receive images, I don't know how long I can keep up with the app/update it, as I don't have the means to access the premium version of the API and therefore can't test my own app. I'll update when the API breaks (if someone points it out to me) ⚠️⚠️
+
 <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki"> Wiki </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/wiki/Code-documentation"> Code documentation </a> ◦ <a href= "https://github.com/Yoddikko/yoddChatGPT/wiki/FAQ"> FAQ </a> ◦ <a href = "https://github.com/Yoddikko/yoddChatGPT/discussions"> Discussions </a>
 
 Use the <a href = "https://github.com/Yoddikko/yoddChatGPT/discussions/categories/show-and-tell"> discussions </a> to give feedbacks, ask for features and share anything with Yodd AI Chat.
